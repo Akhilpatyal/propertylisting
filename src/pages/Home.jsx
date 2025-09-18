@@ -29,7 +29,7 @@ const Home = () => {
             <a class="btn-with-icon" href="about.html">
               <span class="btn btn-five">
                 Collaborate with us
-                <img src="/src/assets/arrow (2).png" alt="" height={"30px"} />
+                <img src="arrow (2).png" alt="" height={"30px"} />
               </span>
             </a>
           </div>

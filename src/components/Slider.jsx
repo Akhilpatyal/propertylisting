@@ -25,12 +25,12 @@ export default function Slider() {
       <SwiperSlide>
         <div className="slide">
           <img
-            src="src/assets/banner1.jpeg"
+            src="/banner1.jpeg"
             alt="Banner 1"
             className="slide-img d-none d-sm-block"
           />
           <img
-            src="src/assets/mobile_banner_1.jpeg"
+            src="/mobile_banner_1.jpeg"
             alt="Banner 1"
             className="slide-img d-sm-none"
           />
@@ -46,12 +46,12 @@ export default function Slider() {
       <SwiperSlide>
         <div className="slide">
           <img
-            src="src/assets/banner2.jpeg"
+            src="/banner2.jpeg"
             alt="Banner 2"
             className="slide-img d-none d-sm-block"
           />
           <img
-            src="src/assets/mobile_banner_2.jpeg"
+            src="/mobile_banner_2.jpeg"
             alt="Banner 2"
             className="slide-img d-sm-none"
           />
@@ -67,12 +67,12 @@ export default function Slider() {
       <SwiperSlide>
         <div className="slide">
           <img
-            src="src/assets/banner3.jpeg"
+            src="/banner3.jpeg"
             alt="Banner 3"
             className="slide-img d-none d-sm-block"
           />
           <img
-            src="src/assets/banner3_mobile_3.jpeg"
+            src="/banner3_mobile_3.jpeg"
             alt="Banner 3"
             className="slide-img d-sm-none"
           />
@@ -88,12 +88,12 @@ export default function Slider() {
       <SwiperSlide>
         <div className="slide">
           <img
-            src="src/assets/banner4.jpeg"
+            src="/banner4.jpeg"
             alt="Banner 3"
             className="slide-img d-none d-sm-block"
           />
           <img
-            src="src/assets/mobile_banner_4.jpeg"
+            src="/mobile_banner_4.jpeg"
             alt="Banner 3"
             className="slide-img d-sm-none"
           />

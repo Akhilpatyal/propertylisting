@@ -9,7 +9,7 @@ export default function Footer() {
           <div className="col-lg-4 col-12 mb-4">
             {/* Logo */}
             {/* <h4 className="fw-bold mb-3">ANAROCK</h4> */}
-            <img src="src/assets/Group-2.png" alt="Anarock" height="100" className="ms-4" />
+            <img src="/Group-2.png" alt="Anarock" height="100" className="ms-4" />
           {/* <p className="mb-0 small fw-bold text-uppercase">Jenika Ventures</p> */}
 
             {/* Social Links */}

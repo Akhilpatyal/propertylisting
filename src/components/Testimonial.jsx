@@ -33,7 +33,7 @@ const Testimonial = () => {
             <div class="testimonial-quote">
               <img
                 class="img-fluid"
-                src="src/assets/straight-quotes.png"
+                src="/straight-quotes.png"
                 alt=""
               />
             </div>
@@ -46,7 +46,7 @@ const Testimonial = () => {
               <div class="author-image">
                 <img
                   class="img-fluid"
-                  src="/src/assets/02.png"
+                  src="/02.png"
                   alt=""
                 />
               </div>
@@ -62,7 +62,7 @@ const Testimonial = () => {
             <div class="testimonial-quote">
               <img
                 class="img-fluid"
-                src="src/assets/straight-quotes.png"
+                src="/straight-quotes.png"
                 alt=""
               />
             </div>
@@ -75,7 +75,7 @@ const Testimonial = () => {
               <div class="author-image">
                 <img
                   class="img-fluid"
-                  src="/src/assets/02.png"
+                  src="/02.png"
                   alt=""
                 />
               </div>
@@ -91,7 +91,7 @@ const Testimonial = () => {
             <div class="testimonial-quote">
               <img
                 class="img-fluid"
-                src="src/assets/straight-quotes.png"
+                src="/straight-quotes.png"
                 alt=""
               />
             </div>
@@ -104,7 +104,7 @@ const Testimonial = () => {
               <div class="author-image">
                 <img
                   class="img-fluid"
-                  src="/src/assets/02.png"
+                  src="/02.png"
                   alt=""
                 />
               </div>
@@ -120,7 +120,7 @@ const Testimonial = () => {
             <div class="testimonial-quote">
               <img
                 class="img-fluid"
-                src="src/assets/straight-quotes.png"
+                src="/straight-quotes.png"
                 alt=""
               />
             </div>
@@ -133,7 +133,7 @@ const Testimonial = () => {
               <div class="author-image">
                 <img
                   class="img-fluid"
-                  src="/src/assets/02.png"
+                  src="/02.png"
                   alt=""
                 />
               </div>

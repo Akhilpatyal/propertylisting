@@ -2,13 +2,13 @@ import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const SolutionsSection = () => {
-  const [activeImage, setActiveImage] = useState("src/assets/start-image.png"); // default image
+  const [activeImage, setActiveImage] = useState("/start-image.png"); // default image
 
   const tabs = [
-    { label: "Developers", img: "src/assets/start-image.png" },
-    { label: "Channel Partners", img: "src/assets/channelpartner.png" },
-    { label: "Corporates", img: "src/assets/01.jpg" },
-    { label: "Consumers", img: "src/assets/02.jpg" },
+    { label: "Developers", img: "/start-image.png" },
+    { label: "Channel Partners", img: "/channelpartner.png" },
+    { label: "Corporates", img: "/01.jpg" },
+    { label: "Consumers", img: "/02.jpg" },
   ];
 
   return (

@@ -518,7 +518,7 @@ span img {
 }
 
 .banner-row {
-  background: url("/src/assets/project-banner.webp") center/cover no-repeat;
+  background: url("/project-banner.webp") center/cover no-repeat;
   min-height: 300px;
   border-bottom-right-radius: 2rem;
 }
