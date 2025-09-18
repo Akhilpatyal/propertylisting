@@ -58,7 +58,7 @@ export default function Services() {
                 <p>Validating project market fit in real estate</p>
               </div>
               <div className="cardBG">
-                <img src="/src/assets/1st.svg" alt="" />
+                <img src="src/assets/1st.svg" alt="" />
               </div>
             </div>
           </SwiperSlide>
@@ -92,7 +92,7 @@ export default function Services() {
                 <p>Validating project market fit in real estate</p>
               </div>
               <div className="cardBG">
-                <img src="/src/assets/2nd.svg" alt="" />
+                <img src="src/assets/2nd.svg" alt="" />
               </div>
             </div>
           </SwiperSlide>
@@ -126,7 +126,7 @@ export default function Services() {
                 <p>Validating project market fit in real estate</p>
               </div>
               <div className="cardBG">
-                <img src="/src/assets/3rd.svg" alt="" />
+                <img src="src/assets/3rd.svg" alt="" />
               </div>
             </div>
           </SwiperSlide>
@@ -160,7 +160,7 @@ export default function Services() {
                 <p>Validating project market fit in real estate</p>
               </div>
               <div className="cardBG">
-                <img src="/src/assets/4rth.svg" alt="" />
+                <img src="src/assets/4rth.svg" alt="" />
               </div>
             </div>
           </SwiperSlide>

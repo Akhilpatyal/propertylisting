@@ -39,7 +39,7 @@ function Navbar() {
 
         {/* Logo */}
         <div className="text-center">
-          <img src="/src/assets/JV-Logo.png" alt="Jenika Ventures" height="80px" />
+          <img src="src/assets/JV-Logo.png" alt="Jenika Ventures" height="80px" />
           {/* <p className="mb-0 small fw-bold text-uppercase">Jenika Ventures</p> */}
         </div>
 

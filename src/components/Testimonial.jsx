@@ -33,7 +33,7 @@ const Testimonial = () => {
             <div class="testimonial-quote">
               <img
                 class="img-fluid"
-                src="/src/assets/straight-quotes.png"
+                src="src/assets/straight-quotes.png"
                 alt=""
               />
             </div>
@@ -62,7 +62,7 @@ const Testimonial = () => {
             <div class="testimonial-quote">
               <img
                 class="img-fluid"
-                src="/src/assets/straight-quotes.png"
+                src="src/assets/straight-quotes.png"
                 alt=""
               />
             </div>
@@ -91,7 +91,7 @@ const Testimonial = () => {
             <div class="testimonial-quote">
               <img
                 class="img-fluid"
-                src="/src/assets/straight-quotes.png"
+                src="src/assets/straight-quotes.png"
                 alt=""
               />
             </div>
@@ -120,7 +120,7 @@ const Testimonial = () => {
             <div class="testimonial-quote">
               <img
                 class="img-fluid"
-                src="/src/assets/straight-quotes.png"
+                src="src/assets/straight-quotes.png"
                 alt=""
               />
             </div>
