@@ -3,6 +3,7 @@
   height: 100vh;
   position: relative;
 }
+
 .mySwiper-2 {
   width: 100%;
   height: auto;
@@ -159,7 +160,7 @@
 
 /*  */
 .mainfooter {
-  background: linear-gradient(327deg, #c80a17 2%, #000000) 45%;
+  background: linear-gradient(327deg, #c80a17 20%, #000000) 45%;
 }
 
 .mainfooter p,
@@ -303,7 +304,7 @@
 
 
 .tg-button-wrap .btn-five {
-  background: black;
+  background: linear-gradient(327deg, #ffb900, #000000) 45%;
   padding: 16px 35px 18px;
   font-size: 18px;
   gap: 8px;
@@ -476,6 +477,16 @@ span img {
   font-weight: 500;
 }
 
+.mainFont-2 {
+  font-size: 20px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 500;
+}
+
+.pt-34 {
+  padding-top: 34px;
+}
+
 .style-2 {
   position: relative;
   overflow: hidden;
@@ -516,6 +527,7 @@ span img {
 .style-2:hover .content-2 {
   opacity: 1;
 }
+
 
 .banner-row {
   background: url("/project-banner.webp") center/cover no-repeat;
@@ -645,10 +657,22 @@ span img {
   text-transform: capitalize;
 }
 
-.cardBG{
+.cardBG {
   position: absolute;
+  right: 0px;
 }
-.cardBG img{
-  object-position:center;
+
+.cardBG img {
+  width: 80%;
+  height: 100%;
   object-fit: cover;
+  object-position: center;
+  transition: 0.4s all ease-in-out;
+  /* put transition here */
 }
+
+.style-2:hover .cardBG img {
+  transform: translateX(30px);
+}
+
+/*  */

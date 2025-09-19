@@ -22,9 +22,7 @@ const SolutionsSection = () => {
             </h2>
             <div className="d-flex flex-wrap gap-2 justify-content-center justify-content-md-start">
               {tabs.map((tab, i) => (
-                <div
-                  key={i}
-                  className="px-4 py-2 bg-white border rounded cursor-pointer"
+                <div key={i} className="px-4 py-2 bg-white border rounded cursor-pointer"
                   style={{
                     minWidth: "150px",
                     textAlign: "center",
@@ -32,7 +30,8 @@ const SolutionsSection = () => {
                   }}
                   onMouseEnter={() => setActiveImage(tab.img)}
                 >
-                  {tab.label}
+                  {tab.label} 
+                  
                 </div>
               ))}
             </div>

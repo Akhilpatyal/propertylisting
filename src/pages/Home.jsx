@@ -6,6 +6,8 @@ import Footer from "../components/Footer";
 import CollaborationTab from "../components/CollaborationTab";
 import Testimonial from "../components/Testimonial";
 import ProjectBanner from "../components/ProjectBanner";
+import ImageSlider from "../components/ImageSlider";
+import PeopleSection from "../components/PeopleSection";
 const Home = () => {
   return (
     <div>
@@ -14,7 +16,9 @@ const Home = () => {
       <Services />
       <CollaborationTab/>
       <ProjectBanner/>
+      <ImageSlider/>
      <Testimonial/>
+     <PeopleSection/>
       <div className="container">
         <div className="moreInfo">
           <h3>We have much more..</h3>

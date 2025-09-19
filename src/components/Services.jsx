@@ -55,7 +55,7 @@ export default function Services() {
               </div>
               <div className="content-2 p-3">
                 <h4>Learn More</h4>
-                <p>Validating project market fit in real estate</p>
+                
               </div>
               <div className="cardBG">
                 <img src="/1st.svg" alt="" />
