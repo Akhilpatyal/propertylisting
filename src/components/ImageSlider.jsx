@@ -27,7 +27,7 @@ function ImageSlider() {
             </h1>
             <div class="tg-button-wrap">
               <a class="btn-with-icon" href="about.html">
-                <span class="btn btn-five">
+                <span className="btn btn-five">
                   Collaborate with us
                   <img src="arrow (2).png" alt="" height={"30px"} />
                 </span>
@@ -39,7 +39,7 @@ function ImageSlider() {
         <Swiper
           effect={"coverflow"}
           grabCursor={true}
-          // centeredSlides={true}
+          centeredSlides={true}
           loop={true}
           slidesPerView={"auto"}
           speed={800}

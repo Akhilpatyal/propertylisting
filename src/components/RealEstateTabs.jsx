@@ -102,14 +102,14 @@ export default function RealEstateTabs() {
                           Quisque a bibendum magna
                         </div> */}
                       </a>
-                      <div class="ripple-cont"></div>
+                      <div className="ripple-cont"></div>
                     </div>
-                    <div class="table p-3">
+                    <div className="table p-3">
                       <div className="ele-1">
                         <h6 class="category text-info">
                           September 2025 | Capital Market
                         </h6>
-                        <p class="card-description fs-4">
+                        <p className="card-description fs-4">
                           Indian REITs A Gateway to Institutional Real Estate{" "}
                         </p>
                         <div className="pt-5">
@@ -255,7 +255,7 @@ export default function RealEstateTabs() {
                 },
               }}
               modules={[Pagination]}
-              className="mySwiper"
+              className="mySwiper-2"
             >
               <SwiperSlide>
                 <div class="cards-3 section-gray">
@@ -264,49 +264,11 @@ export default function RealEstateTabs() {
                       <a href="#">
                         <div className="news-image ">
                           <img
-                            src="http://adamthemes.com/demo/code/cards/images/blog01.jpeg"
+                            src="/public/Pune.png"
                             alt="img"
                           />
                           <img
-                            src="http://adamthemes.com/demo/code/cards/images/blog01.jpeg"
-                            alt="img"
-                          />
-                        </div>
-                        {/* <div class="card-caption">
-                    
-                          Quisque a bibendum magna
-                        </div> */}
-                      </a>
-                      <div class="ripple-cont"></div>
-                    </div>
-                    <div class="table p-3">
-                      <div className="ele-1">
-                        <h6 class="category text-info">
-                          September 2025 | Capital Market
-                        </h6>
-                        <p class="card-description fs-4">
-                          Indian REITs A Gateway to Institutional Real Estate{" "}
-                        </p>
-                        <div className="pt-5">
-                          <a href="">Download</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div class="cards-3 section-gray">
-                  <div class="card card-blog">
-                    <div class="card-image news-box-items">
-                      <a href="#">
-                        <div className="news-image ">
-                          <img
-                            src="http://adamthemes.com/demo/code/cards/images/blog01.jpeg"
-                            alt="img"
-                          />
-                          <img
-                            src="http://adamthemes.com/demo/code/cards/images/blog01.jpeg"
+                            src="/public/Pune.png"
                             alt="img"
                           />
                         </div>
@@ -340,11 +302,11 @@ export default function RealEstateTabs() {
                       <a href="#">
                         <div className="news-image ">
                           <img
-                            src="http://adamthemes.com/demo/code/cards/images/blog01.jpeg"
+                            src="/public/Pune.png"
                             alt="img"
                           />
                           <img
-                            src="http://adamthemes.com/demo/code/cards/images/blog01.jpeg"
+                            src="/public/Pune.png"
                             alt="img"
                           />
                         </div>
@@ -378,11 +340,49 @@ export default function RealEstateTabs() {
                       <a href="#">
                         <div className="news-image ">
                           <img
-                            src="http://adamthemes.com/demo/code/cards/images/blog01.jpeg"
+                            src="/public/Thumbnail.jpeg"
                             alt="img"
                           />
                           <img
-                            src="http://adamthemes.com/demo/code/cards/images/blog01.jpeg"
+                            src="/public/Thumbnail.jpeg"
+                            alt="img"
+                          />
+                        </div>
+                        {/* <div class="card-caption">
+                    
+                          Quisque a bibendum magna
+                        </div> */}
+                      </a>
+                      <div class="ripple-cont"></div>
+                    </div>
+                    <div class="table p-3">
+                      <div className="ele-1">
+                        <h6 class="category text-info">
+                          September 2025 | Capital Market
+                        </h6>
+                        <p class="card-description fs-4">
+                          Indian REITs A Gateway to Institutional Real Estate{" "}
+                        </p>
+                        <div className="pt-5">
+                          <a href="">Download</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div class="cards-3 section-gray">
+                  <div class="card card-blog">
+                    <div class="card-image news-box-items">
+                      <a href="#">
+                        <div className="news-image ">
+                          <img
+                            src="/public/Delhi.png"
+                            alt="img"
+                          />
+                          <img
+                            src="/public/Delhi.png"
                             alt="img"
                           />
                         </div>
@@ -430,7 +430,7 @@ export default function RealEstateTabs() {
                 },
               }}
               modules={[Pagination]}
-              className="mySwiper"
+              className="mySwiper-2"
             >
               <SwiperSlide>
                 <div class="cards-3 section-gray">
@@ -439,49 +439,11 @@ export default function RealEstateTabs() {
                       <a href="#">
                         <div className="news-image ">
                           <img
-                            src="http://adamthemes.com/demo/code/cards/images/blog01.jpeg"
+                            src="/public/Pune.png"
                             alt="img"
                           />
                           <img
-                            src="http://adamthemes.com/demo/code/cards/images/blog01.jpeg"
-                            alt="img"
-                          />
-                        </div>
-                        {/* <div class="card-caption">
-                    
-                          Quisque a bibendum magna
-                        </div> */}
-                      </a>
-                      <div class="ripple-cont"></div>
-                    </div>
-                    <div class="table p-3">
-                      <div className="ele-1">
-                        <h6 class="category text-info">
-                          September 2025 | Capital Market
-                        </h6>
-                        <p class="card-description fs-4">
-                          Indian REITs A Gateway to Institutional Real Estate{" "}
-                        </p>
-                        <div className="pt-5">
-                          <a href="">Download</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div class="cards-3 section-gray">
-                  <div class="card card-blog">
-                    <div class="card-image news-box-items">
-                      <a href="#">
-                        <div className="news-image ">
-                          <img
-                            src="http://adamthemes.com/demo/code/cards/images/blog01.jpeg"
-                            alt="img"
-                          />
-                          <img
-                            src="http://adamthemes.com/demo/code/cards/images/blog01.jpeg"
+                            src="/public/Pune.png"
                             alt="img"
                           />
                         </div>
@@ -515,11 +477,11 @@ export default function RealEstateTabs() {
                       <a href="#">
                         <div className="news-image ">
                           <img
-                            src="http://adamthemes.com/demo/code/cards/images/blog01.jpeg"
+                            src="/public/Chennai.png"
                             alt="img"
                           />
                           <img
-                            src="http://adamthemes.com/demo/code/cards/images/blog01.jpeg"
+                            src="/public/Chennai.png"
                             alt="img"
                           />
                         </div>
@@ -553,11 +515,49 @@ export default function RealEstateTabs() {
                       <a href="#">
                         <div className="news-image ">
                           <img
-                            src="http://adamthemes.com/demo/code/cards/images/blog01.jpeg"
+                            src="/public/Thumbnail.jpeg"
                             alt="img"
                           />
                           <img
-                            src="http://adamthemes.com/demo/code/cards/images/blog01.jpeg"
+                            src="/public/Thumbnail.jpeg"
+                            alt="img"
+                          />
+                        </div>
+                        {/* <div class="card-caption">
+                    
+                          Quisque a bibendum magna
+                        </div> */}
+                      </a>
+                      <div class="ripple-cont"></div>
+                    </div>
+                    <div class="table p-3">
+                      <div className="ele-1">
+                        <h6 class="category text-info">
+                          September 2025 | Capital Market
+                        </h6>
+                        <p class="card-description fs-4">
+                          Indian REITs A Gateway to Institutional Real Estate{" "}
+                        </p>
+                        <div className="pt-5">
+                          <a href="">Download</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div class="cards-3 section-gray">
+                  <div class="card card-blog">
+                    <div class="card-image news-box-items">
+                      <a href="#">
+                        <div className="news-image ">
+                          <img
+                            src="/public/Pune.png"
+                            alt="img"
+                          />
+                          <img
+                            src="/public/Pune.png"
                             alt="img"
                           />
                         </div>

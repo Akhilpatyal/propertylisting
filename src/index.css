@@ -676,3 +676,181 @@ span img {
 }
 
 /*  */
+
+/*  */
+/* Mega Menu styles */
+.dropdown-hover .mega-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(0%) translateY(-20px);
+  width: 900px;
+  background: #fff;
+  border-radius: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+  z-index: 1000;
+}
+
+.dropdown-hover:hover .mega-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0%) translateY(0);
+}
+
+/* Mobile sidebar */
+/* Mega Menu Dropdown */
+.dropdown-hover {
+  position: relative;
+}
+
+.dropdown-hover .mega-menu {
+  position: absolute;
+  top: 100%;
+  left: 0%;
+  transform: translateX(0%) translateY(-20px);
+  width: 900px;
+  background: #fff;
+  border-radius: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+  z-index: 1000;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Show Mega Menu on Hover */
+.dropdown-hover:hover .mega-menu,
+.dropdown-hover .mega-menu:hover {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0%) translateY(0);
+}
+
+/* Optional: Card hover effect inside mega menu */
+
+
+/* Mobile Sidebar */
+.sidebar-menu {
+  position: fixed;
+  top: 0;
+  right: -300px; /* start hidden */
+  width: 260px;
+  height: 100vh;
+  background: #fff;
+  padding: 2rem;
+  box-shadow: -5px 0 20px rgba(0, 0, 0, 0.2);
+  transition: right 0.4s ease;
+  z-index: 1050;
+  overflow-y: auto; /* scroll if content is longer */
+}
+
+/* Open sidebar */
+.sidebar-menu.open {
+  right: 0;
+}
+
+/* Overlay when sidebar is open */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1040;
+}
+
+/* Optional: smooth scrollbar for sidebar */
+.sidebar-menu::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar-menu::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+.fs-20{
+  font-size: 20px;
+}
+.rotate95{
+      transform: rotate(95deg);
+}
+.text-info {
+    color: rgb(119 119 119) !important;
+    font-size: 12px;
+}
+.NewBtn{
+    border-radius: 4px;
+    background: #f4c038;
+    border: none;
+    color: #000;
+    text-align: center;
+    font-size: 18px;
+    padding: 12px 16px;
+    width: 195px;
+    transition: all .5s;
+    border-radius: 0;
+    overflow: hidden;
+    cursor: pointer;
+    display: inline-block;
+    transition: .5s;
+}
+/*  */
+.sidebar-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 280px;
+  height: 100vh;
+  background: #fff;
+  padding: 20px;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(100%);
+  z-index: 1000;
+  overflow-y: auto;
+}
+.sidebar-menu.open {
+  transform: translateX(0);
+}
+
+.dropdown-toggle-btn {
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-weight: 600;
+  font-size: 16px;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.dropdown-toggle-btn:hover {
+  color: #cb2d38;
+}
+
+.submenu {
+  margin-top: 8px;
+}
+.submenu li {
+  padding: 6px 0;
+}
+
+.chevron-icon {
+  transition: transform 0.3s;
+}
+.chevron-icon.rotate {
+  transform: rotate(180deg);
+}
+
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}

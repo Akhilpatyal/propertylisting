@@ -37,7 +37,7 @@ export default function Slider() {
           <div className="slide-overlay">
             <h2>Transforming Data to Intelligence</h2>
             <p>Making more data-driven decisions by tracking industry trends.</p>
-            <button class="btn-donate">Discover More</button>
+            <button className="NewBtn">Discover More</button>
           </div>
         </div>
       </SwiperSlide>
@@ -58,7 +58,7 @@ export default function Slider() {
           <div className="slide-overlay">
             <h2>Bringing Transparency to Business</h2>
             <p>Building credibility, increasing customer loyalty, and creating empowerment.</p>
-            <button class="btn-donate">Discover More</button>
+            <button className="NewBtn">Discover More</button>
           </div>
         </div>
       </SwiperSlide>
@@ -79,7 +79,7 @@ export default function Slider() {
           <div className="slide-overlay">
             <h2>Delivering Excellence to Real Estate</h2>
             <p>Understanding expectations and offering customised solutions to clients.</p>
-            <button class="btn-donate">Discover More</button>
+            <button className="NewBtn">Discover More</button>
           </div>
         </div>
       </SwiperSlide>
@@ -100,7 +100,7 @@ export default function Slider() {
           <div className="slide-overlay">
             <h2>Fuelling Growth through Innovation</h2>
             <p>Leveraging new technologies to transform Indian real estate.</p>
-            <button class="btn-donate">Discover More</button>
+            <button className="NewBtn">Discover More</button>
           </div>
         </div>
       </SwiperSlide>
