@@ -48,7 +48,7 @@ const PeopleSection = () => {
             >
               <h6 className="fw-semibold mb-3 mainFont-2">Different but Equal</h6>
               <img
-                src="/public/pencile-bg.png"
+                src="/pencile-bg.png"
                 alt="Different but Equal"
                 className="img-fluid rounded pt-34"
               />

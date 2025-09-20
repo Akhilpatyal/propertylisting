@@ -165,11 +165,11 @@ export default function RealEstateTabs() {
                       <a href="#">
                         <div className="news-image ">
                           <img
-                            src="/public/Q2.png"
+                            src="/Q2.png"
                             alt="img"
                           />
                           <img
-                            src="/public/Q2.png"
+                            src="/Q2.png"
                             alt="img"
                           />
                         </div>
