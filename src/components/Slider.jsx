@@ -20,7 +20,7 @@ export default function Slider() {
           effect="fade"
           pagination={{ clickable: true }}
           autoplay={{ delay: 4000, disableOnInteraction: false }}
-          modules={[Pagination, Autoplay, EffectFade]}
+          modules={[ Autoplay, EffectFade]}
           className="mySwiper"
           loop={true}
           speed={1200}
