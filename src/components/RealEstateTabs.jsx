@@ -44,7 +44,7 @@ export default function RealEstateTabs() {
 
   return (
     <>
-      <div className="container">
+      <div className="container py-100">
         <Box sx={{ width: "100%" }}>
           <h2 className="fw-bold pt-5 mainFont">Latest in Real Estate</h2>
           {/* Tab Header */}
@@ -54,20 +54,23 @@ export default function RealEstateTabs() {
               onChange={handleChange}
               aria-label="basic tabs example"
             >
-              <Tab label="Research" {...a11yProps(0)} />
-              <Tab label="Blogs" {...a11yProps(1)} />
+              <Tab label="Hot Deals" {...a11yProps(0)} />
+              <Tab label="Blog" {...a11yProps(1)} />
               <Tab label="Media" {...a11yProps(2)} />
             </Tabs>
           </Box>
 
           {/* Tab Content */}
           <CustomTabPanel value={value} index={0}>
-          <Swiper
+            <Swiper
               slidesPerView={3}
               spaceBetween={30}
+              autoplay={{ delay: 2500, disableOnInteraction: false }}
+              modules={[Autoplay, EffectFade]}
               pagination={{
                 clickable: true,
               }}
+               loop={true}
               breakpoints={{
                 0: {
                   slidesPerView: 1, // 👈 mobile (default)
@@ -88,14 +91,8 @@ export default function RealEstateTabs() {
                     <div class="card-image news-box-items">
                       <a href="#">
                         <div className="news-image ">
-                          <img
-                            src="/Pune.png"
-                            alt="img"
-                          />
-                          <img
-                            src="/Pune.png"
-                            alt="img"
-                          />
+                          <img src="/Pune.png" alt="img" />
+                          <img src="/Pune.png" alt="img" />
                         </div>
                         {/* <div class="card-caption">
                     
@@ -126,14 +123,8 @@ export default function RealEstateTabs() {
                     <div class="card-image news-box-items">
                       <a href="#">
                         <div className="news-image ">
-                          <img
-                            src="/Chennai.png"
-                            alt="img"
-                          />
-                          <img
-                            src="/Chennai.png"
-                            alt="img"
-                          />
+                          <img src="/Chennai.png" alt="img" />
+                          <img src="/Chennai.png" alt="img" />
                         </div>
                         {/* <div class="card-caption">
                     
@@ -164,14 +155,8 @@ export default function RealEstateTabs() {
                     <div class="card-image news-box-items">
                       <a href="#">
                         <div className="news-image ">
-                          <img
-                            src="/Q2.png"
-                            alt="img"
-                          />
-                          <img
-                            src="/Q2.png"
-                            alt="img"
-                          />
+                          <img src="/Q2.png" alt="img" />
+                          <img src="/Q2.png" alt="img" />
                         </div>
                         {/* <div class="card-caption">
                     
@@ -202,14 +187,8 @@ export default function RealEstateTabs() {
                     <div class="card-image news-box-items">
                       <a href="#">
                         <div className="news-image ">
-                          <img
-                            src="/Thumbnail.jpeg"
-                            alt="img"
-                          />
-                          <img
-                            src="/Thumbnail.jpeg"
-                            alt="img"
-                          />
+                          <img src="/Thumbnail.jpeg" alt="img" />
+                          <img src="/Thumbnail.jpeg" alt="img" />
                         </div>
                         {/* <div class="card-caption">
                     
@@ -237,12 +216,15 @@ export default function RealEstateTabs() {
             </Swiper>
           </CustomTabPanel>
           <CustomTabPanel value={value} index={1}>
-          <Swiper
+            <Swiper
               slidesPerView={3}
               spaceBetween={30}
+              autoplay={{ delay: 2500, disableOnInteraction: false }}
+              modules={[Autoplay, EffectFade]}
               pagination={{
                 clickable: true,
               }}
+               loop={true}
               breakpoints={{
                 0: {
                   slidesPerView: 1, // 👈 mobile (default)
@@ -263,14 +245,8 @@ export default function RealEstateTabs() {
                     <div class="card-image news-box-items">
                       <a href="#">
                         <div className="news-image ">
-                          <img
-                            src="/Pune.png"
-                            alt="img"
-                          />
-                          <img
-                            src="/Pune.png"
-                            alt="img"
-                          />
+                          <img src="/Pune.png" alt="img" />
+                          <img src="/Pune.png" alt="img" />
                         </div>
                         {/* <div class="card-caption">
                     
@@ -285,10 +261,11 @@ export default function RealEstateTabs() {
                           September 2025 | Capital Market
                         </h6>
                         <p class="card-description fs-4">
-                          Indian REITs A Gateway to Institutional Real Estate{" "}
+                          Lorem ipsum dolor, sit amet consectetur adipisicing
+                          elit!{" "}
                         </p>
                         <div className="pt-5">
-                          <a href="">Download</a>
+                          <a href="">Read</a>
                         </div>
                       </div>
                     </div>
@@ -301,14 +278,8 @@ export default function RealEstateTabs() {
                     <div class="card-image news-box-items">
                       <a href="#">
                         <div className="news-image ">
-                          <img
-                            src="/Pune.png"
-                            alt="img"
-                          />
-                          <img
-                            src="/Pune.png"
-                            alt="img"
-                          />
+                          <img src="/Pune.png" alt="img" />
+                          <img src="/Pune.png" alt="img" />
                         </div>
                         {/* <div class="card-caption">
                     
@@ -323,10 +294,10 @@ export default function RealEstateTabs() {
                           September 2025 | Capital Market
                         </h6>
                         <p class="card-description fs-4">
-                          Indian REITs A Gateway to Institutional Real Estate{" "}
+                          Lorem ipsum dolor sit amet consectetur.{" "}
                         </p>
                         <div className="pt-5">
-                          <a href="">Download</a>
+                          <a href="">Read</a>
                         </div>
                       </div>
                     </div>
@@ -339,14 +310,8 @@ export default function RealEstateTabs() {
                     <div class="card-image news-box-items">
                       <a href="#">
                         <div className="news-image ">
-                          <img
-                            src="/Thumbnail.jpeg"
-                            alt="img"
-                          />
-                          <img
-                            src="/Thumbnail.jpeg"
-                            alt="img"
-                          />
+                          <img src="/Thumbnail.jpeg" alt="img" />
+                          <img src="/Thumbnail.jpeg" alt="img" />
                         </div>
                         {/* <div class="card-caption">
                     
@@ -361,10 +326,10 @@ export default function RealEstateTabs() {
                           September 2025 | Capital Market
                         </h6>
                         <p class="card-description fs-4">
-                          Indian REITs A Gateway to Institutional Real Estate{" "}
+                          Lorem ipsum dolor sit, amet consectetur adipisicing.{" "}
                         </p>
                         <div className="pt-5">
-                          <a href="">Download</a>
+                          <a href="">Read</a>
                         </div>
                       </div>
                     </div>
@@ -377,14 +342,8 @@ export default function RealEstateTabs() {
                     <div class="card-image news-box-items">
                       <a href="#">
                         <div className="news-image ">
-                          <img
-                            src="/Delhi.png"
-                            alt="img"
-                          />
-                          <img
-                            src="/Delhi.png"
-                            alt="img"
-                          />
+                          <img src="/Delhi.png" alt="img" />
+                          <img src="/Delhi.png" alt="img" />
                         </div>
                         {/* <div class="card-caption">
                     
@@ -399,10 +358,11 @@ export default function RealEstateTabs() {
                           September 2025 | Capital Market
                         </h6>
                         <p class="card-description fs-4">
-                          Indian REITs A Gateway to Institutional Real Estate{" "}
+                          Lorem ipsum dolor, sit amet consectetur adipisicing
+                          elit{" "}
                         </p>
                         <div className="pt-5">
-                          <a href="">Download</a>
+                          <a href="">Read</a>
                         </div>
                       </div>
                     </div>
@@ -415,9 +375,12 @@ export default function RealEstateTabs() {
             <Swiper
               slidesPerView={3}
               spaceBetween={30}
+              autoplay={{ delay: 2500, disableOnInteraction: false }}
+              modules={[Autoplay, EffectFade]}
               pagination={{
                 clickable: true,
               }}
+               loop={true}
               breakpoints={{
                 0: {
                   slidesPerView: 1, // 👈 mobile (default)
@@ -438,14 +401,8 @@ export default function RealEstateTabs() {
                     <div class="card-image news-box-items">
                       <a href="#">
                         <div className="news-image ">
-                          <img
-                            src="/Pune.png"
-                            alt="img"
-                          />
-                          <img
-                            src="/Pune.png"
-                            alt="img"
-                          />
+                          <img src="/Delhi.png" alt="img" />
+                          <img src="/Delhi.png" alt="img" />
                         </div>
                         {/* <div class="card-caption">
                     
@@ -460,10 +417,10 @@ export default function RealEstateTabs() {
                           September 2025 | Capital Market
                         </h6>
                         <p class="card-description fs-4">
-                          Indian REITs A Gateway to Institutional Real Estate{" "}
+                          project Media Institutional Real Estate{" "}
                         </p>
                         <div className="pt-5">
-                          <a href="">Download</a>
+                          <a href="">More</a>
                         </div>
                       </div>
                     </div>
@@ -476,14 +433,8 @@ export default function RealEstateTabs() {
                     <div class="card-image news-box-items">
                       <a href="#">
                         <div className="news-image ">
-                          <img
-                            src="/Chennai.png"
-                            alt="img"
-                          />
-                          <img
-                            src="/Chennai.png"
-                            alt="img"
-                          />
+                          <img src="/Chennai.png" alt="img" />
+                          <img src="/Chennai.png" alt="img" />
                         </div>
                         {/* <div class="card-caption">
                     
@@ -501,7 +452,7 @@ export default function RealEstateTabs() {
                           Indian REITs A Gateway to Institutional Real Estate{" "}
                         </p>
                         <div className="pt-5">
-                          <a href="">Download</a>
+                          <a href="">More</a>
                         </div>
                       </div>
                     </div>
@@ -514,14 +465,8 @@ export default function RealEstateTabs() {
                     <div class="card-image news-box-items">
                       <a href="#">
                         <div className="news-image ">
-                          <img
-                            src="/Thumbnail.jpeg"
-                            alt="img"
-                          />
-                          <img
-                            src="/Thumbnail.jpeg"
-                            alt="img"
-                          />
+                          <img src="/Thumbnail.jpeg" alt="img" />
+                          <img src="/Thumbnail.jpeg" alt="img" />
                         </div>
                         {/* <div class="card-caption">
                     
@@ -539,7 +484,7 @@ export default function RealEstateTabs() {
                           Indian REITs A Gateway to Institutional Real Estate{" "}
                         </p>
                         <div className="pt-5">
-                          <a href="">Download</a>
+                          <a href="">More</a>
                         </div>
                       </div>
                     </div>
@@ -552,14 +497,8 @@ export default function RealEstateTabs() {
                     <div class="card-image news-box-items">
                       <a href="#">
                         <div className="news-image ">
-                          <img
-                            src="/Pune.png"
-                            alt="img"
-                          />
-                          <img
-                            src="/Pune.png"
-                            alt="img"
-                          />
+                          <img src="/Pune.png" alt="img" />
+                          <img src="/Pune.png" alt="img" />
                         </div>
                         {/* <div class="card-caption">
                     
@@ -577,7 +516,7 @@ export default function RealEstateTabs() {
                           Indian REITs A Gateway to Institutional Real Estate{" "}
                         </p>
                         <div className="pt-5">
-                          <a href="">Download</a>
+                          <a href="">More</a>
                         </div>
                       </div>
                     </div>

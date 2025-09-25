@@ -3,7 +3,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 const Testimonial = () => {
   return (
-    <div className="container my-5">
+    <section className="googleReview py-0 py-md-5">
+
+
+    <div className="container my-5 pb-4">
       <h2 className="fw-bold pt-5 text-center mainFont">Testimonials</h2>
       <p className="text-center">
         When You Succeed, We Succeed!
@@ -146,6 +149,7 @@ const Testimonial = () => {
         </SwiperSlide>
       </Swiper>
     </div>
+        </section>
   );
 };
 

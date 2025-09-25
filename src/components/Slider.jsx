@@ -1,6 +1,7 @@
-import React from "react";
+import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay, EffectFade } from "swiper/modules";
+import { FaSearch, FaMapMarkerAlt } from "react-icons/fa";
 
 // Import Swiper styles
 import "swiper/css";
@@ -10,100 +11,123 @@ import "swiper/css/effect-fade";
 import "../index.css"; // your custom styles
 
 export default function Slider() {
+  const [activeTab, setActiveTab] = useState("Residential");
   return (
-    <Swiper
-      spaceBetween={0}
-      effect="fade" // 👈 fade effect
-      pagination={{ clickable: true }}
-      autoplay={{ delay: 4000, disableOnInteraction: false }}
-      modules={[Pagination, Autoplay, EffectFade]}
-      className="mySwiper"
-      loop={true}
-      speed={1200} // 👈 control fade speed (ms)
-    >
-      {/* Slide 1 */}
-      <SwiperSlide>
-        <div className="slide">
-          <img
-            src="/banner1.jpeg"
-            alt="Banner 1"
-            className="slide-img d-none d-sm-block"
-          />
-          <img
-            src="/mobile_banner_1.jpeg"
-            alt="Banner 1"
-            className="slide-img d-sm-none"
-          />
-          <div className="slide-overlay">
-            <h2>Transforming Data to Intelligence</h2>
-            <p>Making more data-driven decisions by tracking industry trends.</p>
-            <button className="NewBtn">Discover More</button>
-          </div>
-        </div>
-      </SwiperSlide>
+    <>
+      <div className="slider-wrapper">
+        <Swiper
+          spaceBetween={0}
+          effect="fade"
+          pagination={{ clickable: true }}
+          autoplay={{ delay: 4000, disableOnInteraction: false }}
+          modules={[Pagination, Autoplay, EffectFade]}
+          className="mySwiper"
+          loop={true}
+          speed={1200}
+        >
+          {/* Slide 1 */}
+          <SwiperSlide>
+            <img
+              src="/banner-6.png"
+              alt="Banner 1"
+              className="slide-img d-none d-sm-block"
+            />
+            <img
+              src="/mobBig-1.png"
+              alt="Banner 1"
+              className="slide-img d-sm-none"
+            />
+          </SwiperSlide>
 
-      {/* Slide 2 */}
-      <SwiperSlide>
-        <div className="slide">
-          <img
-            src="/banner2.jpeg"
-            alt="Banner 2"
-            className="slide-img d-none d-sm-block"
-          />
-          <img
-            src="/mobile_banner_2.jpeg"
-            alt="Banner 2"
-            className="slide-img d-sm-none"
-          />
-          <div className="slide-overlay">
-            <h2>Bringing Transparency to Business</h2>
-            <p>Building credibility, increasing customer loyalty, and creating empowerment.</p>
-            <button className="NewBtn">Discover More</button>
-          </div>
-        </div>
-      </SwiperSlide>
+          {/* Slide 2 */}
+          <SwiperSlide>
+            <img
+              src="/banner-8.png"
+              alt="Banner 2"
+              className="slide-img d-none d-sm-block"
+            />
+            <img
+              src="/mobBig-2.png"
+              alt="Banner 2"
+              className="slide-img d-sm-none"
+            />
+          </SwiperSlide>
 
-      {/* Slide 3 */}
-      <SwiperSlide>
-        <div className="slide">
-          <img
-            src="/banner3.jpeg"
-            alt="Banner 3"
-            className="slide-img d-none d-sm-block"
-          />
-          <img
-            src="/banner3_mobile_3.jpeg"
-            alt="Banner 3"
-            className="slide-img d-sm-none"
-          />
-          <div className="slide-overlay">
-            <h2>Delivering Excellence to Real Estate</h2>
-            <p>Understanding expectations and offering customised solutions to clients.</p>
-            <button className="NewBtn">Discover More</button>
+          {/* Slide 3 */}
+          <SwiperSlide>
+            <img
+              src="/banner-9.png"
+              alt="Banner 3"
+              className="slide-img d-none d-sm-block"
+            />
+            <img
+              src="/mobBig-1.png"
+              alt="Banner 3"
+              className="slide-img d-sm-none"
+            />
+          </SwiperSlide>
+
+          {/* Slide 4 */}
+          <SwiperSlide>
+            <img
+              src="/banner-8.png"
+              alt="Banner 4"
+              className="slide-img d-none d-sm-block"
+            />
+            <img
+              src="/mobBig-2.png"
+              alt="Banner 4"
+              className="slide-img d-sm-none"
+            />
+          </SwiperSlide>
+        </Swiper>
+       
+
+        {/* 🔍 Search Section Overlay (Fixed over all slides) */}
+        <div className="search-overlay">
+          <h2>Discover Most Suitable Property</h2>
+          <p>
+            Building credibility, increasing customer loyalty, and creating
+            empowerment.
+          </p>
+          <div className="">
+            {/* Tabs */}
+            <div className="tabs">
+              {["Residential", "Commercial", "Plots"].map((tab) => (
+                <button
+                  key={tab}
+                  className={`tab-btn ${activeTab === tab ? "active" : ""}`}
+                  onClick={() => setActiveTab(tab)}
+                >
+                  {tab}
+                </button>
+              ))}
+            </div>
+
+            {/* Location + Search */}
+            <div className="search-box ">
+              <div className="location-input justify-content-center">
+                <FaMapMarkerAlt className="icon" />
+                <select>
+                  <option>Gurugram</option>
+                  <option>Delhi</option>
+                  <option>Bengaluru</option>
+                  <option>Mumbai</option>
+                </select>
+              </div>
+
+              <input
+                type="text"
+                placeholder="Search property or builders"
+                className="property-input"
+              />
+              <button className="search-btn">
+                <FaSearch />
+              </button>
+            </div>
           </div>
         </div>
-      </SwiperSlide>
-      
-       {/* Slide 34 */}
-      <SwiperSlide>
-        <div className="slide">
-          <img
-            src="/banner4.jpeg"
-            alt="Banner 3"
-            className="slide-img d-none d-sm-block"
-          />
-          <img
-            src="/mobile_banner_4.jpeg"
-            alt="Banner 3"
-            className="slide-img d-sm-none"
-          />
-          <div className="slide-overlay">
-            <h2>Fuelling Growth through Innovation</h2>
-            <p>Leveraging new technologies to transform Indian real estate.</p>
-            <button className="NewBtn">Discover More</button>
-          </div>
-        </div>
-      </SwiperSlide>
-    </Swiper>
+      </div>
+    </>
   );
 }
