@@ -46,7 +46,7 @@ const Whycarousel = () => {
           <SwiperSlide>
             <div className="WHySection text-center">
               {/* img */}
-              <img src="/public/customer.png" alt="" />
+              <img src="/customer.png" alt="" />
               {/* para */}
               <h5>Customer Oriented</h5>
               {/* content */}
@@ -60,7 +60,7 @@ const Whycarousel = () => {
           <SwiperSlide>
             <div className="WHySection text-center">
               {/* img */}
-              <img src="/public/idea.png" alt="" />
+              <img src="/idea.png" alt="" />
               {/* para */}
               <h5>Tech Ideal</h5>
               {/* content */}

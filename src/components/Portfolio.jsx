@@ -31,52 +31,52 @@ const Portfolio = () => {
         >
           <SwiperSlide>
             <img
-              src="/public/builder/prestige.png"
+              src="/builder/prestige.png"
               alt=""
               className="img-fluid"
             />
           </SwiperSlide>
           <SwiperSlide>
             <img
-              src="/public/builder/acelogo.png"
+              src="/builder/acelogo.png"
               alt=""
               className="img-fluid"
             />
           </SwiperSlide>
           <SwiperSlide>
             <img
-              src="/public/builder/brigade.png"
+              src="/builder/brigade.png"
               alt=""
               className="img-fluid"
             />
           </SwiperSlide>
           <SwiperSlide>
             <img
-              src="/public/builder/shriram.png"
+              src="/builder/shriram.png"
               alt=""
               className="img-fluid"
             />
           </SwiperSlide>
           <SwiperSlide>
             <img
-              src="/public/builder/puravankara.png"
+              src="/builder/puravankara.png"
               alt=""
               className="img-fluid"
             />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="/public/builder/sobha.png" alt="" className="img-fluid" />
+            <img src="/builder/sobha.png" alt="" className="img-fluid" />
           </SwiperSlide>
           <SwiperSlide>
             <img
-              src="/public/builder/total-environment.png"
+              src="/builder/total-environment.png"
               alt=""
               className="img-fluid"
             />
           </SwiperSlide>
           <SwiperSlide>
             <img
-              src="/public/builder/godrej-properties.png"
+              src="/builder/godrej-properties.png"
               alt=""
               className="img-fluid"
             />
