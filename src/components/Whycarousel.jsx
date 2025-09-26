@@ -27,7 +27,7 @@ const Whycarousel = () => {
             },
           }}
           modules={[Pagination]}
-          className="mySwiper-2 py-5"
+          className="mySwiper-2 py-3"
         >
           <SwiperSlide>
             <div className="WHySection text-center">
