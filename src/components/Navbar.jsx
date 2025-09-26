@@ -99,7 +99,7 @@ function CustomNavbar() {
 
           {/* Mobile Hamburger */}
           <div className="d-md-none">
-            <FaBars size={24} className="cursor-pointer" />
+            <FaBars size={24} className="cursor-pointer" onClick={() => setShowMenu(true)} />
           </div>
         </Container>
       </Navbar>
