@@ -38,27 +38,27 @@ const CounterSection = () => {
     >
       <div className="row text-center gy-2 g-md-0">
         <div className="col-lg-2 col-sm-4 col-6 mainFont-2">
-          <NumberCounter end={72418} duration={3} /> Cr.<br />
+          <NumberCounter end={72418} duration={6} /> Cr.<br />
           <span className="color-brown" >Worth property sold</span>
         </div>
         <div className="col-lg-2 col-sm-4 col-6 mainFont-2">
-          <NumberCounter end={150000} duration={3} /> +<br />
+          <NumberCounter end={150000} duration={6} /> +<br />
           <span className="color-brown" >Happy Customer</span>
         </div>
         <div className="col-lg-2 col-sm-4 col-6 mainFont-2">
-          <NumberCounter end={100} duration={3} /> +<br />
+          <NumberCounter end={100} duration={6} /> +<br />
          <span className="color-brown" >Happy Customer</span>
         </div>
         <div className="col-lg-2 col-sm-4 col-6 mainFont-2">
-          <NumberCounter end={700} duration={3} /> +<br />
+          <NumberCounter end={700} duration={6} /> +<br />
           <span className="color-brown" >Projects</span>
         </div>
         <div className="col-lg-2 col-sm-4 col-6 mainFont-2">
-          <NumberCounter end={30} duration={3} /> +<br />
+          <NumberCounter end={30} duration={6} /> +<br />
          <span className="color-brown" > Offices in India</span>
         </div>
         <div className="col-lg-2 col-sm-4 col-6 mainFont-2">
-          <NumberCounter end={3} duration={3} /> +<br />
+          <NumberCounter end={3} duration={6} /> +<br />
           <span className="color-brown" >Offices Worldwide</span>
         </div>
       </div>
