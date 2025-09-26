@@ -3,9 +3,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 const Whycarousel = () => {
   return (
-    <section className=" py-5">
-      <div className="container my-5">
-        <h2 className="fw-bold pt-0 pt-md-5 text-center mainFont">
+    <section className=" py-3">
+      <div className="container my-3">
+        <h2 className="fw-bold pt-0 pt-md-3 text-center mainFont">
           Why Only Jenika Ventures
         </h2>
         {/* <p className="text-center">When You Succeed, We Succeed!</p> */}

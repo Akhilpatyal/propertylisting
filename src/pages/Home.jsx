@@ -3,11 +3,7 @@ import Slider from "../components/Slider";
 import RealEstateTabs from "../components/RealEstateTabs";
 import Location from "../components/Location";
 import Footer from "../components/Footer";
-import CollaborationTab from "../components/CollaborationTab";
 import Testimonial from "../components/Testimonial";
-import ProjectBanner from "../components/ProjectBanner";
-import ImageSlider from "../components/ImageSlider";
-import PeopleSection from "../components/PeopleSection";
 import Counter from "../components/Counter";
 import Portfolio from "../components/Portfolio";
 import Whycarousel from "../components/Whycarousel";
@@ -17,7 +13,7 @@ const Home = () => {
       <Slider />
       <Counter/>
       <RealEstateTabs />
-      <Location/>
+      {/* <Location/> */}
       <Portfolio/>
      <Testimonial/>
      <Whycarousel/>

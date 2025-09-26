@@ -4,7 +4,7 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay, EffectFade } from "swiper/modules";
+import { Pagination, Autoplay, EffectFade, Navigation } from "swiper/modules";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -37,16 +37,15 @@ function a11yProps(index) {
 
 export default function RealEstateTabs() {
   const [value, setValue] = React.useState(0);
-
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
   return (
     <>
-      <div className="container py-100">
+      <div className="container pt-5">
         <Box sx={{ width: "100%" }}>
-          <h2 className="fw-bold pt-5 mainFont">Latest in Real Estate</h2>
+          <h2 className="pt-5 mainFont text-center text-md-start">Latest in Real Estate</h2>
           {/* Tab Header */}
           <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
             <Tabs
@@ -65,12 +64,15 @@ export default function RealEstateTabs() {
             <Swiper
               slidesPerView={3}
               spaceBetween={30}
-              autoplay={{ delay: 2500, disableOnInteraction: false }}
-              modules={[Autoplay, EffectFade]}
+              autoplay={{ delay: 0, disableOnInteraction: true }}
+      
               pagination={{
                 clickable: true,
               }}
-               loop={true}
+              navigation={true}
+                loop={true}
+               speed={4000}
+               freeMode={true}
               breakpoints={{
                 0: {
                   slidesPerView: 1, // 👈 mobile (default)
@@ -82,7 +84,7 @@ export default function RealEstateTabs() {
                   slidesPerView: 3, // 👈 desktop
                 },
               }}
-              modules={[Pagination]}
+              modules={[Pagination,Autoplay, EffectFade]}
               className="mySwiper-2"
             >
               <SwiperSlide>
@@ -107,10 +109,10 @@ export default function RealEstateTabs() {
                           September 2025 | Capital Market
                         </h6>
                         <p className="card-description fs-4">
-                          Indian REITs A Gateway to Institutional Real Estate{" "}
+                          Indian REITs A Gateway to Pune Real Estate{" "}
                         </p>
                         <div className="pt-5">
-                          <a href="">Download</a>
+                          <a href="">Read more</a>
                         </div>
                       </div>
                     </div>
@@ -139,10 +141,10 @@ export default function RealEstateTabs() {
                           September 2025 | Capital Market
                         </h6>
                         <p class="card-description fs-4">
-                          Indian REITs A Gateway to Institutional Real Estate{" "}
+                          Indian REITs A Gateway to Chennai Real Estate{" "}
                         </p>
                         <div className="pt-5">
-                          <a href="">Download</a>
+                          <a href="">Read more</a>
                         </div>
                       </div>
                     </div>
@@ -171,10 +173,10 @@ export default function RealEstateTabs() {
                           September 2025 | Capital Market
                         </h6>
                         <p class="card-description fs-4">
-                          Indian REITs A Gateway to Institutional Real Estate{" "}
+                          Indian REITs A Gateway to Residential Real Estate{" "}
                         </p>
                         <div className="pt-5">
-                          <a href="">Download</a>
+                          <a href="">Read more</a>
                         </div>
                       </div>
                     </div>
@@ -206,7 +208,7 @@ export default function RealEstateTabs() {
                           Indian REITs A Gateway to Institutional Real Estate{" "}
                         </p>
                         <div className="pt-5">
-                          <a href="">Download</a>
+                          <a href="">Read more</a>
                         </div>
                       </div>
                     </div>
@@ -219,12 +221,13 @@ export default function RealEstateTabs() {
             <Swiper
               slidesPerView={3}
               spaceBetween={30}
-              autoplay={{ delay: 2500, disableOnInteraction: false }}
-              modules={[Autoplay, EffectFade]}
+              autoplay={{ delay: 0, disableOnInteraction: false }}
               pagination={{
                 clickable: true,
               }}
                loop={true}
+               speed={4000}
+               freeMode={true}
               breakpoints={{
                 0: {
                   slidesPerView: 1, // 👈 mobile (default)
@@ -236,7 +239,7 @@ export default function RealEstateTabs() {
                   slidesPerView: 3, // 👈 desktop
                 },
               }}
-              modules={[Pagination]}
+              modules={[Pagination,Autoplay, EffectFade]}
               className="mySwiper-2"
             >
               <SwiperSlide>
@@ -375,12 +378,13 @@ export default function RealEstateTabs() {
             <Swiper
               slidesPerView={3}
               spaceBetween={30}
-              autoplay={{ delay: 2500, disableOnInteraction: false }}
-              modules={[Autoplay, EffectFade]}
+              autoplay={{ delay: 0, disableOnInteraction: false }}
               pagination={{
                 clickable: true,
               }}
-               loop={true}
+                loop={true}
+               speed={4000}
+               freeMode={true}
               breakpoints={{
                 0: {
                   slidesPerView: 1, // 👈 mobile (default)
@@ -392,7 +396,7 @@ export default function RealEstateTabs() {
                   slidesPerView: 3, // 👈 desktop
                 },
               }}
-              modules={[Pagination]}
+              modules={[Pagination,Autoplay, EffectFade]}
               className="mySwiper-2"
             >
               <SwiperSlide>

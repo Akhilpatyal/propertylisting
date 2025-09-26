@@ -340,7 +340,7 @@
 }
 
 .mainfooter .form button {
-  background: linear-gradient(120deg, black 30%, #ad6e19);
+  background: linear-gradient(68deg, #be973e 3.99%, #f5ebac 55.49%, #b49249 100%) ;
   color: white;
 }
 
@@ -626,9 +626,9 @@ span img {
 }
 
 .mainFont {
-  font-size: 50px;
+  font-size: 45px;
   font-family: "Poppins", sans-serif;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .mainFont-2 {
@@ -1028,4 +1028,38 @@ span img {
 }
 .WHySection{
   font-family: "Poppins", sans-serif;
+}
+.portfolio {
+  position: relative;
+  overflow: hidden; /* prevent overflow */
+}
+
+.portfolio::before,
+.portfolio::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 15%; /* adjust how wide the cloudy effect should be */
+  height: 100%;
+  z-index: 2; /* keep above slider */
+  pointer-events: none; /* don’t block clicks */
+}
+
+/* left cloudy effect */
+.portfolio::before {
+  left: 0;
+      background: linear-gradient(to right, #ffffff, #ffffff0a);
+}
+
+/* right cloudy effect */
+.portfolio::after {
+  right: 0;
+      background: linear-gradient(to right,#ffffff09, #ffffff);
+}
+.portfolio img{
+    box-shadow: rgba(0, 0, 0, 0.16) 3px 0px 15px;
+    height: 100%;
+    padding: 20px;
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
 }

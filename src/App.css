@@ -105,9 +105,10 @@
     left: 30% !important;
     transform: translateX(-30%) !important;
   }
+
   .mainFont-2 {
     font-size: 18px;
-}
+  }
 }
 
 @media (max-width: 450px) {
@@ -173,35 +174,82 @@
   visibility: visible;
 }
 
-.MuiButtonBase-root{
-  font-size: 20px!important;
+.MuiButtonBase-root {
+  font-size: 20px !important;
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
-  color: #be973e!important;
+  color: #be973e !important;
 }
+
 .css-1qltlow-MuiTabs-indicator {
-    background-color: #be973e!important;
+  background-color: #be973e !important;
 }
 
 
-.googleReview{
-  background: linear-gradient(1200deg, #f5e7ad 1.99%, #f5ebac 0.49%, #b49249 100%);;
+.googleReview {
+  background: linear-gradient(1200deg, #f5e7ad 1.99%, #f5ebac 0.49%, #b49249 100%);
+  ;
 }
-.WHySection{
+
+/*  */
+.WHySection {
+  position: relative;
+  /* for ::before positioning */
+  overflow: hidden;
+  /* keep shine inside */
   border: 1px solid rgb(241, 241, 241);
   border-radius: 10px;
   padding: 10px;
+  background: linear-gradient(108deg,
+      #be973e 3.99%,
+      #f5ebac 55.49%,
+      #b49249 100%);
+  transform-style: preserve-3d;
+  transition: transform 1s, filter 0.7s, box-shadow 0.5s;
 }
+
+/* 3D rotation on hover */
+.WHySection:hover {
+  transform: rotateY(-10deg) rotateX(-10deg);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Shine effect */
+.WHySection::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -75%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(120deg,
+      transparent,
+      rgba(255, 255, 255, 0.5),
+      transparent);
+  transform: rotate(-25deg);
+  transition: all 0.7s ease-in-out;
+  pointer-events: none;
+}
+
+/* Animate shine on hover */
+.WHySection:hover::before {
+  left: 125%;
+}
+
+
+/*  */
 .css-19kzrtu {
-    padding: 24px 0px !important;
+  padding: 24px 0px !important;
 }
+
 .offcanvas-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
+
 /* utilities */
-.py-100{
+.py-100 {
   padding-top: 60px;
   padding-bottom: 100px;
 }
