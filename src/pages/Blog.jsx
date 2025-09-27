@@ -69,7 +69,7 @@ const Blog = () => {
   ];
   return (
     <div>
-      <div className="container">
+      <div className="container py-2">
         <div className="row gx-5">
           {/* Left Featured Blog */}
           <div className="col-lg-8">
