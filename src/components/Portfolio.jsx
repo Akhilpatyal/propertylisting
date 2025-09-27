@@ -60,7 +60,7 @@ const Portfolio = () => {
             <img src="/builder/Bhutani-1.png" alt="" className="img-fluid" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="/builder/Gulshan.png" alt="" className="img-fluid" />
+            <img src="/builder/lodha.png" alt="" className="img-fluid" />
           </SwiperSlide>
           <SwiperSlide>
             <img src="/builder/DLF.png" alt="" className="img-fluid" />
@@ -73,6 +73,9 @@ const Portfolio = () => {
           </SwiperSlide>
           <SwiperSlide>
             <img src="/builder/max.png" alt="" className="img-fluid" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="/builder/sobha.png" alt="" className="img-fluid" />
           </SwiperSlide>
           
         </Swiper>
