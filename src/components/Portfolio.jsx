@@ -65,6 +65,12 @@ const Portfolio = () => {
           <SwiperSlide>
             <img src="/builder/DLF.png" alt="" className="img-fluid" />
           </SwiperSlide>
+          <SwiperSlide>
+            <img src="/builder/prestige.png" alt="" className="img-fluid" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="/builder/Adity.png" alt="" className="img-fluid" />
+          </SwiperSlide>
           
         </Swiper>
       </div>
