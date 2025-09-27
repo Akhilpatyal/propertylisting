@@ -153,7 +153,7 @@ function CustomNavbar() {
                     </ul>
                   </details>
                 ) : (
-                  <a href="#" className="text-dark text-decoration-none">
+                  <a as={NavLink} to={"/blog"} className="text-dark text-decoration-none">
                     {item.label}
                   </a>
                 )}
