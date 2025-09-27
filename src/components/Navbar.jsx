@@ -143,7 +143,7 @@ function CustomNavbar() {
                       {item.submenu.map((sub, idx) => (
                         <li key={idx}>
                           <a
-                            href="#"
+                            href="/blog"
                             className="text-dark text-decoration-none"
                           >
                             {sub}
@@ -153,7 +153,7 @@ function CustomNavbar() {
                     </ul>
                   </details>
                 ) : (
-                  <a as={NavLink} to={"/blog"} className="text-dark text-decoration-none">
+                  <a  className="text-dark text-decoration-none">
                     {item.label}
                   </a>
                 )}
