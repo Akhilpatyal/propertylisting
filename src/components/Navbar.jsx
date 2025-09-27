@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import {
   Navbar,
   Nav,
@@ -11,8 +12,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 function CustomNavbar() {
   const [showMenu, setShowMenu] = useState(false);
-    const [showAbout, setShowAbout] = useState(false);
+  const [showAbout, setShowAbout] = useState(false);
   const [showProject, setShowProject] = useState(false);
+  const [showInsight, setShowInsight] = useState(false);
 
   // Mobile menu data
   const menuItems = [
@@ -44,14 +46,13 @@ function CustomNavbar() {
         style={{ background: "#fff", zIndex: 99 }}
       >
         <Container className="d-flex justify-content-center align-items-center">
-
-           {/* Logo */}
-          <Navbar.Brand href="#" className="me-auto">
+          {/* Logo */}
+          <Navbar.Brand as={NavLink} to={"/"} className="me-auto">
             <img src="/JV-Logo.png" alt="Jenika Ventures" height="80px" />
           </Navbar.Brand>
-          {/* Left Nav (desktop) */} 
+          {/* Left Nav (desktop) */}
           <Nav className="d-none d-md-flex flex-row gap-4">
-            <Nav.Link href="#" className="fs-20 text-dark">
+            <Nav.Link as={NavLink} to={"/"} className="fs-20 text-dark">
               HOME
             </Nav.Link>
 
@@ -86,9 +87,17 @@ function CustomNavbar() {
               <NavDropdown.Item href="#">Studio Apartments</NavDropdown.Item>
               <NavDropdown.Item href="#">Plots</NavDropdown.Item>
             </NavDropdown>
-             <Nav.Link href="#" className="fs-20 text-dark">
-              INSIGHTS
-            </Nav.Link>
+            <NavDropdown
+              title={<span className="fs-20 text-dark">INSIGHTS</span>}
+              id="insights-dropdown"
+              className="custom-dropdown"
+              show={showInsight}
+              onMouseEnter={() => setShowInsight(true)}
+              onMouseLeave={() => setShowInsight(false)}
+            >
+              <NavDropdown.Item >NEWS MEDIA</NavDropdown.Item>
+              <NavDropdown.Item as={NavLink} to={"/blog"}>BLOGS</NavDropdown.Item>
+            </NavDropdown>
             <Nav.Link href="#" className="fs-20 text-dark">
               CAREERS
             </Nav.Link>
@@ -99,7 +108,11 @@ function CustomNavbar() {
 
           {/* Mobile Hamburger */}
           <div className="d-md-none">
-            <FaBars size={24} className="cursor-pointer" onClick={() => setShowMenu(true)} />
+            <FaBars
+              size={24}
+              className="cursor-pointer"
+              onClick={() => setShowMenu(true)}
+            />
           </div>
         </Container>
       </Navbar>
