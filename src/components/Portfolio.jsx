@@ -38,7 +38,7 @@ const Portfolio = () => {
             <img src="/builder/M3M.png" alt="" className="img-fluid" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="/builder/Omaxe.png" alt="" className="img-fluid" />
+            <img src="/builder/l&t.png" alt="" className="img-fluid" />
           </SwiperSlide>
           <SwiperSlide>
             <img src="/builder/elan.png" alt="" className="img-fluid" />
@@ -70,6 +70,9 @@ const Portfolio = () => {
           </SwiperSlide>
           <SwiperSlide>
             <img src="/builder/Adity.png" alt="" className="img-fluid" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="/builder/max.png" alt="" className="img-fluid" />
           </SwiperSlide>
           
         </Swiper>
