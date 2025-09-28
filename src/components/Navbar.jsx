@@ -1,165 +1,130 @@
-import { useState } from "react";
-import { NavLink } from "react-router-dom";
-import {
-  Navbar,
-  Nav,
-  NavDropdown,
-  Container,
-  Offcanvas,
-} from "react-bootstrap";
-import { FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
+import React, { useState } from "react";
+import { NavLink, Link } from "react-router-dom";
+import { Navbar, Nav, NavDropdown, Container, Offcanvas } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function CustomNavbar() {
-  const [showMenu, setShowMenu] = useState(false);
-  const [showAbout, setShowAbout] = useState(false);
-  const [showProject, setShowProject] = useState(false);
-  const [showInsight, setShowInsight] = useState(false);
+  const [show, setShow] = useState(false);
 
-  // Mobile menu data
-  const menuItems = [
-    { label: "HOME" },
-    {
-      label: "ABOUT US",
-      submenu: [
-        "WHO WE ARE",
-        "OUR TEAM",
-        "CLIENT TESTIMONIALS",
-        "Awards and Recognition",
-      ],
-    },
-    {
-      label: "PROJECT",
-      submenu: ["Residential", "Commercial", "Studio Apartments", "Plots"],
-    },
-    { label: "INSIGHTS", submenu: ["NEWS MEDIA", "BLOGS"] },
-    { label: "CAREERS" },
-    { label: "CONTACT US" },
-  ];
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   return (
     <>
-      <Navbar
-        expand="lg"
-        className="shadow-sm py-2 px-4"
-        sticky="top"
-        style={{ background: "#fff", zIndex: 99 }}
-      >
-        <Container className="d-flex justify-content-center align-items-center">
-          {/* Logo */}
-          <Navbar.Brand as={NavLink} to={"/"} className="me-auto">
-            <img src="/JV-Logo.png" alt="Jenika Ventures" height="80px" />
+      <Navbar bg="light" expand="lg" className="py-3">
+        <Container>
+          <Navbar.Brand as={Link} to="/">
+            <img src="/JV-Logo.png" alt="Logo" width="150" />
           </Navbar.Brand>
-          {/* Left Nav (desktop) */}
-          <Nav className="d-none d-md-flex flex-row gap-4">
-            <Nav.Link as={NavLink} to={"/"} className="fs-20 text-dark">
-              HOME
-            </Nav.Link>
+          <Navbar.Toggle aria-controls="offcanvasNavbar" onClick={handleShow} />
+          <Navbar.Collapse className="d-none d-lg-flex justify-content-end">
+            <Nav>
+              <Nav.Link as={NavLink} to="/">Home</Nav.Link>
 
-            {/* ABOUT US with hover dropdown */}
-            <NavDropdown
-              title={<span className="fs-20 text-dark">ABOUT US</span>}
-              id="about-dropdown"
-              className="custom-dropdown"
-              show={showAbout}
-              onMouseEnter={() => setShowAbout(true)}
-              onMouseLeave={() => setShowAbout(false)}
-            >
-              <NavDropdown.Item href="#">WHO WE ARE</NavDropdown.Item>
-              <NavDropdown.Item href="#">OUR TEAM</NavDropdown.Item>
-              <NavDropdown.Item href="#">CLIENT TESTIMONIALS</NavDropdown.Item>
-              <NavDropdown.Item href="#">
-                Awards and Recognition
-              </NavDropdown.Item>
-            </NavDropdown>
+              {/* Dropdown for Collection */}
+              <NavDropdown title="ABOUT US" id="collection-dropdown">
+                <NavDropdown.Item as={NavLink} to="/whoweare" onClick={handleClose}>
+                  WHO WE ARE
+                </NavDropdown.Item>
+                <NavDropdown.Item as={NavLink} to="/Collection/Commercial" onClick={handleClose}>
+                  OUR TEAM
+                </NavDropdown.Item>
+                <NavDropdown.Item as={NavLink} to="/Collection/Studio" onClick={handleClose}>
+                  CLIENT TESTIMONIALS
+                </NavDropdown.Item>
+                <NavDropdown.Item as={NavLink} to="/Collection/Plots" onClick={handleClose}>
+                  Awards and Recognition
+                </NavDropdown.Item>
+              </NavDropdown>
+              {/* Dropdown for Collection */}
+              <NavDropdown title="PROJECT" id="collection-dropdown">
+                <NavDropdown.Item as={NavLink} to="/Collection/Residential" onClick={handleClose}>
+                  Residential
 
-            {/* PROJECT dropdown */}
-            <NavDropdown
-              title={<span className="fs-20 text-dark">PROJECT</span>}
-              id="project-dropdown"
-              className="custom-dropdown"
-              show={showProject}
-              onMouseEnter={() => setShowProject(true)}
-              onMouseLeave={() => setShowProject(false)}
-            >
-              <NavDropdown.Item href="#">Residential</NavDropdown.Item>
-              <NavDropdown.Item href="#">Commercial</NavDropdown.Item>
-              <NavDropdown.Item href="#">Studio Apartments</NavDropdown.Item>
-              <NavDropdown.Item href="#">Plots</NavDropdown.Item>
-            </NavDropdown>
-            <NavDropdown
-              title={<span className="fs-20 text-dark">INSIGHTS</span>}
-              id="insights-dropdown"
-              className="custom-dropdown"
-              show={showInsight}
-              onMouseEnter={() => setShowInsight(true)}
-              onMouseLeave={() => setShowInsight(false)}
-            >
-              <NavDropdown.Item >NEWS MEDIA</NavDropdown.Item>
-              <NavDropdown.Item as={NavLink} to={"/blog"}>BLOGS</NavDropdown.Item>
-            </NavDropdown>
-            <Nav.Link href="#" className="fs-20 text-dark">
-              CAREERS
-            </Nav.Link>
-            <Nav.Link href="#" className="fs-20 text-dark">
-              CONTACT US
-            </Nav.Link>
-          </Nav>
+                </NavDropdown.Item>
+                <NavDropdown.Item as={NavLink} to="/Collection/Commercial" onClick={handleClose}>
+                  Commercial
+                </NavDropdown.Item>
+                <NavDropdown.Item as={NavLink} to="/Collection/Studio" onClick={handleClose}>
+                  Studio Apartments
+                </NavDropdown.Item>
+                <NavDropdown.Item as={NavLink} to="/Collection/Plots" onClick={handleClose}>
+                  Plots
+                </NavDropdown.Item>
+              </NavDropdown>
+              {/* Dropdown for Collection */}
+              <NavDropdown title="INSIGHTS" id="collection-dropdown">
+                <NavDropdown.Item as={NavLink} to="/Collection/Residential" onClick={handleClose}>
+                 NEWS MEDIA
+                </NavDropdown.Item>
+                <NavDropdown.Item as={NavLink} to="/blog" onClick={handleClose}>
+                  BLOGS
+                </NavDropdown.Item>
+                
+              </NavDropdown>
 
-          {/* Mobile Hamburger */}
-          <div className="d-md-none">
-            <FaBars
-              size={24}
-              className="cursor-pointer"
-              onClick={() => setShowMenu(true)}
-            />
-          </div>
+              <Nav.Link as={NavLink} to="/CAREERS">CAREERS</Nav.Link>
+              <Nav.Link as={NavLink} to="/Contact">Contact Us</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
         </Container>
       </Navbar>
 
-      {/* Offcanvas (Mobile Menu) */}
-      <Offcanvas
-        show={showMenu}
-        onHide={() => setShowMenu(false)}
-        placement="start"
-      >
-        <Offcanvas.Header>
-          <Offcanvas.Title>
-            <img src="/JV-Logo.png" alt="Jenika Ventures" height="60px" />
-          </Offcanvas.Title>
-          <FaTimes size={24} onClick={() => setShowMenu(false)} />
+      {/* Offcanvas menu for small screens */}
+      <Offcanvas show={show} onHide={handleClose} placement="end">
+        <Offcanvas.Header closeButton>
+          <Navbar.Brand as={Link} to="/">
+            <img src="/JV-Logo.png" alt="Logo" width="150" />
+          </Navbar.Brand>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          <ul className="list-unstyled fw-semibold">
-            {menuItems.map((item, i) => (
-              <li key={i} className="pt-3">
-                {item.submenu ? (
-                  <details>
-                    <summary className="d-flex justify-content-between align-items-center">
-                      {item.label}
-                      <FaChevronDown />
-                    </summary>
-                    <ul className="list-unstyled ps-3">
-                      {item.submenu.map((sub, idx) => (
-                        <li key={idx}>
-                          <a
-                            href="/blog"
-                            className="text-dark text-decoration-none"
-                          >
-                            {sub}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  </details>
-                ) : (
-                  <a  className="text-dark text-decoration-none">
-                    {item.label}
-                  </a>
-                )}
-              </li>
-            ))}
-          </ul>
+          <Nav className="flex-column text-center">
+            <Nav.Link as={NavLink} to="/" onClick={handleClose}>Home</Nav.Link>
+
+            {/* Offcanvas Dropdown for Collection */}
+            <NavDropdown title="ABOUT US" id="offcanvas-collection-dropdown" className="text-center">
+              <NavDropdown.Item as={NavLink} to="/whoweare" onClick={handleClose}>
+                WHO WE ARE
+              </NavDropdown.Item>
+              <NavDropdown.Item as={NavLink} to="/Collection/Commercial" onClick={handleClose}>
+                OUR TEAM
+              </NavDropdown.Item>
+              <NavDropdown.Item as={NavLink} to="/Collection/Studio" onClick={handleClose}>
+                CLIENT TESTIMONIALS
+              </NavDropdown.Item>
+              <NavDropdown.Item as={NavLink} to="/Collection/Plots" onClick={handleClose}>
+                Awards and Recognition
+              </NavDropdown.Item>
+            </NavDropdown>
+            {/* Offcanvas Dropdown for Collection */}
+            <NavDropdown title="PROJECT" id="offcanvas-collection-dropdown" className="text-center">
+              <NavDropdown.Item as={NavLink} to="/Collection/Residential" onClick={handleClose}>
+                Residential
+              </NavDropdown.Item>
+              <NavDropdown.Item as={NavLink} to="/Collection/Commercial" onClick={handleClose}>
+                commercial
+              </NavDropdown.Item>
+              <NavDropdown.Item as={NavLink} to="/Collection/Studio" onClick={handleClose}>
+                Studio Apartments
+              </NavDropdown.Item>
+              <NavDropdown.Item as={NavLink} to="/Collection/Plots" onClick={handleClose}>
+                Plots
+              </NavDropdown.Item>
+            </NavDropdown>
+            {/* Offcanvas Dropdown for Collection */}
+            <NavDropdown title="INSIGHTS" id="offcanvas-collection-dropdown" className="text-center">
+              <NavDropdown.Item as={NavLink} to="/Collection/Residential" onClick={handleClose}>
+                NEWS MEDIA
+              </NavDropdown.Item>
+              <NavDropdown.Item as={NavLink} to="/blog" onClick={handleClose}>
+                BLOGS
+              </NavDropdown.Item>
+              
+            </NavDropdown>
+
+            <Nav.Link as={NavLink} to="/About" onClick={handleClose}>CAREERS</Nav.Link>
+            <Nav.Link as={NavLink} to="/Contact" onClick={handleClose}>Contact Us</Nav.Link>
+          </Nav>
         </Offcanvas.Body>
       </Offcanvas>
     </>
@@ -167,3 +132,4 @@ function CustomNavbar() {
 }
 
 export default CustomNavbar;
+ 

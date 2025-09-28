@@ -17,7 +17,6 @@ const Home = () => {
       <Portfolio/>
      <Testimonial/>
      <Whycarousel/>
-      <Footer />
     </div>
   );
 };
