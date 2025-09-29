@@ -83,7 +83,7 @@ const VideoText = () => {
               autoPlay
               loop
               muted
-              src="/video.mp4"
+              src="https://download-video-ak.vimeocdn.com/v3-1/playback/36bc59b8-6671-4358-abc2-15555fc6ae59/69496b2d?__token__=st=1759135800~exp=1759139400~acl=%2Fv3-1%2Fplayback%2F36bc59b8-6671-4358-abc2-15555fc6ae59%2F69496b2d%2A~hmac=81e662a60f5dc0a07f0b6bcce786ba8f6d2cdd06ff524c984e7886f63a71f7ba&r=dXMtZWFzdDE%3D"
             ></video>
           </div>
           &nbsp;Are

@@ -1,9 +1,9 @@
 
-// import Video from "../components/video";
+import Video from "../components/video";
 const Whoweare = () => {
   return (
     <div>
-      {/* <Video /> */}
+      <Video />
       <div className="container py-5 belowVideo">
           <p>Jenika Ventures is not just a consulting firm—it’s a growth partner for clients and developers alike, operating across residential, commercial, luxury and mixed-use segments.With Abhishek Raj at the helm, our journey continues to be defined by bold goals, customer-centricity and an unshakable commitment to shaping the future of Indian real estate. </p>
       </div>
