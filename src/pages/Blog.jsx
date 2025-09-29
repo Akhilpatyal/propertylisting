@@ -1,5 +1,6 @@
 import React from "react";
-
+import { PiClockClockwiseLight } from "react-icons/pi";
+import { SlCalender } from "react-icons/sl";
 const Blog = () => {
   const blogs = [
     {
@@ -69,7 +70,7 @@ const Blog = () => {
   ];
   return (
     <div>
-      <div className="container py-2">
+      <div className="container py-4">
         <div className="row gx-5">
           {/* Left Featured Blog */}
           <div className="col-lg-8">
@@ -108,10 +109,11 @@ const Blog = () => {
 
                 <div className="d-flex align-items-center text-muted small">
                   <span>
-                    <i className="bi bi-clock"></i> 4 Min Read
+                    <PiClockClockwiseLight /> 4 Min Read
                   </span>
+                  &nbsp;&nbsp;&nbsp;
                   <span>
-                    <i className="bi bi-calendar-event"></i> June 18, 2025
+                    <SlCalender/> June 18, 2025
                   </span>
                 </div>
               </div>
@@ -131,9 +133,9 @@ const Blog = () => {
                   </div>
                   <div className="d-content">
                     <a href="#">
-                      <h4>Exploring the Rise of Unique and Lifestyle Hotels</h4>
+                      <h5>Exploring the Rise of Unique and Lifestyle Hotels</h5>
                     </a>
-                    <div className="d-date">January 15, 2023</div>
+                    <div className="d-date"><SlCalender/> January 15, 2023</div>
                   </div>
                 </li>
                 <li className="d-flex">
@@ -142,11 +144,11 @@ const Blog = () => {
                   </div>
                   <div className="d-content">
                     <a href="#">
-                      <h4>
+                      <h5>
                         Hotels are Adapting to Modern Traveler Preferences
-                      </h4>
+                      </h5>
                     </a>
-                    <div className="d-date">January 15, 2023</div>
+                    <div className="d-date"><SlCalender/> January 15, 2023</div>
                   </div>
                 </li>
                 <li className="d-flex">
@@ -155,11 +157,11 @@ const Blog = () => {
                   </div>
                   <div className="d-content">
                     <a href="#">
-                      <h4>
+                      <h5>
                         Innovative Marketing Strategies for Boutique Hotels
-                      </h4>
+                      </h5>
                     </a>
-                    <div className="d-date">January 15, 2023</div>
+                    <div className="d-date"><SlCalender/> January 15, 2023</div>
                   </div>
                 </li>
                 <li className="d-flex">
@@ -168,9 +170,9 @@ const Blog = () => {
                   </div>
                   <div className="d-content">
                     <a href="#">
-                      <h4>Transforming Common Spaces in Modern Hotels</h4>
+                      <h5>Transforming Common Spaces in Modern Hotels</h5>
                     </a>
-                    <div className="d-date">January 15, 2023</div>
+                    <div className="d-date"><SlCalender/> January 15, 2023</div>
                   </div>
                 </li>
               </ul>
@@ -196,10 +198,10 @@ const Blog = () => {
                   </div>
                   <div className="card-footer bg-white border-0 d-flex justify-content-between text-muted small">
                     <span>
-                      <i className="bi bi-clock"></i> {blog.readTime}
+                      <PiClockClockwiseLight /> {blog.readTime}
                     </span>
                     <span>
-                      <i className="bi bi-calendar-event"></i> {blog.date}
+                      <SlCalender /> {blog.date}
                     </span>
                   </div>
                 </div>

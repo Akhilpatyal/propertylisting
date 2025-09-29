@@ -11,7 +11,7 @@ function CustomNavbar() {
 
   return (
     <>
-      <Navbar bg="light" expand="lg" className="py-3">
+      <Navbar bg="light" expand="lg">
         <Container>
           <Navbar.Brand as={Link} to="/">
             <img src="/JV-Logo.png" alt="Logo" width="150" />

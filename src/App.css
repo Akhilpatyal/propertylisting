@@ -277,9 +277,11 @@
   font-size: 1.75rem;
   line-height: 1.3;
 }
-.widget {
+@media (min-width:780px){
+  .widget {
   margin-bottom: 30px;
   padding-bottom: 30px;
+}
 }
 
 .widget ul {
@@ -460,27 +462,22 @@
 }
 /* de-post-type-1 */
 .de-post-type-1 {
-  margin-bottom: 40px;
+  padding: 20px 0px!important;
+}
+.widget ul li {
+    margin: 20px 0;
 }
 
 .de-post-type-1 .d-image {
-  position: relative;
-  overflow: hidden;
-  border-radius: 8px;
-  -moz-border-radius: 8px;
-  -webkit-border-radius: 8px;
-  margin-bottom: 20px;
+  width: 120px;   /* or whatever size */
+  margin-right: 15px;
 }
 
 .de-post-type-1 .d-image img {
-  width: 80%;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
 }
-
-.de-post-type-1 .d-meta {
-  font-size: 12px;
-  margin-bottom: 10px;
-}
-
 .de-post-type-1 .d-meta span {
   display: inline-block;
   font-weight: 600;
@@ -511,6 +508,7 @@
   margin: 0 12px;
   position: relative;
   transition: color 0.3s ease;
+  line-height: 1.2; /* keeps links tight */
 }
 
 .navbar-nav .nav-link:hover {
@@ -521,9 +519,9 @@
   content: "";
   position: absolute;
   width: 0%;
-  height:0px;
+  height: 2px;       /* keep height fixed */
   left: 0;
-  bottom: -5px;
+  bottom: 0;         /* align at bottom edge, not -5px */
   background: #c62828;
   transition: width 0.3s ease;
   opacity: 0;
@@ -531,7 +529,6 @@
 
 .navbar-nav .nav-link:hover::after {
   width: 100%;
-  height:1px;
   opacity: 1;
 }
 
@@ -595,4 +592,24 @@
 .offcanvas .dropdown-item {
   text-align: center;
   justify-content: center;
+}
+/*  */
+.belowVideo{
+  font-size: 26px;
+  line-height: 36px;
+text-align: center;
+}
+
+.ourStory img{
+  border-top-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+}
+.ourStory h1{
+  font-size: 50px;
+}
+.ourStory p{
+    font-family: "Poppins", sans-serif;
+  font-style: normal;
+   font-size: 16px;
+   text-align: justify;
 }
