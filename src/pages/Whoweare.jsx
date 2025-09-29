@@ -1,11 +1,9 @@
 
-import Video from "../components/video";
-import Whycarousel from "../components/Whycarousel";
-
+// import Video from "../components/video";
 const Whoweare = () => {
   return (
     <div>
-      <Video />
+      {/* <Video /> */}
       <div className="container py-5 belowVideo">
           <p>Jenika Ventures is not just a consulting firm—it’s a growth partner for clients and developers alike, operating across residential, commercial, luxury and mixed-use segments.With Abhishek Raj at the helm, our journey continues to be defined by bold goals, customer-centricity and an unshakable commitment to shaping the future of Indian real estate. </p>
       </div>
@@ -13,7 +11,7 @@ const Whoweare = () => {
       
         <div className="row">
           <div className="col-12 col-md-6 ourStory">
-            <img src="/public/banner-6.png" alt="" className="h-100 w-100" />
+            <img src="/banner-6.png" alt="" className="img-fluid object-fit-cover" style={{height:"100%"}} />
           </div>
           <div className="col-12 col-md-6 ourStory">
             <h1 className="text-center">Our Story</h1>
@@ -53,10 +51,10 @@ const Whoweare = () => {
       <div className="container py-5">
         <h1>Our Story</h1>
         <div className="row">
-          <div className="col-6">
+          <div className="col-12 col-md-6">
             <img src="/public/banner-6.png" alt="" className="h-100 w-100" />
           </div>
-          <div className="col-6">
+          <div className="col-12 col-md-6">
             <ul>
               <li>
                 2021: Partnered with Grade A+ developers like DLF, Tata, Godrej,
