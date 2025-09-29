@@ -45,8 +45,9 @@ const Whoweare = () => {
         </div>
       </div>
 
-      <div className="container py-5">
-          <Whycarousel/>
+      <div className="container py-5 belowVideo">
+          <h1>Our Mission</h1>
+          <p>Transformingreal estateby combiningexpertise, innovation,and technologyto createsmarter solutionsfor tomorrow.</p>
       </div>
 
       <div className="container py-5">
