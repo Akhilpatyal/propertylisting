@@ -1,6 +1,6 @@
 import React from "react";
 import VideoText from "../components/VideoText";
-const Video = () => {
+const video = () => {
   return (
     <div>
       <div
@@ -23,4 +23,4 @@ const Video = () => {
   );
 };
 
-export default Video;
+export default video;
