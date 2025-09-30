@@ -68,7 +68,7 @@ const VideoText = () => {
             lineHeight: "8vw",
           }}
         >
-          WE&nbsp;
+          WE &nbsp;
           <div
             className="rounded-pill overflow-hidden"
             style={{
@@ -83,7 +83,7 @@ const VideoText = () => {
               autoPlay
               loop
               muted
-              src="/video.mp4"
+              src="https://www.pexels.com/download/video/3205624/"
             ></video>
           </div>
           &nbsp;Are
