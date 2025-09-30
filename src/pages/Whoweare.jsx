@@ -1,10 +1,27 @@
-import Video from "../components/video";
+
 
 // import PathsTimeline from "../components/PathsTimeline";
 const Whoweare = () => {
   return (
     <div>
-    <Video/>
+     <div>
+      <div
+        className="object-fit-cover position-relative"
+        style={{ height: "550px", width: "100vw" }}
+      >
+        <video
+          className="object-fit-cover"
+          style={{ height: "550px", width: "100vw", filter:"brightness(0.6)" }}
+          autoPlay
+          loop
+          muted
+          src="https://www.pexels.com/download/video/3205624/"
+        ></video>
+      </div>
+      <div className="position-absolute top-50 start-50 translate-middle text-white text-center">
+        <VideoText/>
+      </div>
+    </div>
       <div className="container py-5 belowVideo">
         <p>
           Jenika Ventures is not just a consulting firm—it’s a growth partner
