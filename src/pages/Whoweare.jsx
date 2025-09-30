@@ -1,5 +1,5 @@
-import Video from "../components/video";
-import PathsTimeline from "../components/PathsTimeline";
+import Video from "../components/Video";
+// import PathsTimeline from "../components/PathsTimeline";
 const Whoweare = () => {
   return (
     <div>
