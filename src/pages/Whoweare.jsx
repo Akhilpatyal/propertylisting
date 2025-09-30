@@ -1,9 +1,10 @@
-import Video from "../components/Video";
+import Video from "../components/video";
+
 // import PathsTimeline from "../components/PathsTimeline";
 const Whoweare = () => {
   return (
     <div>
-      <Video />
+    <Video/>
       <div className="container py-5 belowVideo">
         <p>
           Jenika Ventures is not just a consulting firm—it’s a growth partner
