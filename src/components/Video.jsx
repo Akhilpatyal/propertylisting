@@ -9,11 +9,11 @@ const Video = () => {
       >
         <video
           className="object-fit-cover"
-          style={{ height: "550px", width: "100vw" }}
+          style={{ height: "550px", width: "100vw", filter:"brightness(0.6)" }}
           autoPlay
           loop
           muted
-          src="/video.mp4"
+          src="https://www.pexels.com/download/video/3205624/"
         ></video>
       </div>
       <div className="position-absolute top-50 start-50 translate-middle text-white text-center">

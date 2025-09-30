@@ -7,6 +7,9 @@
   box-sizing: border-box;
   list-style-type: none;
 }
+body{
+  overflow-x:hidden;
+}
 
 :root {
   --primary: #6a59ff;
