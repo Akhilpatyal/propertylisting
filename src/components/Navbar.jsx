@@ -19,7 +19,7 @@ function CustomNavbar() {
           <Navbar.Toggle aria-controls="offcanvasNavbar" onClick={handleShow} />
           <Navbar.Collapse className="d-none d-lg-flex justify-content-end">
             <Nav>
-              <Nav.Link as={NavLink} to="/">Home</Nav.Link>
+              <Nav.Link as={NavLink} to="/">HOME</Nav.Link>
 
               {/* Dropdown for Collection */}
               <NavDropdown title="ABOUT US" id="collection-dropdown">
@@ -64,7 +64,7 @@ function CustomNavbar() {
               </NavDropdown>
 
               <Nav.Link as={NavLink} to="/CAREERS">CAREERS</Nav.Link>
-              <Nav.Link as={NavLink} to="/Contact">Contact Us</Nav.Link>
+              <Nav.Link as={NavLink} to="/Contact">CONTACT US</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
