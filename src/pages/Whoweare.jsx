@@ -1,14 +1,24 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(SplitText);
+gsap.registerPlugin(ScrollTrigger, SplitText);
 
-// import PathsTimeline from "../components/PathsTimeline";
+import PathsTimeline from "../components/PathsTimeline";
 const Whoweare = () => {
   const containerRef = useRef(null);
   const line1Ref = useRef(null);
   const line2Ref = useRef(null);
+  useEffect(() => {
+    AOS.init({
+      duration: 1200, // default duration
+      once: true, // whether animation should happen only once
+      easing: "ease-in-out",
+    });
+  }, []);
 
   useEffect(() => {
     let split1, split2;
@@ -48,6 +58,31 @@ const Whoweare = () => {
       if (split1) split1.revert();
       if (split2) split2.revert();
     };
+  }, []);
+
+useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.utils.toArray(".split").forEach((el) => {
+        let split = new SplitText(el, {
+          type: "words,lines",
+          linesClass: "line",
+        });
+
+        gsap.from(split.lines, {
+          scrollTrigger: {
+            trigger: el,            // 👈 har element ka trigger usi pe hoga
+            start: "top 80%",       // jab ~80% viewport me aayega tab chalega
+            toggleActions: "play none none none",
+          },
+          duration: 2,
+          yPercent: 100,
+          opacity: 0,
+          stagger: 0.1,
+          ease: "expo.out",
+        });
+      });
+    });
+    return () => ctx.revert(); // cleanup on unmount
   }, []);
   return (
     <div>
@@ -120,8 +155,9 @@ const Whoweare = () => {
           </div>
         </div>
       </div>
+      {/* our story */}
       <div className="container py-5 belowVideo">
-        <p>
+        <p className="split">
           Jenika Ventures is not just a consulting firm—it’s a growth partner
           for clients and developers alike, operating across residential,
           commercial, luxury and mixed-use segments.With Abhishek Raj at the
@@ -132,16 +168,27 @@ const Whoweare = () => {
       </div>
       <div className="container py-5 ourStorySection">
         <div className="row">
-          <div className="col-12 col-md-6 ourStory">
+          <div className="col-12 col-md-6 ourStory position-relative">
             <img
               src="/banner-6.png"
               alt=""
               className="img-fluid object-fit-cover"
               style={{ height: "100%" }}
+              data-aos="fade-right"
+              data-aos-duration="4000"
             />
+            <div className="overImg position-absolute moveXY">
+              <img src="/public/about-one-dots.png" alt="" />
+            </div>
           </div>
           <div className="col-12 col-md-6 ourStory">
-            <h1 className="text-center">Our Story</h1>
+            <h1
+              className="text-center"
+              data-aos="fade-in"
+              data-aos-duration="4000"
+            >
+              Our Story
+            </h1>
             <p>
               Founded in 2020, Jenika Ventures was born out of a vision to bring
               trust, transparency and innovation into India’s real estate
@@ -176,13 +223,14 @@ const Whoweare = () => {
 
       <section className="bg-brown mb-5">
         <div className="container py-5 belowVideo">
-          <h1>Our Mission</h1>
-          <p>
+          <h1  className="split">Our Mission</h1>
+          <p className="split">
             Transformingreal estateby combiningexpertise, innovation,and
             technologyto createsmarter solutionsfor tomorrow.
           </p>
           <div className="row g-0">
-            <div className=" col-12 col-md-3">
+            <div className=" col-12 col-md-3"  data-aos="fade-down"
+              data-aos-duration="4000"  data-aos-delay="50">
               <div className="service-box-items">
                 {/* Icon Section */}
                 <div className="icon text-start">
@@ -200,7 +248,8 @@ const Whoweare = () => {
                 </div>
               </div>
             </div>
-            <div className=" col-12 col-md-3">
+            <div className=" col-12 col-md-3"  data-aos="fade-down"
+              data-aos-duration="4000"  data-aos-delay="100">
               <div className="service-box-items">
                 {/* Icon Section */}
                 <div className="icon text-start">
@@ -216,7 +265,8 @@ const Whoweare = () => {
                 </div>
               </div>
             </div>
-            <div className=" col-12 col-md-3">
+            <div className=" col-12 col-md-3"  data-aos="fade-down"
+              data-aos-duration="4000"  data-aos-delay="130">
               <div className="service-box-items">
                 {/* Icon Section */}
                 <div className="icon text-start">
@@ -235,7 +285,8 @@ const Whoweare = () => {
                 </div>
               </div>
             </div>
-            <div className=" col-12 col-md-3">
+            <div className=" col-12 col-md-3"  data-aos="fade-down"
+              data-aos-duration="4000"  data-aos-delay="160">
               <div className="service-box-items">
                 {/* Icon Section */}
                 <div className="icon text-start">
@@ -245,7 +296,7 @@ const Whoweare = () => {
                 {/* Content Section */}
                 <div className="content">
                   <h3>
-                    <a href="service-details.html">Developers</a>
+                    <a href="service-details.html">Developers Relationship</a>
                   </h3>
                   <p>
                     Partnering with top 350+ developers to deliver world-class
@@ -258,7 +309,7 @@ const Whoweare = () => {
         </div>
       </section>
 
-      {/* <PathsTimeline /> */}
+      <PathsTimeline />
     </div>
   );
 };

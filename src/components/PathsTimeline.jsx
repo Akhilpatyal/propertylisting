@@ -1,115 +1,127 @@
-"use client";
-import { useEffect, useRef } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import React, { useEffect} from "react";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/scrollbar";
 import gsap from "gsap";
+import { SplitText } from "gsap/SplitText";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import "bootstrap/dist/css/bootstrap.min.css";
+// Import required modules
+import { Scrollbar } from "swiper/modules";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, SplitText);
 
-export default function PathsTimeline() {
-  const containerRef = useRef(null);
-  const bgRef = useRef(null); // new ref for background width
+export default function App() {
 
   useEffect(() => {
-    const container = containerRef.current;
-    const sections = gsap.utils.toArray(container.querySelectorAll(".col-4"));
+    const ctx = gsap.context(() => {
+      gsap.utils.toArray(".split").forEach((el) => {
+        let split = new SplitText(el, {
+          type: "words,lines",
+          linesClass: "line",
+        });
 
-    const totalWidth = sections.length * sections[0].offsetWidth;
-
-    let ctx = gsap.context(() => {
-      // Horizontal scroll
-      const scrollTween = gsap.to(sections, {
-        x: () => `-${totalWidth - window.innerWidth}px`,
-        ease: "none",
-        scrollTrigger: {
-          trigger: container,
-          start: "top 20%",
-          end: () => `+=${totalWidth}`,
-          pin: true,
-          scrub: 1,
-          anticipatePin: 1,
-          markers: true,
-        },
+        gsap.from(split.lines, {
+          scrollTrigger: {
+            trigger: el, // 👈 har element ka trigger usi pe hoga
+            start: "top 80%", // jab ~80% viewport me aayega tab chalega
+            toggleActions: "play none none none",
+          },
+          duration: 2,
+          yPercent: 100,
+          opacity: 0,
+          stagger: 0.1,
+          ease: "expo.out",
+        });
       });
+    });
 
-      // Background width animation from 80% to 100%
-      gsap.to(bgRef.current, {
-        width: "100%",
-        ease: "none",
-        scrollTrigger: {
-          trigger: container,
-          containerAnimation: scrollTween, // link to horizontal scroll
-          start: "left left",
-          end: "right right",
-          scrub: 1,
-        },
-      });
-
-    }, container);
-
-    return () => ctx.revert();
+    return () => ctx.revert(); // cleanup on unmount
   }, []);
-
   return (
-    <section style={{backgroundColor:"#edebe4", position:"relative"}}>
-      {/* Background fill div */}
-      <div 
-        ref={bgRef} 
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          height: "100%",
-          width: "80%", // start at 80%
-          backgroundColor: "#d6d2c4", // or any color
-          zIndex: -1,
-        }}
-      ></div>
-
-      <div className="container py-5" ref={containerRef}>
-        <div className="row flex-nowrap">
-          <div className="col-4">
-            <div className="process-box fade-top">
-              <span className="number">2021</span>
-              <p>
-                Partnered with Grade A+ developers like DLF, Tata, Godrej, and Lodha Group. Achieved ₹100 crore sales in our very first year.
+    <>
+      <section className="container pb-5">
+        <Swiper
+          slidesPerView={2} // show 2 slides
+          spaceBetween={20}
+          grabCursor={true}
+          scrollbar={{ draggable: true, hide: false }}
+          modules={[Scrollbar]}
+          className="TimelineSwiper py-4"
+          breakpoints={{
+            0: {
+              slidesPerView: 1, // 👈 mobile (default)
+            },
+            768: {
+              slidesPerView: 1, // 👈 tablets
+            },
+            1024: {
+              slidesPerView: 2, // 👈 desktop
+            },
+          }}
+        >
+          <SwiperSlide >
+            <div className="yearItems redgradient text-white p-4 position-relative">
+              <h4>2021 - Partnered with top developers</h4>
+              <p className="split">
+                Partnered with Grade A+ developers like DLF, Tata, Godrej, and
+                Lodha Group. Achieved ₹100 crore sales in our very first year.
               </p>
+              <div className="overImg position-absolute">
+                <img src="/public/counter-one-shape1.png" alt="" />
+              </div>
             </div>
-          </div>
-          <div className="col-4">
-            <div className="process-box fade-top">
-              <span className="number">2022</span>
-              <p>
-                Spread wings across Delhi-NCR, Mumbai and Pune. Recognized as Outstanding Real Estate Company of the Year 2022.
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="yearItems bg-brown-2 text-white p-4">
+              <h4>2022 - Expanded operations</h4>
+              <p className="split">
+                Expanded operations to 5 cities, introduced new digital tools
+                for real estate.
               </p>
+              <div className="overImg position-absolute">
+                <img src="/public/counter-one-shape1.png" alt="" />
+              </div>
             </div>
-          </div>
-          <div className="col-4">
-            <div className="process-box fade-top">
-              <span className="number">2023</span>
-              <p>
-                Deepened collaboration with Lodha Group. Diversified into commercial & mixed-use projects. Surpassed ₹300 crore with 80% YoY growth.
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="yearItems greengradient-2 text-white p-4">
+              <h4>2023 - Crossed ₹500 crore sales</h4>
+              <p className="split">
+                Crossed ₹500 crore in sales and built strong brand recognition
+                in the market.
               </p>
+              <div className="overImg position-absolute">
+                <img src="/public/counter-one-shape1.png" alt="" />
+              </div>
             </div>
-          </div>
-          <div className="col-4">
-            <div className="process-box fade-top">
-              <span className="number">2024</span>
-              <p>
-                Expanded into Goa, Bengaluru & Hyderabad. Hit ₹750 crore in sales with 150% YoY growth, moving closer to becoming a top-tier consultancy nationwide.
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="yearItems yellowgradient-2 text-white p-4">
+              <h4>2024 - Introduced AI-driven tools</h4>
+              <p className="split">
+                Introduced AI-driven property recommendations for customers
+                across India.
               </p>
+              <div className="overImg position-absolute">
+                <img src="/public/counter-one-shape1.png" alt="" />
+              </div>
             </div>
-          </div>
-          <div className="col-4">
-            <div className="process-box fade-top">
-              <span className="number">2025</span>
-              <p>
-                Now chasing our boldest target—₹2,000 crore in sales with 2x growth in a single year. Backed by client trust, strategic alliances and our relentless pursuit of excellence.
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="yearItems redgradient-2 text-white p-4">
+              <h4 >2025 - Planning international expansion</h4>
+              <p className="split">
+                Planning international expansion with focus on Dubai & Singapore
+                markets.
               </p>
+              <div className="overImg position-absolute">
+                <img src="/public/counter-one-shape1.png" alt="" />
+              </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
+          </SwiperSlide>
+        </Swiper>
+      </section>
+    </>
   );
 }
