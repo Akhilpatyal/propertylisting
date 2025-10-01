@@ -41,6 +41,8 @@ export default function App() {
   return (
     <>
       <section className="container pb-5">
+        <h1 className="split text-center">Our milestones</h1>
+        <p className="split text-center">Celebrating the journey that shaped us</p>
         <Swiper
           slidesPerView={2} // show 2 slides
           spaceBetween={20}

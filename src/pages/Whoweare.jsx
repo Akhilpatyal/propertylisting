@@ -233,7 +233,7 @@ useEffect(() => {
               data-aos-duration="4000"  data-aos-delay="50">
               <div className="service-box-items">
                 {/* Icon Section */}
-                <div className="icon text-start">
+                <div className="icon text-md-start text-center">
                   <img src="/one.png" alt="icon" height={"40px"} />
                 </div>
 
@@ -252,7 +252,7 @@ useEffect(() => {
               data-aos-duration="4000"  data-aos-delay="100">
               <div className="service-box-items">
                 {/* Icon Section */}
-                <div className="icon text-start">
+                <div className="icon text-md-start text-center">
                   <img src="/two.png" alt="icon" height={"40px"} />
                 </div>
 
@@ -269,7 +269,7 @@ useEffect(() => {
               data-aos-duration="4000"  data-aos-delay="130">
               <div className="service-box-items">
                 {/* Icon Section */}
-                <div className="icon text-start">
+                <div className="icon text-md-start text-center">
                   <img src="/three.png" alt="icon" height={"40px"} />
                 </div>
 
@@ -289,7 +289,7 @@ useEffect(() => {
               data-aos-duration="4000"  data-aos-delay="160">
               <div className="service-box-items">
                 {/* Icon Section */}
-                <div className="icon text-start">
+                <div className="icon text-md-start text-center">
                   <img src="/four.png" alt="icon" height={"40px"} />
                 </div>
 
