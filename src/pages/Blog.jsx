@@ -1,7 +1,54 @@
-import React from "react";
+import {useEffect} from "react";
 import { PiClockClockwiseLight } from "react-icons/pi";
 import { SlCalender } from "react-icons/sl";
+
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { SplitText } from "gsap/SplitText";
+gsap.registerPlugin(ScrollTrigger,SplitText);
+
+
 const Blog = () => {
+  useEffect(() => {
+    gsap.from(".blog-card", {
+      opacity: 0,
+      y: 50,
+      stagger: 0.5, // delay between cards
+      duration: 1.2,  
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".blog-card",
+        start: "top 60%",
+        toggleActions: "play none none none",
+      },
+    });
+  }, []);
+    useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.utils.toArray(".split").forEach((el) => {
+        let split = new SplitText(el, {
+          type: "words,lines",
+          linesClass: "line",
+        });
+
+        gsap.from(split.lines, {
+          scrollTrigger: {
+            trigger: el, // 👈 har element ka trigger usi pe hoga
+            start: "top 80%", // jab ~80% viewport me aayega tab chalega
+            toggleActions: "play none none none",
+          },
+          duration: 2,
+          yPercent: 100,
+          opacity: 0,
+          stagger: 0.1,
+          ease: "expo.out",
+        });
+      });
+    });
+
+    return () => ctx.revert(); // cleanup on unmount
+  }, []);
+
   const blogs = [
     {
       id: 1,
@@ -96,12 +143,12 @@ const Blog = () => {
                   <span className="ms-2">Author – Rohin Shah</span>
                 </div>
 
-                <h2 className="fw-bold mb-3">
+                <h2 className="fw-bold mb-3 split">
                   Britain’s Tax Trap Tightens: Why Investors Are Rethinking the
                   UK
                 </h2>
 
-                <p className="text-muted fs-5 mb-3">
+                <p className="text-muted fs-5 mb-3 split">
                   With over three decades spent working in the UK and global
                   property markets, I’ve seen firsthand how quickly policy
                   shifts…
@@ -125,9 +172,9 @@ const Blog = () => {
           {/* Sidebar */}
           <div className="col-lg-4">
             <div className="widget widget-post">
-              <h4>Recent Posts</h4>
+              <h4 className="split">Recent Posts</h4>
               <ul className="de-post-type-1">
-                <li className="d-flex">
+                <li className="d-flex blog-card">
                   <div className="d-image">
                     <img src="/02.jpg" alt="" className="img-fluid" />
                   </div>
@@ -138,7 +185,7 @@ const Blog = () => {
                     <div className="d-date"><SlCalender/> January 15, 2023</div>
                   </div>
                 </li>
-                <li className="d-flex">
+                <li className="d-flex blog-card">
                   <div className="d-image">
                     <img src="/01.jpg" alt="" className="img-fluid" />
                   </div>
@@ -151,7 +198,7 @@ const Blog = () => {
                     <div className="d-date"><SlCalender/> January 15, 2023</div>
                   </div>
                 </li>
-                <li className="d-flex">
+                <li className="d-flex blog-card">
                   <div className="d-image">
                     <img src="/02.jpg" alt="" className="img-fluid" />
                   </div>
@@ -164,7 +211,7 @@ const Blog = () => {
                     <div className="d-date"><SlCalender/> January 15, 2023</div>
                   </div>
                 </li>
-                <li className="d-flex">
+                <li className="d-flex blog-card">
                   <div className="d-image">
                     <img src="/01.jpg" alt="" className="img-fluid" />
                   </div>
@@ -182,7 +229,7 @@ const Blog = () => {
         <div className="my-5">
           <div className="row g-4">
             {blogs.map((blog) => (
-              <div className="col-lg-4 col-md-6" key={blog.id}>
+              <div className="col-lg-4 col-md-6 blog-card" key={blog.id}>
                 <div className="card shadow-sm border-0" >
                   <img
                     src={blog.image}
