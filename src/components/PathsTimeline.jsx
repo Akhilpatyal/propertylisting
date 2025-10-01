@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import React, { useEffect} from "react";
+import React, { useEffect } from "react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/scrollbar";
@@ -12,7 +12,6 @@ import { Scrollbar } from "swiper/modules";
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 export default function App() {
-
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.utils.toArray(".split").forEach((el) => {
@@ -42,7 +41,9 @@ export default function App() {
     <>
       <section className="container pb-5">
         <h1 className="split text-center">Our milestones</h1>
-        <p className="split text-center">Celebrating the journey that shaped us</p>
+        <p className="split text-center">
+          Celebrating the journey that shaped us
+        </p>
         <Swiper
           slidesPerView={2} // show 2 slides
           spaceBetween={20}
@@ -62,7 +63,7 @@ export default function App() {
             },
           }}
         >
-          <SwiperSlide >
+          <SwiperSlide>
             <div className="yearItems redgradient text-white p-4 position-relative">
               <h4>2021 - Partnered with top developers</h4>
               <p className="split">
@@ -70,7 +71,7 @@ export default function App() {
                 Lodha Group. Achieved ₹100 crore sales in our very first year.
               </p>
               <div className="overImg position-absolute">
-                <img src="/public/counter-one-shape1.png" alt="" />
+                <img src="/counter-one-shape1.png" alt="" />
               </div>
             </div>
           </SwiperSlide>
@@ -82,7 +83,7 @@ export default function App() {
                 for real estate.
               </p>
               <div className="overImg position-absolute">
-                <img src="/public/counter-one-shape1.png" alt="" />
+                <img src="/counter-one-shape1.png" alt="" />
               </div>
             </div>
           </SwiperSlide>
@@ -94,7 +95,7 @@ export default function App() {
                 in the market.
               </p>
               <div className="overImg position-absolute">
-                <img src="/public/counter-one-shape1.png" alt="" />
+                <img src="/counter-one-shape1.png" alt="" />
               </div>
             </div>
           </SwiperSlide>
@@ -106,19 +107,19 @@ export default function App() {
                 across India.
               </p>
               <div className="overImg position-absolute">
-                <img src="/public/counter-one-shape1.png" alt="" />
+                <img src="/counter-one-shape1.png" alt="" />
               </div>
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="yearItems redgradient-2 text-white p-4">
-              <h4 >2025 - Planning international expansion</h4>
+              <h4>2025 - Planning international expansion</h4>
               <p className="split">
                 Planning international expansion with focus on Dubai & Singapore
                 markets.
               </p>
               <div className="overImg position-absolute">
-                <img src="/public/counter-one-shape1.png" alt="" />
+                <img src="/counter-one-shape1.png" alt="" />
               </div>
             </div>
           </SwiperSlide>
