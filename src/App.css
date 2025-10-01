@@ -901,3 +901,68 @@ body {
 
 
 /*  */
+.card {
+  position: relative;
+}
+
+.card-img-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-img-wrapper img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.7s ease;
+}
+
+/* Zoom out when card is hovered */
+.card:hover .card-img-wrapper img {
+  transform: scale(1.1);
+}
+
+/* Shine overlay */
+.card-img-wrapper::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -75%;
+  width: 20%; /* narrow shine */
+  height: 200%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transform: rotate(-25deg);
+  transition: all 0.7s ease-in-out;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0; /* hide shine initially */
+}
+
+/* Animate shine on card hover */
+.card:hover .card-img-wrapper::before {
+  left: 125%;
+  opacity: 1;
+}
+/* top - bottom effect */
+.de-post-type-1 .blog-card h5 {
+  transition: all 0.6s ease-in-out;
+  display: inline-block; /* ensures gradient clip works properly */
+}
+
+.de-post-type-1 .blog-card h5:hover {
+  background: linear-gradient(327deg, #c80a17 20%, #000000 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card-title:hover{
+   background: linear-gradient(327deg, #c80a17 20%, #000000 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+}

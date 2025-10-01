@@ -1,12 +1,11 @@
-import {useEffect} from "react";
+import { useEffect } from "react";
 import { PiClockClockwiseLight } from "react-icons/pi";
 import { SlCalender } from "react-icons/sl";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
-gsap.registerPlugin(ScrollTrigger,SplitText);
-
+gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const Blog = () => {
   useEffect(() => {
@@ -14,7 +13,7 @@ const Blog = () => {
       opacity: 0,
       y: 50,
       stagger: 0.5, // delay between cards
-      duration: 1.2,  
+      duration: 1.2,
       ease: "power3.out",
       scrollTrigger: {
         trigger: ".blog-card",
@@ -23,7 +22,7 @@ const Blog = () => {
       },
     });
   }, []);
-    useEffect(() => {
+  useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.utils.toArray(".split").forEach((el) => {
         let split = new SplitText(el, {
@@ -40,7 +39,7 @@ const Blog = () => {
           duration: 2,
           yPercent: 100,
           opacity: 0,
-          stagger: 0.1,
+          stagger: 0.3,
           ease: "expo.out",
         });
       });
@@ -83,7 +82,8 @@ const Blog = () => {
         "Leasing office space is a critical decision that can significantly impact your business’s operations, culture, and financial health. Whether you…",
       readTime: "2 Min Read",
       date: "April 1, 2025",
-    },{
+    },
+    {
       id: 4,
       image: "/07.png",
       category: "Commercial Leasing & Advisory",
@@ -93,7 +93,8 @@ const Blog = () => {
         "Leasing office space is a critical decision that can significantly impact your business’s operations, culture, and financial health. Whether you…",
       readTime: "2 Min Read",
       date: "April 1, 2025",
-    },{
+    },
+    {
       id: 5,
       image: "/08.png",
       category: "Commercial Leasing & Advisory",
@@ -103,7 +104,8 @@ const Blog = () => {
         "Leasing office space is a critical decision that can significantly impact your business’s operations, culture, and financial health. Whether you…",
       readTime: "2 Min Read",
       date: "April 1, 2025",
-    },{
+    },
+    {
       id: 6,
       image: "/04.jpg",
       category: "Commercial Leasing & Advisory",
@@ -160,7 +162,7 @@ const Blog = () => {
                   </span>
                   &nbsp;&nbsp;&nbsp;
                   <span>
-                    <SlCalender/> June 18, 2025
+                    <SlCalender /> June 18, 2025
                   </span>
                 </div>
               </div>
@@ -182,7 +184,9 @@ const Blog = () => {
                     <a href="#">
                       <h5>Exploring the Rise of Unique and Lifestyle Hotels</h5>
                     </a>
-                    <div className="d-date"><SlCalender/> January 15, 2023</div>
+                    <div className="d-date">
+                      <SlCalender /> January 15, 2023
+                    </div>
                   </div>
                 </li>
                 <li className="d-flex blog-card">
@@ -195,7 +199,9 @@ const Blog = () => {
                         Hotels are Adapting to Modern Traveler Preferences
                       </h5>
                     </a>
-                    <div className="d-date"><SlCalender/> January 15, 2023</div>
+                    <div className="d-date">
+                      <SlCalender /> January 15, 2023
+                    </div>
                   </div>
                 </li>
                 <li className="d-flex blog-card">
@@ -208,7 +214,9 @@ const Blog = () => {
                         Innovative Marketing Strategies for Boutique Hotels
                       </h5>
                     </a>
-                    <div className="d-date"><SlCalender/> January 15, 2023</div>
+                    <div className="d-date">
+                      <SlCalender /> January 15, 2023
+                    </div>
                   </div>
                 </li>
                 <li className="d-flex blog-card">
@@ -219,7 +227,9 @@ const Blog = () => {
                     <a href="#">
                       <h5>Transforming Common Spaces in Modern Hotels</h5>
                     </a>
-                    <div className="d-date"><SlCalender/> January 15, 2023</div>
+                    <div className="d-date">
+                      <SlCalender /> January 15, 2023
+                    </div>
                   </div>
                 </li>
               </ul>
@@ -230,12 +240,14 @@ const Blog = () => {
           <div className="row g-4">
             {blogs.map((blog) => (
               <div className="col-lg-4 col-md-6 blog-card" key={blog.id}>
-                <div className="card shadow-sm border-0" >
-                  <img
-                    src={blog.image}
-                    className="card-img-top rounded-2"
-                    alt={blog.title}
-                  />
+                <div className="card shadow-sm border-0">
+                  <div className="card-img-wrapper rounded-2 overflow-hidden">
+                    <img
+                      src={blog.image}
+                      className="card-img-top"
+                      alt={blog.title}
+                    />
+                  </div>
                   <div className="card-body">
                     <div className="text-uppercase small text-muted fw-semibold mb-2">
                       {blog.category} | Author – {blog.author}
