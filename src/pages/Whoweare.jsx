@@ -166,7 +166,7 @@ useEffect(() => {
           of Indian real estate.{" "}
         </p>
       </div>
-      <div className="container py-5 ourStorySection">
+      <div className="container ourStorySection">
         <div className="row">
           <div className="col-12 col-md-6 ourStory position-relative">
             <img
@@ -223,10 +223,11 @@ useEffect(() => {
 
       <section className="bg-brown mb-5">
         <div className="container py-5 belowVideo">
-          <h1  className="split">Our Mission</h1>
-          <p className="split">
-            Transformingreal estateby combiningexpertise, innovation,and
-            technologyto createsmarter solutionsfor tomorrow.
+          <h1 className="text-gradient " data-aos="fade-up"
+              data-aos-duration="4000">Our Mission</h1>
+          <p className="split" style={{color:"white",fontSize:"25px",fontWeight:"500"}}>
+            Transforming real estateby combining expertise, innovation,and
+            technology to create smarter solutions for tomorrow.
           </p>
           <div className="row g-0">
             <div className=" col-12 col-md-3"  data-aos="fade-down"
@@ -242,7 +243,7 @@ useEffect(() => {
                   <h3>
                     <a href="service-details.html">Global Reach</a>
                   </h3>
-                  <p>
+                  <p className="colorWhite">
                     Trusted presence across 19+ cities in India & Global Markets
                   </p>
                 </div>
@@ -261,7 +262,7 @@ useEffect(() => {
                   <h3>
                     <a href="service-details.html">Expert Team</a>
                   </h3>
-                  <p>Driven by 2,200+ Professionals of Excellence</p>
+                  <p className="colorWhite" >Driven by 2,200+ Professionals of Excellence</p>
                 </div>
               </div>
             </div>
@@ -278,7 +279,7 @@ useEffect(() => {
                   <h3>
                     <a href="service-details.html">Innovation First</a>
                   </h3>
-                  <p>
+                  <p className="colorWhite">
                     Pioneering real estate solutions through creativity &
                     technology
                   </p>
@@ -298,7 +299,7 @@ useEffect(() => {
                   <h3>
                     <a href="service-details.html">Developers Relationship</a>
                   </h3>
-                  <p>
+                  <p className="colorWhite">
                     Partnering with top 350+ developers to deliver world-class
                     projects
                   </p>

@@ -632,8 +632,8 @@ body {
 
 /*  */
 .belowVideo {
-  font-size: 26px;
-  line-height: 36px;
+  font-size: 22px;
+  line-height: 30px;
   text-align: center;
 }
 
@@ -662,6 +662,7 @@ body {
   position: relative;
   z-index: 9;
   transition: all 0.4s ease-in-out;
+  height:  -webkit-fill-available;
 }
 
 @media (max-width: 780px) {
@@ -965,4 +966,26 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   cursor: pointer;
+}
+.text-gradient{
+     background: linear-gradient(180deg, #c80a17 35%, #000000) 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.ourStorySection{
+  padding-top: 10px;
+  padding-bottom: 50px;
+}
+.colorWhite{
+      color: white;
+    font-size: 20px!important;
+    transition: all 0.5s 
+ease-in-out;
+}
+.service-box-items:hover .colorWhite{
+      color: black;
+}
+.swiper-scrollbar-drag{
+    background: rgb(190 151 62)!important;
+
 }

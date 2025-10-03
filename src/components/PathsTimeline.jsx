@@ -65,10 +65,9 @@ export default function App() {
         >
           <SwiperSlide>
             <div className="yearItems redgradient text-white p-4 position-relative">
-              <h4>2021 - Partnered with top developers</h4>
+              <h4>2021 -</h4>
               <p className="split">
-                Partnered with Grade A+ developers like DLF, Tata, Godrej, and
-                Lodha Group. Achieved ₹100 crore sales in our very first year.
+               Partnered with Grade A+ developers like DLF, Tata, Godrej, and Lodha Group. Achieved ₹100 crore sales in our very first year.
               </p>
               <div className="overImg position-absolute">
                 <img src="/counter-one-shape1.png" alt="" />
@@ -77,10 +76,9 @@ export default function App() {
           </SwiperSlide>
           <SwiperSlide>
             <div className="yearItems bg-brown-2 text-white p-4">
-              <h4>2022 - Expanded operations</h4>
+              <h4>2022 -</h4>
               <p className="split">
-                Expanded operations to 5 cities, introduced new digital tools
-                for real estate.
+                Spread wings across Delhi-NCR, Mumbai and Pune. Recognized as Outstanding Real Estate Company of the Year 2022.
               </p>
               <div className="overImg position-absolute">
                 <img src="/counter-one-shape1.png" alt="" />
@@ -89,10 +87,9 @@ export default function App() {
           </SwiperSlide>
           <SwiperSlide>
             <div className="yearItems greengradient-2 text-white p-4">
-              <h4>2023 - Crossed ₹500 crore sales</h4>
+              <h4>2023 -</h4>
               <p className="split">
-                Crossed ₹500 crore in sales and built strong brand recognition
-                in the market.
+                Deepened collaboration with Lodha Group. Diversified into commercial & mixed-use projects. Surpassed ₹300 crore with 80% YoY growth.
               </p>
               <div className="overImg position-absolute">
                 <img src="/counter-one-shape1.png" alt="" />
@@ -101,10 +98,9 @@ export default function App() {
           </SwiperSlide>
           <SwiperSlide>
             <div className="yearItems yellowgradient-2 text-white p-4">
-              <h4>2024 - Introduced AI-driven tools</h4>
+              <h4>2024 -</h4>
               <p className="split">
-                Introduced AI-driven property recommendations for customers
-                across India.
+              Expanded into Goa, Bengaluru & Hyderabad. Hit ₹750 crore in sales with 150% YoY growth, moving closer to becoming a top-tier consultancy nationwide.
               </p>
               <div className="overImg position-absolute">
                 <img src="/counter-one-shape1.png" alt="" />
@@ -113,10 +109,9 @@ export default function App() {
           </SwiperSlide>
           <SwiperSlide>
             <div className="yearItems redgradient-2 text-white p-4">
-              <h4>2025 - Planning international expansion</h4>
+              <h4>2025 -</h4>
               <p className="split">
-                Planning international expansion with focus on Dubai & Singapore
-                markets.
+               Now chasing our boldest target—₹2,000 crore in sales with 2x growth in a single year. Backed by client trust, strategic alliances and our relentless pursuit of excellence.
               </p>
               <div className="overImg position-absolute">
                 <img src="/counter-one-shape1.png" alt="" />
