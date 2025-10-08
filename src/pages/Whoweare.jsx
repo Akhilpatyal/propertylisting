@@ -101,7 +101,7 @@ useEffect(() => {
             autoPlay
             loop
             muted
-            src="/video.mp4"
+            src="https://drive.google.com/file/d/1J_YmozREQfflSJg87D7fVjQ7GyvZDSQp/preview"
           ></video>
         </div>
         <div className="position-absolute top-50 start-50 translate-middle text-white text-center">

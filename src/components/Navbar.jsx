@@ -26,7 +26,7 @@ function CustomNavbar() {
                 <NavDropdown.Item as={NavLink} to="/whoweare" onClick={handleClose}>
                   WHO WE ARE
                 </NavDropdown.Item>
-                <NavDropdown.Item as={NavLink} to="/Collection/Commercial" onClick={handleClose}>
+                <NavDropdown.Item as={NavLink} to="/our-team" onClick={handleClose}>
                   OUR TEAM
                 </NavDropdown.Item>
                 <NavDropdown.Item as={NavLink} to="/Collection/Studio" onClick={handleClose}>
