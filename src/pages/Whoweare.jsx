@@ -101,7 +101,7 @@ useEffect(() => {
             autoPlay
             loop
             muted
-            src="/public/video.mp4"
+            src="/video.mp4"
           ></video>
         </div>
         <div className="position-absolute top-50 start-50 translate-middle text-white text-center">
@@ -146,7 +146,7 @@ useEffect(() => {
                     autoPlay
                     loop
                     muted
-                    src="/public/video.mp4"
+                    src="/video.mp4"
                   ></video>
                 </div>
                 &nbsp;Are
@@ -170,7 +170,7 @@ useEffect(() => {
         <div className="row">
           <div className="col-12 col-md-6 ourStory position-relative">
             <img
-              src="/public/ourTeam/boss1.png"
+              src="/ourTeam/boss1.png"
               alt=""
               className="img-fluid object-fit-cover"
               style={{ height: "100%" }}
@@ -178,7 +178,7 @@ useEffect(() => {
               data-aos-duration="4000"
             />
             <div className="overImg position-absolute moveXY">
-              <img src="/public/about-one-dots.png" alt="" />
+              <img src="/about-one-dots.png" alt="" />
             </div>
           </div>
           <div className="col-12 col-md-6 ourStory">
