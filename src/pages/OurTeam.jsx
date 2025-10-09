@@ -387,13 +387,12 @@ const OurTeam = () => {
       <div
         style={{
           background: "linear-gradient(327deg, #c80a17 20%, #000000) 45%",
-        }}
-      >
+        }} >
         <div className="container">
           <div class="footer__cta-wrap py-5 ">
             <h2 class="footer__cta-wrap-title">
               <p class="link-btn text-white">
-                Meet the Leaders Behind Our Vision{" "}
+                Meet the Leaders Behind Our Vision
                 <i class="icon-arrow-top-left"></i>
               </p>
             </h2>
