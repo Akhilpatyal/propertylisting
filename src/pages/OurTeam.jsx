@@ -114,6 +114,9 @@ const OurTeam = () => {
       },
     });
 
+
+
+
     // Cleanup
     return () => {
       window.removeEventListener("resize", handleResize);
@@ -399,6 +402,8 @@ const OurTeam = () => {
           </div>
         </div>
       </div>
+
+      
     </div>
   );
 };
