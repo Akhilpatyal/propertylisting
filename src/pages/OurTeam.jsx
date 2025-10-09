@@ -150,7 +150,7 @@ const OurTeam = () => {
               Abhishek Raj
             </p>
             <p className="text-start text-drop__line text-muted">Co-Founder</p>
-            <p className="text-drop__line">
+            <p className="text-drop__line" style={{textAlign:"justify"}}>
               Abhishek Raj is the CEO of Jenika Ventures, a real estate
               consultancy he established in 2020 with a vision to bring trust,
               transparency and innovation to the Indian property market. With
@@ -171,7 +171,7 @@ const OurTeam = () => {
           <div className="col-12 col-sm-6 d-flex flex-column justify-content-center p-2 order-sm-1 order-2">
             <p className="text-drop__line fw-bold fs-4">Priyanka Marwha</p>
             <p className="text-drop__line text-muted">Founder and MD</p>
-            <p className="text-drop__line">
+            <p className="text-drop__line" style={{textAlign:"justify"}}>
               Priyanka Marwha is the Managing Director of Jenika Ventures. She
               has played a pivotal role in shaping the company’s growth and
               success. With more than a decade of experience in the Delhi-NCR
