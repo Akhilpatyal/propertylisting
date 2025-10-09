@@ -101,7 +101,7 @@ useEffect(() => {
             autoPlay
             loop
             muted
-            src="/video.mp4"
+            src="/public/video.mp4"
           ></video>
         </div>
         <div className="position-absolute top-50 start-50 translate-middle text-white text-center">
@@ -146,7 +146,7 @@ useEffect(() => {
                     autoPlay
                     loop
                     muted
-                    src="/video.mp4"
+                    src="/public/video.mp4"
                   ></video>
                 </div>
                 &nbsp;Are
@@ -170,7 +170,7 @@ useEffect(() => {
         <div className="row">
           <div className="col-12 col-md-6 ourStory position-relative">
             <img
-              src="/banner-6.png"
+              src="/public/ourTeam/boss1.png"
               alt=""
               className="img-fluid object-fit-cover"
               style={{ height: "100%" }}
