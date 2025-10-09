@@ -139,7 +139,7 @@ const OurTeam = () => {
         <div className="row align-items-center">
           <div className="col-12 col-sm-6">
             <img
-              src="/public/ourTeam/boss1.png"
+              src="/ourTeam/boss1.png"
               alt=""
               className="img-fluid text-drop__img-box"
               style={{ borderRadius: "10px" }}
@@ -253,7 +253,7 @@ const OurTeam = () => {
             <div className="shine-animate-item">
               <div className="shine-animate">
                 <img
-                  src="/public/ourTeam/yogesh.png"
+                  src="/ourTeam/yogesh.png"
                   alt=""
                   className="img-fluid"
                 />
@@ -264,7 +264,7 @@ const OurTeam = () => {
             <div className="shine-animate-item">
               <div className="shine-animate">
                 <img
-                  src="/public/ourTeam/akshay.png"
+                  src="/ourTeam/akshay.png"
                   alt=""
                   className="img-fluid"
                 />
@@ -275,7 +275,7 @@ const OurTeam = () => {
             <div className="shine-animate-item">
               <div className="shine-animate">
                 <img
-                  src="/public/ourTeam/sandeep.png"
+                  src="/ourTeam/sandeep.png"
                   alt=""
                   className="img-fluid"
                 />
@@ -286,7 +286,7 @@ const OurTeam = () => {
             <div className="shine-animate-item">
               <div className="shine-animate">
                 <img
-                  src="/public/ourTeam/shailendra.png"
+                  src="/ourTeam/shailendra.png"
                   alt=""
                   className="img-fluid"
                 />
@@ -297,7 +297,7 @@ const OurTeam = () => {
             <div className="shine-animate-item">
               <div className="shine-animate">
                 <img
-                  src="/public/ourTeam/chandra.png"
+                  src="/ourTeam/chandra.png"
                   alt=""
                   className="img-fluid"
                 />
@@ -308,7 +308,7 @@ const OurTeam = () => {
             <div className="shine-animate-item">
               <div className="shine-animate">
                 <img
-                  src="/public/ourTeam/sudhesh.png"
+                  src="/ourTeam/sudhesh.png"
                   alt=""
                   className="img-fluid"
                 />
@@ -319,7 +319,7 @@ const OurTeam = () => {
             <div className="shine-animate-item">
               <div className="shine-animate">
                 <img
-                  src="/public/ourTeam/ashutosh.png"
+                  src="/ourTeam/ashutosh.png"
                   alt=""
                   className="img-fluid"
                 />
@@ -330,7 +330,7 @@ const OurTeam = () => {
             <div className="shine-animate-item">
               <div className="shine-animate">
                 <img
-                  src="/public/ourTeam/satishbatra.png"
+                  src="/ourTeam/satishbatra.png"
                   alt=""
                   className="img-fluid"
                 />
@@ -341,7 +341,7 @@ const OurTeam = () => {
             <div className="shine-animate-item">
               <div className="shine-animate">
                 <img
-                  src="/public/ourTeam/Taufique.png"
+                  src="/ourTeam/Taufique.png"
                   alt=""
                   className="img-fluid"
                 />
@@ -352,7 +352,7 @@ const OurTeam = () => {
             <div className="shine-animate-item">
               <div className="shine-animate">
                 <img
-                  src="/public/ourTeam/manish.png"
+                  src="/ourTeam/manish.png"
                   alt=""
                   className="img-fluid"
                 />
@@ -363,7 +363,7 @@ const OurTeam = () => {
             <div className="shine-animate-item">
               <div className="shine-animate">
                 <img
-                  src="/public/ourTeam/mohak.png"
+                  src="/ourTeam/mohak.png"
                   alt=""
                   className="img-fluid"
                 />
@@ -374,7 +374,7 @@ const OurTeam = () => {
             <div className="shine-animate-item">
               <div className="shine-animate">
                 <img
-                  src="/public/ourTeam/abbas.png"
+                  src="/ourTeam/abbas.png"
                   alt=""
                   className="img-fluid"
                 />
