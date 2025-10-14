@@ -106,7 +106,7 @@ function CustomNavbar() {
               <NavDropdown.Item as={NavLink} to="/our-team" onClick={handleClose}>
                 OUR TEAM
               </NavDropdown.Item>
-              <NavDropdown.Item as={NavLink} to="/Collection/Studio" onClick={handleClose}>
+              <NavDropdown.Item as={NavLink} to="/client-testimonial" onClick={handleClose}>
                 CLIENT TESTIMONIALS
               </NavDropdown.Item>
               <NavDropdown.Item as={NavLink} to="/Collection/Plots" onClick={handleClose}>
