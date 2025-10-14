@@ -1263,7 +1263,7 @@ body {
 /* --- NAVIGATION BUTTONS --- */
 .swiper-button-prev,
 .swiper-button-next {
-  width: 45px;
+  width: 55px!important;
   height: 45px;
   border-radius: 50%;
   background: #fff;

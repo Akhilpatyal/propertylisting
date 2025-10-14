@@ -39,7 +39,7 @@ function CustomNavbar() {
                   CLIENT TESTIMONIALS
                 </NavDropdown.Item>
                 <NavDropdown.Item as={NavLink} to="/Collection/Plots" onClick={handleClose}>
-                  Awards and Recognition
+                 AWARDS & RECOGNITION
                 </NavDropdown.Item>
               </NavDropdown>
 
@@ -110,7 +110,7 @@ function CustomNavbar() {
                 CLIENT TESTIMONIALS
               </NavDropdown.Item>
               <NavDropdown.Item as={NavLink} to="/Collection/Plots" onClick={handleClose}>
-                Awards and Recognition
+                AWARDS & RECOGNITION
               </NavDropdown.Item>
             </NavDropdown>
 

@@ -2,7 +2,7 @@ import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { FaSearch } from "react-icons/fa";
+import { FaSearch,FaArrowRight  } from "react-icons/fa";
 import { PiClockClockwiseLight } from "react-icons/pi";
 import { SlCalender } from "react-icons/sl";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -12,18 +12,18 @@ const NewMedia = () => {
   const blogs = [
     {
       id: 1,
-      image: "/public/hydrabad.png",
+      image: "/new1.png",
       
       author: "Peush Jain",
       title: "Singapore's Xander, GIC buy Hyderabad's",
       description:
         "Signing a commercial lease is a critical step for any business, whether you are opening your first office or expanding…",
       readTime: "3 Min Read",
-      date: "April 1, 2025",
+      date: "Read More",
     },
     {
       id: 2,
-      image: "/public/new2.png",
+      image: "/new2.png",
     
       author: "Peush Jain",
       title:
@@ -31,49 +31,49 @@ const NewMedia = () => {
       description:
         "In today’s fast-paced real estate market, data analytics has emerged as a game-changer, empowering businesses and investors to make smarter…",
       readTime: "3 Min Read",
-      date: "April 1, 2025",
+      date: "Read More",
     },
     {
       id: 3,
-      image: "/public/new3.png",
+      image: "/new3.png",
       author: "Peush Jain",
       title: "Growth prospect for Indian real estate in 2024",
       description:
         "Leasing office space is a critical decision that can significantly impact your business’s operations, culture, and financial health. Whether you…",
       readTime: "2 Min Read",
-      date: "April 1, 2025",
+      date: "Read More",
     },
     {
       id: 4,
-      image: "/public/ModernHome.png",
+      image: "/new4.png",
       
       author: "Peush Jain",
       title: "Top 5 Factors to Consider When Leasing Office Space",
       description:
         "Leasing office space is a critical decision that can significantly impact your business’s operations, culture, and financial health. Whether you…",
       readTime: "2 Min Read",
-      date: "April 1, 2025",
+      date: "Read More",
     },
     {
       id: 5,
-      image: "/public/building.jpg",
+      image: "/new5.png",
   
       author: "Peush Jain",
       title: "Dwarka Expressway to further boost real estate prices i",
       description:
         "Leasing office space is a critical decision that can significantly impact your business’s operations, culture, and financial health. Whether you…",
       readTime: "2 Min Read",
-      date: "April 1, 2025",
+      date: "Read More",
     },
     {
       id: 6,
-      image: "/public/building-2.jpg",
+      image: "/new6.png",
       author: "Peush Jain",
       title: "Premium housing sales grow in Pune",
       description:
         "Leasing office space is a critical decision that can significantly impact your business’s operations, culture, and financial health. Whether you…",
       readTime: "2 Min Read",
-      date: "April 1, 2025",
+      date: "Read More",
     },
   ];
 
@@ -94,7 +94,7 @@ const NewMedia = () => {
             autoPlay
             loop
             muted
-            src="/public/newsVideo.mp4"
+            src="/newsVideo.mp4"
           ></video>
         </div>
         <div className="position-absolute top-50 start-50 translate-middle text-white text-center">
@@ -129,7 +129,7 @@ const NewMedia = () => {
         <div className="d-flex align-items-center gap-3">
           {/* Image */}
           <img
-            src="/public/channelpartner.png" // Replace with your image path
+            src="/channelpartner.png" // Replace with your image path
             alt="Ayushi"
             className="rounded"
             style={{ width: "80px", height: "80px", objectFit: "cover" }}
@@ -239,7 +239,8 @@ const NewMedia = () => {
                       <PiClockClockwiseLight /> {blog.readTime}
                     </span>
                     <span>
-                      <SlCalender /> {blog.date}
+                      
+                      <a href="" className="NewsLink">{blog.date} <FaArrowRight /></a>
                     </span>
                   </div>
                 </div>
