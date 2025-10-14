@@ -32,7 +32,7 @@ const Whycarousel = () => {
           <SwiperSlide>
             <div className="WHySection text-center">
               {/* img */}
-              <img src="/handshaqke.png" alt="" />
+              <img src="/content1.png" alt="" width={"100px"} height={"100px"} />
               {/* para */}
               <h5 >Why Trust Jenika Venture</h5>
               {/* content */}
@@ -46,10 +46,10 @@ const Whycarousel = () => {
           <SwiperSlide>
             <div className="WHySection text-center">
               {/* img */}
-              <img src="/customer.png" alt="" />
+              <img src="/content2.png" alt="" width={"100px"} height={"100px"}/>
               {/* para */}
               <h5>Customer Oriented</h5>
-              {/* content */}
+              {/* content  */}
               <p>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Deserunt facere reiciendis dignissimos illo iure nobis ab minus
@@ -60,7 +60,7 @@ const Whycarousel = () => {
           <SwiperSlide>
             <div className="WHySection text-center">
               {/* img */}
-              <img src="/idea.png" alt="" />
+              <img src="/content3.png" alt="" width={"100px"} height={"100px"}/>
               {/* para */}
               <h5>Tech Ideal</h5>
               {/* content */}

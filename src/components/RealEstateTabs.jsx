@@ -69,7 +69,7 @@ export default function RealEstateTabs() {
               pagination={{
                 clickable: true,
               }}
-              navigation={true}
+              navigation={false}
                 loop={true}
                speed={4000}
                freeMode={true}

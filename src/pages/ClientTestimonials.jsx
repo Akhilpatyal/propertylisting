@@ -18,12 +18,12 @@ const ClientTestimonials = () => {
   return (
     <div>
       <div className="ClientTestimonial">
-        <h2 className="fw-bold " data-aos="fade-up" data-aos-duration="0.4s">
+        {/* <h2 className="fw-bold " data-aos="fade-up" data-aos-duration="0.4s">
           Client{" "}
           <span data-aos="fade-up" data-aos-duration="0.9s">
             Testimonials
           </span>
-        </h2>
+        </h2> */}
       </div>
 
       {/* ClientTestimonials */}
@@ -37,7 +37,7 @@ const ClientTestimonials = () => {
                 data-aos-duration="1000"
               >
                 <img src="/icons8-home.gif" alt="" className="gif" />
-                Customer Testimonial
+                Client Testimonial
               </p>
               <h2 className="fs-1 fw-bold" data-aos="fade-up"
                 data-aos-duration="1500">Hear From Happy Homeowners</h2>

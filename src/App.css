@@ -204,18 +204,30 @@ body {
   border: 1px solid rgb(241, 241, 241);
   border-radius: 10px;
   padding: 10px;
-  background: linear-gradient(108deg,
-      #be973e 3.99%,
-      #f5ebac 55.49%,
-      #b49249 100%);
+  background-color: #ffffff;
   transform-style: preserve-3d;
-  transition: transform 1s, filter 0.7s, box-shadow 0.5s;
+  transition: transform 1s, filter 0.7s, box-shadow 0.5s,background-color 0.5s,color 0.5s;
+}
+.WHySection img{
+  border-radius: 50%;
+  background-color: #ffdedf;
+    transition: transform 1s,background-color 0.5s;
+}
+.WHySection:hover img{
+  background-color: #fff;
 }
 
 /* 3D rotation on hover */
+.WHySection h5{
+  padding: 5px 0px;
+}
 .WHySection:hover {
+  background-color: #c80a17;
   transform: rotateY(-10deg) rotateX(-10deg);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+.WHySection:hover h5,.WHySection:hover p{
+  color: #fff;
 }
 
 /* Shine effect */
@@ -1014,7 +1026,7 @@ body {
 }
 
 .ClientTestimonial {
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url('/public/onlineTesti.png');
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url('/ClientTestimonials.png');
   width: 100%;
   height: 60vh;
   background-position: center;
