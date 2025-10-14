@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "@studio-freight/lenis";
-
+import SplitType from "split-type";
 gsap.registerPlugin(ScrollTrigger);
 
 const OurTeam = () => {
@@ -90,7 +90,7 @@ const OurTeam = () => {
       duration: 1,
       stagger: 0.2,
       ease: "power3.out",
-  
+
       scrollTrigger: {
         trigger: ".leadershipTeam",
         start: "top 70%", // you can try 70% or even 60%
@@ -104,18 +104,14 @@ const OurTeam = () => {
       duration: 1,
       stagger: 0.2,
       ease: "power3.out",
-   
+
       scrollTrigger: {
         trigger: ".managementTeam",
         start: "top 70%", // you can try 70% or even 60%
         end: "bottom 20%",
         toggleActions: "play none none reverse",
-        
       },
     });
-
-
-
 
     // Cleanup
     return () => {
@@ -124,11 +120,37 @@ const OurTeam = () => {
       lenis.destroy();
     };
   }, []);
+  useEffect(() => {
+    // Wait for fonts to load before animation
+    document.fonts.ready.then(() => {
+      gsap.set(".split2", { opacity: 1 });
 
+      const elements = document.querySelectorAll(".split2");
+
+      elements.forEach((el, i) => {
+        // Split text into words
+        const split = new SplitType(el, { types: "words", tagName: "span" });
+
+        // Animate words
+        gsap.from(split.words, {
+          opacity: 0,
+          y: 50, // slide up
+          duration: 1,
+          ease: "sine.out",
+          stagger: 0.2,
+          delay: i * 0.3,
+          scrollTrigger: {
+            trigger: el,
+            start: "top 85%",
+          },
+        });
+      });
+    });
+  }, []);
   return (
     <div>
       <div className="OurTeambanner has-prlx">
-        <h2 className="text-drop__line fw-bold ">Our Team</h2>
+        <h2 className=" fw-bold split2  ">Our Team</h2>
       </div>
 
       {/* Founders Section */}
@@ -136,7 +158,8 @@ const OurTeam = () => {
         <h2 className="text-drop__line fs-1 fw-bold text-center py-4 ourFounder">
           Our Founders
         </h2>
-        <div className="row align-items-center">
+
+        <div className="row align-items-center gy-5">
           <div className="col-12 col-sm-6">
             <img
               src="/ourTeam/boss1.png"
@@ -146,11 +169,20 @@ const OurTeam = () => {
             />
           </div>
           <div className="col-12 col-sm-6 d-flex flex-column justify-content-center p-2">
-            <p className="text-start text-drop__line fw-bold fs-4">
-              Abhishek Raj
-            </p>
+            <div className="maintext">
+              <p className="text-start text-drop__line fw-bold fs-4">
+                Abhishek Raj
+              </p>
+              <a href="">
+                <img
+                  src="/linkedin2.png"
+                  alt=""
+                  className="links text-drop__line"
+                />
+              </a>
+            </div>
             <p className="text-start text-drop__line text-muted">Co-Founder</p>
-            <p className="text-drop__line" style={{textAlign:"justify"}}>
+            <p className="text-drop__line" style={{ textAlign: "justify" }}>
               Abhishek Raj is the CEO of Jenika Ventures, a real estate
               consultancy he established in 2020 with a vision to bring trust,
               transparency and innovation to the Indian property market. With
@@ -169,9 +201,18 @@ const OurTeam = () => {
           </div>
 
           <div className="col-12 col-sm-6 d-flex flex-column justify-content-center p-2 order-sm-1 order-2">
-            <p className="text-drop__line fw-bold fs-4">Priyanka Marwha</p>
+            <div className="maintext">
+              <p className="text-drop__line fw-bold fs-4">Priyanka Marwha</p>
+              <a href="">
+                <img
+                  src="/linkedin2.png"
+                  alt=""
+                  className="links text-drop__line"
+                />
+              </a>
+            </div>
             <p className="text-drop__line text-muted">Founder and MD</p>
-            <p className="text-drop__line" style={{textAlign:"justify"}}>
+            <p className="text-drop__line" style={{ textAlign: "justify" }}>
               Priyanka Marwha is the Managing Director of Jenika Ventures. She
               has played a pivotal role in shaping the company’s growth and
               success. With more than a decade of experience in the Delhi-NCR
@@ -207,34 +248,73 @@ const OurTeam = () => {
           </div>
           <div className="col-12 col-md-4">
             <div className="shine-animate-item">
-              <div className="shine-animate">
+              <div className="shine-animate position-relative">
                 <img
                   src="/ourTeam/Director1.png"
                   alt=""
                   className="img-fluid"
                 />
+                <a href="">
+                  <img
+                    src="/linkedin2.png"
+                    alt=""
+                    style={{
+                      position: "absolute",
+                      right: "28px",
+                      bottom: "10px",
+                      width: "35px",
+                      height: "35px",
+                    }}
+                  />
+                </a>
               </div>
             </div>
           </div>
           <div className="col-12 col-md-4">
-            <div className="shine-animate-item">
-              <div className="shine-animate">
+            <div className="shine-animate-item ">
+              <div className="shine-animate position-relative">
                 <img
                   src="/ourTeam/Director2.png"
                   alt=""
                   className="img-fluid"
                 />
+                <a href="">
+                  <img
+                    src="/linkedin2.png"
+                    alt=""
+                    style={{
+                      position: "absolute",
+                      right: "28px",
+                      bottom: "10px",
+                      width: "35px",
+                      height: "35px",
+                    }}
+                  />
+                </a>
               </div>
             </div>
           </div>
           <div className="col-12 col-md-4">
             <div className="shine-animate-item">
-              <div className="shine-animate">
+              <div className="shine-animate position-relative">
                 <img
                   src="/ourTeam/Director3.png"
                   alt=""
                   className="img-fluid"
                 />
+                <a href="">
+                  <img
+                    src="/linkedin2.png"
+                    alt=""
+                    style={{
+                      position: "absolute",
+                      right: "28px",
+                      bottom: "10px",
+                      width: "35px",
+                      height: "35px",
+                    }}
+                  />
+                </a>
               </div>
             </div>
           </div>
@@ -251,133 +331,249 @@ const OurTeam = () => {
           </div>
           <div className="col-12 col-md-3">
             <div className="shine-animate-item">
-              <div className="shine-animate">
-                <img
-                  src="/ourTeam/yogesh.png"
-                  alt=""
-                  className="img-fluid"
-                />
+              <div className="shine-animate position-relative">
+                <img src="/ourTeam/yogesh.png" alt="" className="img-fluid" />
+                <a href="">
+                  <img
+                    src="/linkedin2.png"
+                    alt=""
+                    style={{
+                      position: "absolute",
+                      right: "10px",
+                      bottom: "10px",
+                      width: "35px",
+                      height: "35px",
+                    }}
+                  />
+                </a>
               </div>
             </div>
           </div>
           <div className="col-12 col-md-3">
             <div className="shine-animate-item">
-              <div className="shine-animate">
-                <img
-                  src="/ourTeam/akshay.png"
-                  alt=""
-                  className="img-fluid"
-                />
-              </div>
-            </div>
-          </div>
-          <div className="col-12 col-md-3">
-            <div className="shine-animate-item">
-              <div className="shine-animate">
-                <img
-                  src="/ourTeam/sandeep.png"
-                  alt=""
-                  className="img-fluid"
-                />
-              </div>
-            </div>
-          </div>
-          <div className="col-12 col-md-3">
-            <div className="shine-animate-item">
-              <div className="shine-animate">
-                <img
-                  src="/ourTeam/shailendra.png"
-                  alt=""
-                  className="img-fluid"
-                />
-              </div>
-            </div>
-          </div>
-          <div className="col-12 col-md-3">
-            <div className="shine-animate-item">
-              <div className="shine-animate">
-                <img
-                  src="/ourTeam/chandra.png"
-                  alt=""
-                  className="img-fluid"
-                />
-              </div>
-            </div>
-          </div>
-          <div className="col-12 col-md-3">
-            <div className="shine-animate-item">
-              <div className="shine-animate">
-                <img
-                  src="/ourTeam/sudhesh.png"
-                  alt=""
-                  className="img-fluid"
-                />
-              </div>
-            </div>
-          </div>
-          <div className="col-12 col-md-3">
-            <div className="shine-animate-item">
-              <div className="shine-animate">
-                <img
-                  src="/ourTeam/ashutosh.png"
-                  alt=""
-                  className="img-fluid"
-                />
-              </div>
-            </div>
-          </div>
-          <div className="col-12 col-md-3">
-            <div className="shine-animate-item">
-              <div className="shine-animate">
+              <div className="shine-animate position-relative">
                 <img
                   src="/ourTeam/satishbatra.png"
                   alt=""
                   className="img-fluid"
                 />
+                <a href="">
+                  <img
+                    src="/linkedin2.png"
+                    alt=""
+                    style={{
+                      position: "absolute",
+                      right: "10px",
+                      bottom: "10px",
+                      width: "35px",
+                      height: "35px",
+                    }}
+                  />
+                </a>
               </div>
             </div>
           </div>
           <div className="col-12 col-md-3">
             <div className="shine-animate-item">
-              <div className="shine-animate">
-                <img
-                  src="/ourTeam/Taufique.png"
-                  alt=""
-                  className="img-fluid"
-                />
+              <div className="shine-animate position-relative">
+                <img src="/ourTeam/ashutosh.png" alt="" className="img-fluid" />
+                <a href="">
+                  <img
+                    src="/linkedin2.png"
+                    alt=""
+                    style={{
+                      position: "absolute",
+                      right: "10px",
+                      bottom: "10px",
+                      width: "35px",
+                      height: "35px",
+                    }}
+                  />
+                </a>
               </div>
             </div>
           </div>
           <div className="col-12 col-md-3">
             <div className="shine-animate-item">
-              <div className="shine-animate">
-                <img
-                  src="/ourTeam/manish.png"
-                  alt=""
-                  className="img-fluid"
-                />
+              <div className="shine-animate position-relative">
+                <img src="/ourTeam/Taufique.png" alt="" className="img-fluid" />
+                <a href="">
+                  <img
+                    src="/linkedin2.png"
+                    alt=""
+                    style={{
+                      position: "absolute",
+                      right: "10px",
+                      bottom: "10px",
+                      width: "35px",
+                      height: "35px",
+                    }}
+                  />
+                </a>
               </div>
             </div>
           </div>
           <div className="col-12 col-md-3">
             <div className="shine-animate-item">
-              <div className="shine-animate">
+              <div className="shine-animate position-relative">
                 <img
-                  src="/ourTeam/mohak.png"
+                  src="/ourTeam/shailendra.png"
                   alt=""
                   className="img-fluid"
                 />
+                <a href="">
+                  <img
+                    src="/linkedin2.png"
+                    alt=""
+                    style={{
+                      position: "absolute",
+                      right: "10px",
+                      bottom: "10px",
+                      width: "35px",
+                      height: "35px",
+                    }}
+                  />
+                </a>
               </div>
             </div>
           </div>
           <div className="col-12 col-md-3">
             <div className="shine-animate-item">
-              <div className="shine-animate">
-                <img
-                  src="/ourTeam/abbas.png"
-                  alt=""
-                  className="img-fluid"
-                />
+              <div className="shine-animate position-relative">
+                <img src="/ourTeam/chandra.png" alt="" className="img-fluid" />
+                <a href="">
+                  <img
+                    src="/linkedin2.png"
+                    alt=""
+                    style={{
+                      position: "absolute",
+                      right: "10px",
+                      bottom: "10px",
+                      width: "35px",
+                      height: "35px",
+                    }}
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="col-12 col-md-3">
+            <div className="shine-animate-item">
+              <div className="shine-animate position-relative">
+                <img src="/ourTeam/akshay.png" alt="" className="img-fluid" />
+                <a href="">
+                  <img
+                    src="/linkedin2.png"
+                    alt=""
+                    style={{
+                      position: "absolute",
+                      right: "10px",
+                      bottom: "10px",
+                      width: "35px",
+                      height: "35px",
+                    }}
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="col-12 col-md-3">
+            <div className="shine-animate-item">
+              <div className="shine-animate position-relative">
+                <img src="/ourTeam/sandeep.png" alt="" className="img-fluid" />
+                <a href="">
+                  <img
+                    src="/linkedin2.png"
+                    alt=""
+                    style={{
+                      position: "absolute",
+                      right: "10px",
+                      bottom: "10px",
+                      width: "35px",
+                      height: "35px",
+                    }}
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="col-12 col-md-3">
+            <div className="shine-animate-item">
+              <div className="shine-animate position-relative">
+                <img src="/ourTeam/abbas.png" alt="" className="img-fluid" />
+                <a href="">
+                  <img
+                    src="/linkedin2.png"
+                    alt=""
+                    style={{
+                      position: "absolute",
+                      right: "10px",
+                      bottom: "10px",
+                      width: "35px",
+                      height: "35px",
+                    }}
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="col-12 col-md-3">
+            <div className="shine-animate-item">
+              <div className="shine-animate position-relative">
+                <img src="/ourTeam/manish.png" alt="" className="img-fluid" />
+                <a href="">
+                  <img
+                    src="/linkedin2.png"
+                    alt=""
+                    style={{
+                      position: "absolute",
+                      right: "10px",
+                      bottom: "10px",
+                      width: "35px",
+                      height: "35px",
+                    }}
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="col-12 col-md-3">
+            <div className="shine-animate-item">
+              <div className="shine-animate position-relative">
+                <img src="/ourTeam/mohak.png" alt="" className="img-fluid" />
+                <a href="">
+                  <img
+                    src="/linkedin2.png"
+                    alt=""
+                    style={{
+                      position: "absolute",
+                      right: "10px",
+                      bottom: "10px",
+                      width: "35px",
+                      height: "35px",
+                    }}
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="col-12 col-md-3">
+            <div className="shine-animate-item">
+              <div className="shine-animate position-relative">
+                <img src="/ourTeam/sudhesh.png" alt="" className="img-fluid" />
+                <a href="">
+                  <img
+                    src="/linkedin2.png"
+                    alt=""
+                    style={{
+                      position: "absolute",
+                      right: "10px",
+                      bottom: "10px",
+                      width: "35px",
+                      height: "35px",
+                    }}
+                  />
+                </a>
               </div>
             </div>
           </div>
@@ -390,7 +586,8 @@ const OurTeam = () => {
       <div
         style={{
           background: "linear-gradient(327deg, #c80a17 20%, #000000) 45%",
-        }} >
+        }}
+      >
         <div className="container">
           <div class="footer__cta-wrap py-5 ">
             <h2 class="footer__cta-wrap-title">
@@ -402,8 +599,6 @@ const OurTeam = () => {
           </div>
         </div>
       </div>
-
-      
     </div>
   );
 };

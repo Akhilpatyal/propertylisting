@@ -1,17 +1,14 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import gsap from "gsap";
-import { SplitText } from "gsap/SplitText";
+import SplitType from "split-type";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger, SplitText);
+import Lenis from "@studio-freight/lenis";
+gsap.registerPlugin(ScrollTrigger);
 
 import PathsTimeline from "../components/PathsTimeline";
 const Whoweare = () => {
-  const containerRef = useRef(null);
-  const line1Ref = useRef(null);
-  const line2Ref = useRef(null);
   useEffect(() => {
     AOS.init({
       duration: 1200, // default duration
@@ -21,68 +18,58 @@ const Whoweare = () => {
   }, []);
 
   useEffect(() => {
-    let split1, split2;
-
-    document.fonts.ready.then(() => {
-      gsap.set(containerRef.current, { opacity: 1 });
-
-      // Split "Who"
-      split1 = new SplitText(line1Ref.current, {
-        type: "words",
-        aria: "hidden",
-      });
-      gsap.from(split1.words, {
-        opacity: 0,
-        y: 40, // slide-up
-        duration: 1,
-        ease: "sine.out",
-        stagger: 0.1,
-      });
-
-      // Split "WE Are"
-      split2 = new SplitText(line2Ref.current, {
-        type: "words",
-        aria: "hidden",
-      });
-      gsap.from(split2.words, {
-        opacity: 0,
-        y: 40,
-        duration: 1,
-        ease: "sine.out",
-        stagger: 0.1,
-        delay: 0.5, // starts after first line
-      });
+    //
+    // --- LENIS SMOOTH SCROLL SETUP ---
+    const lenis = new Lenis({
+      smooth: true,
+      lerp: 0.08,
+      direction: "vertical",
+      smoothTouch: true,
     });
 
-    return () => {
-      if (split1) split1.revert();
-      if (split2) split2.revert();
-    };
+    // keep Lenis and ScrollTrigger in sync
+    lenis.on("scroll", ScrollTrigger.update);
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // normalize scroll for GSAP
+    ScrollTrigger.normalizeScroll(true);
+
+    // Reset scroll triggers on resize
+    const handleResize = () => ScrollTrigger.refresh();
+    window.addEventListener("resize", handleResize);
+    //
   }, []);
+  useEffect(() => {
+    // Wait for fonts to load before animation
+    document.fonts.ready.then(() => {
+      gsap.set(".split2", { opacity: 1 });
 
-useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.utils.toArray(".split").forEach((el) => {
-        let split = new SplitText(el, {
-          type: "words,lines",
-          linesClass: "line",
-        });
+      const elements = document.querySelectorAll(".split2");
 
-        gsap.from(split.lines, {
-          scrollTrigger: {
-            trigger: el,            // 👈 har element ka trigger usi pe hoga
-            start: "top 80%",       // jab ~80% viewport me aayega tab chalega
-            toggleActions: "play none none none",
-          },
-          duration: 2,
-          yPercent: 100,
+      elements.forEach((el, i) => {
+        // Split text into words
+        const split = new SplitType(el, { types: "words", tagName: "span" });
+
+        // Animate words
+        gsap.from(split.words, {
           opacity: 0,
-          stagger: 0.1,
-          ease: "expo.out",
+          y: 40, // slide up
+          duration: 1,
+          ease: "sine.out",
+          stagger: 0.08,
+          delay: i * 0.3,
+          scrollTrigger: {
+            trigger: el,
+            start: "top 85%",
+          },
         });
       });
     });
-    return () => ctx.revert(); // cleanup on unmount
   }, []);
   return (
     <div>
@@ -104,55 +91,8 @@ useEffect(() => {
             src="/video.mp4"
           ></video>
         </div>
-        <div className="position-absolute top-50 start-50 translate-middle text-white text-center">
-          <div ref={containerRef}>
-            <div
-              className="text-center pt-5 mt-5 mt-lg-0"
-              style={{ fontFamily: "font1" }}
-            >
-              {/* First Line */}
-              <div
-                ref={line1Ref}
-                className="text-uppercase text-light"
-                style={{
-                  fontSize: "9.5vw",
-                  lineHeight: "8vw",
-                }}
-              >
-                Who
-              </div>
-
-              {/* Second Line */}
-              <div
-                ref={line2Ref}
-                className="d-flex justify-content-center align-items-center text-uppercase text-light"
-                style={{
-                  fontSize: "9.5vw",
-                  lineHeight: "8vw",
-                }}
-              >
-                WE &nbsp;
-                <div
-                  className="rounded-pill overflow-hidden"
-                  style={{
-                    height: "7vw",
-                    width: "16vw",
-                    marginTop: "0.75rem",
-                  }}
-                >
-                  <video
-                    className="object-fit-cover"
-                    style={{ height: "10vw", width: "16vw" }}
-                    autoPlay
-                    loop
-                    muted
-                    src="/video.mp4"
-                  ></video>
-                </div>
-                &nbsp;Are
-              </div>
-            </div>
-          </div>
+        <div className=" whoweare position-absolute top-50 start-50 translate-middle text-white text-center">
+          <h1 className="fw-bold split2 ">WHO WE ARE</h1>
         </div>
       </div>
       {/* our story */}
@@ -223,15 +163,27 @@ useEffect(() => {
 
       <section className="bg-brown mb-5">
         <div className="container py-5 belowVideo">
-          <h1 className="text-gradient " data-aos="fade-up"
-              data-aos-duration="4000">Our Mission</h1>
-          <p className="split" style={{color:"white",fontSize:"25px",fontWeight:"500"}}>
+          <h1
+            className="text-gradient "
+            data-aos="fade-up"
+            data-aos-duration="4000"
+          >
+            Our Mission
+          </h1>
+          <p
+            className="split"
+            style={{ color: "white", fontSize: "25px", fontWeight: "500" }}
+          >
             Transforming real estateby combining expertise, innovation,and
             technology to create smarter solutions for tomorrow.
           </p>
           <div className="row g-0">
-            <div className=" col-12 col-md-3"  data-aos="fade-down"
-              data-aos-duration="4000"  data-aos-delay="50">
+            <div
+              className=" col-12 col-md-3"
+              data-aos="fade-down"
+              data-aos-duration="4000"
+              data-aos-delay="50"
+            >
               <div className="service-box-items">
                 {/* Icon Section */}
                 <div className="icon text-md-start text-center">
@@ -249,8 +201,12 @@ useEffect(() => {
                 </div>
               </div>
             </div>
-            <div className=" col-12 col-md-3"  data-aos="fade-down"
-              data-aos-duration="4000"  data-aos-delay="100">
+            <div
+              className=" col-12 col-md-3"
+              data-aos="fade-down"
+              data-aos-duration="4000"
+              data-aos-delay="100"
+            >
               <div className="service-box-items">
                 {/* Icon Section */}
                 <div className="icon text-md-start text-center">
@@ -262,12 +218,18 @@ useEffect(() => {
                   <h3>
                     <a href="service-details.html">Expert Team</a>
                   </h3>
-                  <p className="colorWhite" >Driven by 2,200+ Professionals of Excellence</p>
+                  <p className="colorWhite">
+                    Driven by 2,200+ Professionals of Excellence
+                  </p>
                 </div>
               </div>
             </div>
-            <div className=" col-12 col-md-3"  data-aos="fade-down"
-              data-aos-duration="4000"  data-aos-delay="130">
+            <div
+              className=" col-12 col-md-3"
+              data-aos="fade-down"
+              data-aos-duration="4000"
+              data-aos-delay="130"
+            >
               <div className="service-box-items">
                 {/* Icon Section */}
                 <div className="icon text-md-start text-center">
@@ -286,8 +248,12 @@ useEffect(() => {
                 </div>
               </div>
             </div>
-            <div className=" col-12 col-md-3"  data-aos="fade-down"
-              data-aos-duration="4000"  data-aos-delay="160">
+            <div
+              className=" col-12 col-md-3"
+              data-aos="fade-down"
+              data-aos-duration="4000"
+              data-aos-delay="160"
+            >
               <div className="service-box-items">
                 {/* Icon Section */}
                 <div className="icon text-md-start text-center">

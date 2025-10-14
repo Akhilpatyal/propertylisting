@@ -9,31 +9,31 @@ export default function Services() {
         <h2 className="fw-bold pt-5 mainFont">Services</h2>
         <p>We create innovative strategies to enable transformative growth</p>
         <Swiper
-                      slidesPerView={3}
-                      spaceBetween={30}
-                      pagination={{
-                        clickable: true,
-                      }}
-                      breakpoints={{
-                        0: {
-                          slidesPerView: 1, // 👈 mobile (default)
-                        },
-                        768: {
-                          slidesPerView: 2, // 👈 tablets
-                        },
-                        1024: {
-                          slidesPerView: 3, // 👈 desktop
-                        },
-                      }}
-                      modules={[Pagination]}
-                      className="mySwiper-2"
-                    >
+          slidesPerView={3}
+          spaceBetween={30}
+          pagination={{
+            clickable: true,
+          }}
+          breakpoints={{
+            0: {
+              slidesPerView: 1, // 👈 mobile (default)
+            },
+            768: {
+              slidesPerView: 2, // 👈 tablets
+            },
+            1024: {
+              slidesPerView: 3, // 👈 desktop
+            },
+          }}
+          modules={[Pagination]}
+          className="mySwiper-2"
+        >
           <SwiperSlide>
             <div
               className="card style-2"
               style={{
                 height: "450px",
-                backgroundColor:"#f9e8fb",
+                backgroundColor: "#f9e8fb",
                 backgroundSize: "cover",
               }}
             >
@@ -42,7 +42,7 @@ export default function Services() {
                 <p className="para-1">
                   Validating project market fit in real estate
                 </p>
-                <div className="insideContent d-flex gap-4" >
+                <div className="insideContent d-flex gap-4">
                   <div className="sec-1">
                     <span>600+</span>
                     <p>project executed</p>
@@ -55,7 +55,6 @@ export default function Services() {
               </div>
               <div className="content-2 p-3">
                 <h4>Learn More</h4>
-                
               </div>
               <div className="cardBG">
                 <img src="/1st.svg" alt="" />
@@ -63,7 +62,7 @@ export default function Services() {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-             <div
+            <div
               className="card style-2"
               style={{
                 height: "450px",
@@ -76,7 +75,7 @@ export default function Services() {
                 <p className="para-1">
                   Validating project market fit in real estate
                 </p>
-                <div className="insideContent d-flex gap-4" >
+                <div className="insideContent d-flex gap-4">
                   <div className="sec-1">
                     <span>600+</span>
                     <p>project executed</p>
@@ -97,7 +96,7 @@ export default function Services() {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-             <div
+            <div
               className="card style-2"
               style={{
                 height: "450px",
@@ -110,7 +109,7 @@ export default function Services() {
                 <p className="para-1">
                   Validating project market fit in real estate
                 </p>
-                <div className="insideContent d-flex gap-4" >
+                <div className="insideContent d-flex gap-4">
                   <div className="sec-1">
                     <span>600+</span>
                     <p>project executed</p>
@@ -131,7 +130,7 @@ export default function Services() {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-             <div
+            <div
               className="card style-2"
               style={{
                 height: "450px",
@@ -144,7 +143,7 @@ export default function Services() {
                 <p className="para-1">
                   Validating project market fit in real estate
                 </p>
-                <div className="insideContent d-flex gap-4" >
+                <div className="insideContent d-flex gap-4">
                   <div className="sec-1">
                     <span>600+</span>
                     <p>project executed</p>

@@ -6,6 +6,8 @@ import Footer from './components/Footer'
 import Blog from './pages/Blog'
 import Whoweare from './pages/Whoweare'
 import OurTeam from './pages/OurTeam'
+import NewMedia from './pages/NewMedia'
+import ClientTestimonials from './pages/ClientTestimonials'
 function App() {
 
   return (
@@ -15,7 +17,9 @@ function App() {
       <Route path="/" element={<Home/>} />
       <Route path="/whoweare" element={<Whoweare/>} />
       <Route path="/blog" element={<Blog/>} />
-      <Route path="/our-team" element={<OurTeam/>} />
+      <Route path="/our-team" element={<OurTeam/>} />                 
+      <Route path="/client-testimonial" element={<ClientTestimonials/>} />                 
+      <Route path="/insight/news&media" element={<NewMedia/>} />                 
     </Routes>
     <Footer/> 
     </>
