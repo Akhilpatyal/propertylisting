@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import { Navbar, Nav, Container, NavDropdown, Offcanvas } from "react-bootstrap";
+import {
+  Navbar,
+  Nav,
+  Container,
+  NavDropdown,
+  Offcanvas,
+} from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
 
 function CustomNavbar() {
@@ -19,7 +25,9 @@ function CustomNavbar() {
           <Navbar.Toggle aria-controls="offcanvasNavbar" onClick={handleShow} />
           <Navbar.Collapse className="d-none d-lg-flex justify-content-end">
             <Nav>
-              <Nav.Link as={NavLink} to="/">HOME</Nav.Link>
+              <Nav.Link as={NavLink} to="/">
+                HOME
+              </Nav.Link>
 
               {/* ABOUT US dropdown */}
               <NavDropdown
@@ -29,17 +37,33 @@ function CustomNavbar() {
                 onMouseEnter={() => setHoveredDropdown("about")}
                 onMouseLeave={() => setHoveredDropdown(null)}
               >
-                <NavDropdown.Item as={NavLink} to="/whoweare" onClick={handleClose}>
+                <NavDropdown.Item
+                  as={NavLink}
+                  to="/whoweare"
+                  onClick={handleClose}
+                >
                   WHO WE ARE
                 </NavDropdown.Item>
-                <NavDropdown.Item as={NavLink} to="/our-team" onClick={handleClose}>
+                <NavDropdown.Item
+                  as={NavLink}
+                  to="/our-team"
+                  onClick={handleClose}
+                >
                   OUR TEAM
                 </NavDropdown.Item>
-                <NavDropdown.Item as={NavLink} to="/client-testimonial" onClick={handleClose}>
+                <NavDropdown.Item
+                  as={NavLink}
+                  to="/client-testimonial"
+                  onClick={handleClose}
+                >
                   CLIENT TESTIMONIALS
                 </NavDropdown.Item>
-                <NavDropdown.Item as={NavLink} to="/Collection/Plots" onClick={handleClose}>
-                 AWARDS & RECOGNITION
+                <NavDropdown.Item
+                  as={NavLink}
+                  to="/Collection/Plots"
+                  onClick={handleClose}
+                >
+                  AWARDS & RECOGNITION
                 </NavDropdown.Item>
               </NavDropdown>
 
@@ -51,16 +75,32 @@ function CustomNavbar() {
                 onMouseEnter={() => setHoveredDropdown("project")}
                 onMouseLeave={() => setHoveredDropdown(null)}
               >
-                <NavDropdown.Item as={NavLink} to="/Collection/Residential" onClick={handleClose}>
+                <NavDropdown.Item
+                  as={NavLink}
+                  to="/Collection/Residential"
+                  onClick={handleClose}
+                >
                   Residential
                 </NavDropdown.Item>
-                <NavDropdown.Item as={NavLink} to="/Collection/Commercial" onClick={handleClose}>
+                <NavDropdown.Item
+                  as={NavLink}
+                  to="/Collection/Commercial"
+                  onClick={handleClose}
+                >
                   Commercial
                 </NavDropdown.Item>
-                <NavDropdown.Item as={NavLink} to="/Collection/Studio" onClick={handleClose}>
+                <NavDropdown.Item
+                  as={NavLink}
+                  to="/Collection/Studio"
+                  onClick={handleClose}
+                >
                   Studio Apartments
                 </NavDropdown.Item>
-                <NavDropdown.Item as={NavLink} to="/Collection/Plots" onClick={handleClose}>
+                <NavDropdown.Item
+                  as={NavLink}
+                  to="/Collection/Plots"
+                  onClick={handleClose}
+                >
                   Plots
                 </NavDropdown.Item>
               </NavDropdown>
@@ -73,7 +113,11 @@ function CustomNavbar() {
                 onMouseEnter={() => setHoveredDropdown("insights")}
                 onMouseLeave={() => setHoveredDropdown(null)}
               >
-                <NavDropdown.Item as={NavLink} to="/insight/news&media" onClick={handleClose}>
+                <NavDropdown.Item
+                  as={NavLink}
+                  to="/insight/news&media"
+                  onClick={handleClose}
+                >
                   NEWS MEDIA
                 </NavDropdown.Item>
                 <NavDropdown.Item as={NavLink} to="/blog" onClick={handleClose}>
@@ -81,8 +125,12 @@ function CustomNavbar() {
                 </NavDropdown.Item>
               </NavDropdown>
 
-              <Nav.Link as={NavLink} to="/CAREERS">CAREERS</Nav.Link>
-              <Nav.Link as={NavLink} to="/Contact">CONTACT US</Nav.Link>
+              <Nav.Link as={NavLink} to="/CAREERS">
+                CAREERS
+              </Nav.Link>
+              <Nav.Link as={NavLink} to="/contact">
+                CONTACT US
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
@@ -97,40 +145,90 @@ function CustomNavbar() {
         </Offcanvas.Header>
         <Offcanvas.Body>
           <Nav className="flex-column text-center">
-            <Nav.Link as={NavLink} to="/" onClick={handleClose}>Home</Nav.Link>
+            <Nav.Link as={NavLink} to="/" onClick={handleClose}>
+              Home
+            </Nav.Link>
 
-            <NavDropdown title="ABOUT US" id="offcanvas-about-dropdown" className="text-center">
-              <NavDropdown.Item as={NavLink} to="/whoweare" onClick={handleClose}>
+            <NavDropdown
+              title="ABOUT US"
+              id="offcanvas-about-dropdown"
+              className="text-center"
+            >
+              <NavDropdown.Item
+                as={NavLink}
+                to="/whoweare"
+                onClick={handleClose}
+              >
                 WHO WE ARE
               </NavDropdown.Item>
-              <NavDropdown.Item as={NavLink} to="/our-team" onClick={handleClose}>
+              <NavDropdown.Item
+                as={NavLink}
+                to="/our-team"
+                onClick={handleClose}
+              >
                 OUR TEAM
               </NavDropdown.Item>
-              <NavDropdown.Item as={NavLink} to="/client-testimonial" onClick={handleClose}>
+              <NavDropdown.Item
+                as={NavLink}
+                to="/client-testimonial"
+                onClick={handleClose}
+              >
                 CLIENT TESTIMONIALS
               </NavDropdown.Item>
-              <NavDropdown.Item as={NavLink} to="/Collection/Plots" onClick={handleClose}>
+              <NavDropdown.Item
+                as={NavLink}
+                to="/Collection/Plots"
+                onClick={handleClose}
+              >
                 AWARDS & RECOGNITION
               </NavDropdown.Item>
             </NavDropdown>
 
-            <NavDropdown title="PROJECT" id="offcanvas-project-dropdown" className="text-center">
-              <NavDropdown.Item as={NavLink} to="/Collection/Residential" onClick={handleClose}>
+            <NavDropdown
+              title="PROJECT"
+              id="offcanvas-project-dropdown"
+              className="text-center"
+            >
+              <NavDropdown.Item
+                as={NavLink}
+                to="/Collection/Residential"
+                onClick={handleClose}
+              >
                 Residential
               </NavDropdown.Item>
-              <NavDropdown.Item as={NavLink} to="/Collection/Commercial" onClick={handleClose}>
+              <NavDropdown.Item
+                as={NavLink}
+                to="/Collection/Commercial"
+                onClick={handleClose}
+              >
                 Commercial
               </NavDropdown.Item>
-              <NavDropdown.Item as={NavLink} to="/Collection/Studio" onClick={handleClose}>
+              <NavDropdown.Item
+                as={NavLink}
+                to="/Collection/Studio"
+                onClick={handleClose}
+              >
                 Studio Apartments
               </NavDropdown.Item>
-              <NavDropdown.Item as={NavLink} to="/Collection/Plots" onClick={handleClose}>
+              <NavDropdown.Item
+                as={NavLink}
+                to="/Collection/Plots"
+                onClick={handleClose}
+              >
                 Plots
               </NavDropdown.Item>
             </NavDropdown>
 
-            <NavDropdown title="INSIGHTS" id="offcanvas-insights-dropdown" className="text-center">
-              <NavDropdown.Item as={NavLink} to="/Collection/Residential" onClick={handleClose}>
+            <NavDropdown
+              title="INSIGHTS"
+              id="offcanvas-insights-dropdown"
+              className="text-center"
+            >
+              <NavDropdown.Item
+                as={NavLink}
+                to="/Collection/Residential"
+                onClick={handleClose}
+              >
                 NEWS MEDIA
               </NavDropdown.Item>
               <NavDropdown.Item as={NavLink} to="/blog" onClick={handleClose}>
@@ -138,8 +236,12 @@ function CustomNavbar() {
               </NavDropdown.Item>
             </NavDropdown>
 
-            <Nav.Link as={NavLink} to="/CAREERS" onClick={handleClose}>CAREERS</Nav.Link>
-            <Nav.Link as={NavLink} to="/Contact" onClick={handleClose}>CONTACT US</Nav.Link>
+            <Nav.Link as={NavLink} to="/CAREERS" onClick={handleClose}>
+              CAREERS
+            </Nav.Link>
+            <Nav.Link as={NavLink} to="/contact" onClick={handleClose}>
+              CONTACT US
+            </Nav.Link>
           </Nav>
         </Offcanvas.Body>
       </Offcanvas>

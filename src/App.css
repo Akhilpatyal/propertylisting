@@ -1036,7 +1036,23 @@ body {
   align-items: center;
   justify-content: center;
 }
+.ContactBanner {
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url('/public/contactusbanner.jpg');
+  width: 100%;
+  height: 60vh;
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.ContactBanner h1 {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 60px;
+  font-family: "Montserrat", sans-serif;
+}
 .whoweare h1 {
   color: rgba(255, 255, 255, 0.9);
   font-size: 60px;
