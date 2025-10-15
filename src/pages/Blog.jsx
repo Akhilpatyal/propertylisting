@@ -8,21 +8,41 @@ import { SplitText } from "gsap/SplitText";
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const Blog = () => {
+
   useEffect(() => {
     gsap.from(".blog-card", {
       opacity: 0,
       y: 50,
-      stagger: 0.5, // delay between cards
-      duration: 1.2,
+      stagger: 0.2, // delay between cards
+      duration: 1,
       ease: "power3.out",
       scrollTrigger: {
         trigger: ".blog-card",
-        start: "top 60%",
+        start: "top 80%",
         toggleActions: "play none none none",
       },
     });
-  }, []);
-  useEffect(() => {
+    // 
+          // --- TEXT ANIMATION ---
+      gsap.utils.toArray(".text-drop__line").forEach((line, i) => {
+        gsap.fromTo(
+          line,
+          { y: 50, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            ease: "power3.out",
+            delay: i * 0.1, // slight stagger
+            scrollTrigger: {
+              trigger: line,
+              start: "top 85%",
+              toggleActions: "play none none reverse",
+            },
+          }
+        );
+      });
+    // 
     const ctx = gsap.context(() => {
       gsap.utils.toArray(".split").forEach((el) => {
         let split = new SplitText(el, {
@@ -36,7 +56,7 @@ const Blog = () => {
             start: "top 80%", // jab ~80% viewport me aayega tab chalega
             toggleActions: "play none none none",
           },
-          duration: 2,
+          duration: 0.1,
           yPercent: 100,
           opacity: 0,
           stagger: 0.3,
@@ -119,62 +139,54 @@ const Blog = () => {
   ];
   return (
     <div>
+       <div className="BlogBanner">
+        <h1 className="text-drop__line ">Blogs</h1>
+      </div>
       <div className="container py-4">
         <div className="row gx-5">
           {/* Left Featured Blog */}
           <div className="col-lg-8">
-            <div className="blog-featured shadow-soft rounded-20 overflow-hidden">
-              <div className="featured-image">
-                <img
-                  src="/banner-6.png"
-                  className="img-fluid w-100"
-                  alt="Featured Blog"
-                />
-              </div>
-
-              <div
-                className="featured-content p-4"
-                style={{
-                  marginTop: "-40px",
-                  background: "#fff",
-                  borderRadius: "12px",
-                }}
-              >
-                <div className="meta mb-2 text-uppercase small fw-semibold text-muted">
-                  <span className="me-2">Real Estate</span> |
-                  <span className="ms-2">Author – Rohin Shah</span>
-                </div>
-
-                <h2 className="fw-bold mb-3 split">
-                  Britain’s Tax Trap Tightens: Why Investors Are Rethinking the
-                  UK
-                </h2>
-
-                <p className="text-muted fs-5 mb-3 split">
-                  With over three decades spent working in the UK and global
-                  property markets, I’ve seen firsthand how quickly policy
-                  shifts…
-                </p>
-
-                <div className="d-flex align-items-center text-muted small">
-                  <span>
-                    <PiClockClockwiseLight /> 4 Min Read
-                  </span>
-                  &nbsp;&nbsp;&nbsp;
-                  <span>
-                    <SlCalender /> June 18, 2025
-                  </span>
-                </div>
+            <div className="my-2">
+              <div className="row g-4">
+                {blogs.map((blog) => (
+                  <div className="col-lg-6 col-md-6 blog-card" key={blog.id}>
+                    <div className="card shadow-sm border-0">
+                      <div className="card-img-wrapper rounded-2 overflow-hidden">
+                        <img
+                          src={blog.image}
+                          className="card-img-top"
+                          alt={blog.title}
+                        />
+                      </div>
+                      <div className="card-body">
+                        <div className="text-uppercase small text-muted fw-semibold mb-2">
+                          {blog.category} | Author – {blog.author}
+                        </div>
+                        <h5 className="card-title fw-bold">{blog.title}</h5>
+                        <p className="card-text text-muted">
+                          {blog.description}
+                        </p>
+                      </div>
+                      <div className="card-footer bg-white border-0 d-flex justify-content-between text-muted small">
+                        <span>
+                          <PiClockClockwiseLight /> {blog.readTime}
+                        </span>
+                        <span>
+                          <SlCalender /> {blog.date}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
-
             <div className="spacer-single"></div>
           </div>
 
           {/* Sidebar */}
           <div className="col-lg-4">
-            <div className="widget widget-post">
-              <h4 className="split">Recent Posts</h4>
+            <div className="widget widget-post sticky-top">
+              <h4 className="text-drop__line">Recent Posts</h4>
               <ul className="de-post-type-1">
                 <li className="d-flex blog-card">
                   <div className="d-image">
@@ -234,38 +246,6 @@ const Blog = () => {
                 </li>
               </ul>
             </div>
-          </div>
-        </div>
-        <div className="my-5">
-          <div className="row g-4">
-            {blogs.map((blog) => (
-              <div className="col-lg-4 col-md-6 blog-card" key={blog.id}>
-                <div className="card shadow-sm border-0">
-                  <div className="card-img-wrapper rounded-2 overflow-hidden">
-                    <img
-                      src={blog.image}
-                      className="card-img-top"
-                      alt={blog.title}
-                    />
-                  </div>
-                  <div className="card-body">
-                    <div className="text-uppercase small text-muted fw-semibold mb-2">
-                      {blog.category} | Author – {blog.author}
-                    </div>
-                    <h5 className="card-title fw-bold">{blog.title}</h5>
-                    <p className="card-text text-muted">{blog.description}</p>
-                  </div>
-                  <div className="card-footer bg-white border-0 d-flex justify-content-between text-muted small">
-                    <span>
-                      <PiClockClockwiseLight /> {blog.readTime}
-                    </span>
-                    <span>
-                      <SlCalender /> {blog.date}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </div>

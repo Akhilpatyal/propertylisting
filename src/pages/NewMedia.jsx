@@ -2,7 +2,7 @@ import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { FaSearch,FaArrowRight  } from "react-icons/fa";
+import { FaSearch, FaArrowRight } from "react-icons/fa";
 import { PiClockClockwiseLight } from "react-icons/pi";
 import { SlCalender } from "react-icons/sl";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -13,7 +13,7 @@ const NewMedia = () => {
     {
       id: 1,
       image: "/new1.png",
-      
+
       author: "Peush Jain",
       title: "Singapore's Xander, GIC buy Hyderabad's",
       description:
@@ -24,10 +24,9 @@ const NewMedia = () => {
     {
       id: 2,
       image: "/new2.png",
-    
+
       author: "Peush Jain",
-      title:
-        "Metro Line 12 to benefit Thane, Kalyan, and Taloja",
+      title: "Metro Line 12 to benefit Thane, Kalyan, and Taloja",
       description:
         "In today’s fast-paced real estate market, data analytics has emerged as a game-changer, empowering businesses and investors to make smarter…",
       readTime: "3 Min Read",
@@ -46,7 +45,7 @@ const NewMedia = () => {
     {
       id: 4,
       image: "/new4.png",
-      
+
       author: "Peush Jain",
       title: "Top 5 Factors to Consider When Leasing Office Space",
       description:
@@ -57,7 +56,7 @@ const NewMedia = () => {
     {
       id: 5,
       image: "/new5.png",
-  
+
       author: "Peush Jain",
       title: "Dwarka Expressway to further boost real estate prices i",
       description:
@@ -144,7 +143,7 @@ const NewMedia = () => {
               href="mailto:arun.chitnis@gmail.com"
               className="text-decoration-none text-primary small mt-1"
             >
-              arun.chitnis@anarock.com
+              arun.chitnis@abc.com
             </a>
           </div>
         </div>
@@ -229,7 +228,7 @@ const NewMedia = () => {
                   </div>
                   <div className="card-body">
                     <div className="text-uppercase small text-muted fw-semibold mb-2">
-                       Author – {blog.author}
+                      Author – {blog.author}
                     </div>
                     <h5 className="card-title fw-bold">{blog.title}</h5>
                     <p className="card-text text-muted">{blog.description}</p>
@@ -239,8 +238,9 @@ const NewMedia = () => {
                       <PiClockClockwiseLight /> {blog.readTime}
                     </span>
                     <span>
-                      
-                      <a href="" className="NewsLink">{blog.date} <FaArrowRight /></a>
+                      <a href="" className="NewsLink">
+                        {blog.date} <FaArrowRight />
+                      </a>
                     </span>
                   </div>
                 </div>
@@ -286,12 +286,13 @@ const NewMedia = () => {
           <button
             className="btn border-0 text-dark"
             style={{
-              backgroundColor: "#f5c518",
+              background:
+                "linear-gradient(68deg, #be973e 3.99%, #f5ebac 55.49%, #b49249 100%)",
               fontWeight: "500",
               fontSize: "25px",
             }}
           >
-            Download <span className="ms-1">›</span>
+            Download
           </button>
         </div>
 
@@ -319,12 +320,13 @@ const NewMedia = () => {
           <button
             className="btn border-0 text-dark"
             style={{
-              backgroundColor: "#f5c518",
+              background:
+                "linear-gradient(68deg, #be973e 3.99%, #f5ebac 55.49%, #b49249 100%)",
               fontWeight: "500",
               fontSize: "25px",
             }}
           >
-            View Profiles <span className="ms-1">›</span>
+            View Profiles
           </button>
         </div>
 
