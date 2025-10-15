@@ -269,7 +269,7 @@ const Contact = () => {
                   </li>
                 </ul>
                 <button>Direction</button>
-                <img src="/public/globe.png" alt="" className="overflowImg"/>
+                <img src="/globe.png" alt="" className="overflowImg"/>
               </div>
             </div>
             <div className="col-12 col-sm-4">
@@ -296,7 +296,7 @@ const Contact = () => {
                   </li>
                 </ul>
                 <button>Direction</button>
-                <img src="/public/globe.png" alt="" className="overflowImg"/>
+                <img src="/globe.png" alt="" className="overflowImg"/>
               </div>
             </div>
             <div className="col-12 col-sm-4">
@@ -309,7 +309,7 @@ const Contact = () => {
                     className="ms-4"
                   />
                 </div>
-                <h4 className="text-center">Banglore</h4>
+                <h4 className="text-center">Banglore </h4>
                 <ul>
                   <li>
                     <FaLocationDot /> H210 36/5 Hustlehub Tech Park, Sector 2,
@@ -323,7 +323,7 @@ const Contact = () => {
                   </li>
                 </ul>
                 <button>Direction</button>
-                <img src="/public/globe.png" alt="" className="overflowImg"/>
+                <img src="/globe.png" alt="" className="overflowImg"/>
               </div>
             </div>
           </div>
