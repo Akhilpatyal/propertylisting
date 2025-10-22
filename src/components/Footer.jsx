@@ -228,6 +228,9 @@ export default function Footer() {
           We value diversity within Jenika Ventures and are committed to
           offering equal opportunities in employment...
         </div>
+        <div className=" pt-3 text-center small text-light">
+          Developed By <a href="https://aajneeti.social/">Aajneeti Connect Ltd.</a>
+        </div>
       </div>
       
       <ScrollToTop/>
