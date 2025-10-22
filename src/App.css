@@ -1188,12 +1188,14 @@ body {
     flex-direction: column!important;
   }
   .filter-title {
-    font-size: 32px!important;
+    font-size: 22px!important;
 }
 .filter-select select {
-  font-size: 22px!important;
+  font-size: 18px!important;
 }
-
+.jobSection h1 {
+    font-size: 36px!important;
+}
 }
 
 /* animation */

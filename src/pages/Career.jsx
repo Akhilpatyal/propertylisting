@@ -49,7 +49,7 @@ const Career = () => {
     });
   }, []);
   return (
-    <div>
+    <div style={{ overflowX: "hidden" }}>
       <div className="CareerBanner">
         <h1 className="text-drop__line split2">Career</h1>
         <p className="text-drop__line split2">
