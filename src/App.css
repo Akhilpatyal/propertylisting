@@ -1061,7 +1061,7 @@ body {
 }
 
 .OurTeambanner {
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url('/public/ourTeam/Team-2.jpg');
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url('/ourTeam/Team-2.jpg');
   width: 100%;
   height: 90vh;
   background-position: center;
@@ -1085,7 +1085,7 @@ body {
 }
 
 .ContactBanner {
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url('/public/contactusbanner.jpg');
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(65, 56, 56, 0)), url('/contactusbanner.jpg');
   width: 100%;
   height: 60vh;
   background-position: top;
@@ -1095,8 +1095,28 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+.CareerBanner {
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(65, 56, 56, 0)), url('/careerBanner2.png');
+  width: 100%;
+  height: 60vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+}
+
+.CareerBanner p {
+  font-size: 40px;
+  text-align: center;
+}
+
 .BlogBanner {
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url('/public/blog.jpg');
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/blog.jpg');
   width: 100%;
   height: 60vh;
   background-position: center;
@@ -1107,7 +1127,9 @@ body {
   justify-content: center;
 }
 
-.ContactBanner h1,.BlogBanner h1 {
+.ContactBanner h1,
+.BlogBanner h1,
+.CareerBanner h1 {
   color: rgba(255, 255, 255, 0.9);
   font-size: 60px;
   font-family: "Montserrat", sans-serif;
@@ -1144,11 +1166,19 @@ body {
     font-family: "Montserrat", sans-serif;
   }
 
-  .whoweare h1 {
+  .whoweare h1,
+  .CareerBanner h1 {
     color: white;
     font-size: 40px;
     font-family: "Montserrat", sans-serif;
   }
+
+  .CareerBanner p {
+    font-size: 25px;
+  }
+.extraCareer a {
+  font-size: 24px;
+}
 
 }
 
@@ -1354,7 +1384,7 @@ body {
 .swiper-button-prev,
 .swiper-button-next {
   width: 55px !important;
-  height: 45px;
+  height: 55px !important;
   border-radius: 50%;
   background: #fff;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
@@ -1533,7 +1563,7 @@ svg path {
 
 .addressCol {
   background:
-    linear-gradient(to top, rgb(174 9 20), rgb(160 8 19 / 37%)), url(/public/contact11.jpg);
+    linear-gradient(to top, rgb(174 9 20), rgb(160 8 19 / 37%)), url(/contact11.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1558,7 +1588,9 @@ svg path {
   padding-left: 0px;
   z-index: 9;
 }
-.presence .card .logo,.presence .card h4 {
+
+.presence .card .logo,
+.presence .card h4 {
   z-index: 9;
 }
 
@@ -1671,7 +1703,7 @@ svg path {
   height: 200%;
   top: 110%;
   left: 50%;
-  background:linear-gradient(68deg, #be973e 30.99%, #f5ebac 55.49%, #b49249 100%);
+  background: linear-gradient(68deg, #be973e 30.99%, #f5ebac 55.49%, #b49249 100%);
   -webkit-transform: translateX(-50%);
   -moz-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
@@ -1744,10 +1776,414 @@ svg path {
 .contactform p {
   font-size: 18px;
 }
-.brown{
-color: #b49249;
- transition: color 0.4s ease-out;
+
+.brown {
+  color: #b49249;
+  transition: color 0.4s ease-out;
 }
-.contactform ul li:hover .brown{
+
+.contactform ul li:hover .brown {
   color: #c80a17;
+}
+
+.Careercontent {
+  background-color: #e5eaf0;
+}
+
+.Careercontent p {
+  font-size: 24px;
+  text-align: start;
+}
+
+/* career */
+.mySwiper-3 {
+  width: 100%;
+  padding: 40px 0 !important;
+}
+.mySwiper-3 .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* allow slide to size itself by its content */
+  height: auto !important;
+}
+.CareerTestimonial .card-wrapper {
+  width: 100%; /* allow responsive width, or use 400px if you want fixed */
+  max-width: 400px;
+  margin: 0 auto;
+  position: relative; /* keep wrapper relative if you want inner absolute, but we will avoid absolute */
+  height: auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.CareerTestimonial .card {
+position: relative; /* changed from absolute */
+  top: auto;
+  left: auto;
+  transform: none;
+  width: 350px;
+  height: auto;          /* let it adjust with content */
+  min-height: 450px;     /* optional: maintain similar look on large screens */
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  transition: 0.5s;
+  background: #fff; /* ensure visible background */
+  display: flex;
+  flex-direction: column;
+}
+.CareerTestimonial .card-image::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.4);
+  opacity: 1;
+  transition: opacity 0.5s ease;
+  z-index: 2;
+}
+.CareerTestimonial .card-image {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background-color: #000;
+  transition: 0.5s;
+}
+
+.CareerTestimonial .card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s;
+}
+
+.CareerTestimonial .card:hover .card-image img {
+  opacity: 0.4;
+  transition: 0.5s;
+}
+
+.CareerTestimonial .card:hover .card-image {
+  /* transform: translateY(-0px); */
+  transition: all 0.9s;
+}
+
+.employeeTestimonial .swiper-controls .custom-pagination {
+  display: none;
+}
+.employeeTestimonial .swiper-controls .swiper-button-next, .employeeTestimonial .swiper-controls .swiper-button-prev {
+    background: linear-gradient(108deg, #f5ebac 15.49%, #b49249 100%);
+
+}
+/* -------------------------------
+   Name (visible by default)
+--------------------------------*/
+.CareerTestimonial .details2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: 5;
+  text-align: center;
+  color: #fff;
+  transition: 0.5s;
+  opacity: 1;
+}
+
+
+/* Hide name when hovered (fades away) */
+.CareerTestimonial .card:hover .details2 {
+  opacity: 0;
+  transform: translate(-50%, -70%);
+  transition: 0.6s ease;
+}
+
+/* -------------------------------
+   Full content (appears on hover)
+--------------------------------*/
+.CareerTestimonial .details {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  background: #fff;
+  width: 100%;
+  z-index: 3;
+  padding: 20px;
+  opacity: 0;
+  transition: all 0.6s ease;
+  box-sizing: border-box;
+  height: auto;
+  min-height: 120px;
+}
+
+.CareerTestimonial .card:hover .details {
+  bottom: 0;
+  opacity: 1;
+  transition-delay: 0.5s;
+}
+
+/* Text styling */
+
+.CareerTestimonial .details2 h2 {
+  margin: 20px 0;
+  padding: 0;
+}
+
+
+.CareerTestimonial .details2 .job-title {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 300;
+  color: #333;
+}
+
+.CareerTestimonial .details h2 {
+  margin: 10px 0;
+  padding: 0;
+  text-align: center;
+  color: #000;
+}
+
+.CareerTestimonial .details .job-title {
+  display: block;
+  font-size: 0.95rem;
+  line-height: 1.5rem;
+  color: #333;
+  font-weight: 300;
+  margin-top: 5px;
+}
+
+.StorySection h1,
+p {
+  text-align: center;
+}
+
+.StorySection {
+  background-image: linear-gradient(90deg, #a136aa, #fcba63 52%, #0899d4);
+}
+
+.extraCareer {
+  padding: 60px 0px;
+  text-align: center;
+}
+
+.extraCareer a {
+  text-decoration: none;
+  background: linear-gradient(180deg, #c80a17 35%, #000000) 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 30px;
+}
+
+.employeeTestimonial {
+  position: relative;
+  background-image: url("/counter-one-shape1.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  z-index: 1;
+}
+.employeeTestimonial::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* shorthand for top:0; right:0; bottom:0; left:0 */
+  background-image: inherit; /* reuse same background */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: contrast(0.5); /* 👈 only applies to this layer */
+  z-index: -1; /* place it behind the content */
+}
+.employeeTestimonial p{
+font-size: 24px;
+}
+
+.employeeTestimonial .swiper-controls {
+  position: absolute;
+  top: 20px;
+  right: 0px;
+}
+
+.first {
+  background-image: linear-gradient(279deg, #ebf8ff, #f3efff 73%, #f3e9ff 0, #ebf8ff);
+  padding: 60px 0px;
+}
+
+/*  */
+/* ===========================
+   General Section Styling
+=========================== */
+.job-section {
+  /* background-color: #f9fafb; */
+  padding-bottom: 50px;
+  padding: 0px 40px;
+  min-height: 100%;
+  font-family: "Inter", sans-serif;
+}
+
+.jobSection {
+  padding: 70px 0px;
+}
+.jobSection h1{
+  font-size: 50px;
+}
+.jobSection p{
+  font-size: 22px;
+}
+
+
+/* ===========================
+   Filter Bar
+=========================== */
+.filter-bar {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  margin-top: -50px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  margin-bottom: 40px;
+  gap: 16px;
+}
+
+.filter-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #333;
+}
+
+.filter-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  flex: 1;
+  justify-content: center;
+}
+
+.filter-select {
+  position: relative;
+}
+
+.filter-select select {
+  padding: 10px 40px 10px 16px;
+  border: none;
+  border-bottom: 1px solid #b1b1b1;
+  font-size: 18px;
+  background-color: #fff;
+  color: #333;
+  appearance: none;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.filter-select select:focus {
+  outline: none;
+  border-color: #f3b000;
+}
+
+.select-icon {
+  position: absolute;
+  right: 10px;
+  top: 12px;
+  color: #666;
+  pointer-events: none;
+}
+
+.search-btn {
+  background: linear-gradient(68deg, #be973e 3.99%, #f5ebac 55.49%, #b49249 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.search-btn:hover {
+  background: linear-gradient(68deg, #be973e 3.99%, #f5ebac 55.49%, #b49249 100%);
+  ;
+}
+
+/* ===========================
+   Job List Section
+=========================== */
+.job-list {
+  border-top: 2px solid #ffa51e;
+}
+
+.job-count {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #222;
+}
+
+.job-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-bottom: 1px solid #ffa51e;
+  padding: 24px 0;
+  gap: 12px;
+}
+
+@media (min-width: 768px) {
+  .job-item {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.job-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.job-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #000;
+  text-transform: capitalize;
+}
+
+.job-meta {
+  font-size: 14px;
+  color: #555;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.apply-btn {
+  background: linear-gradient(68deg, #be973e 3.99%, #f5ebac 55.49%, #b49249 100%);
+  ;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.apply-btn:hover {
+  background: linear-gradient(68deg, #be973e 3.99%, #f5ebac 55.49%, #b49249 100%);
+  
+}
+.StorySection .card{
+  background-color: rgba(255, 255, 255, 0)!important;
 }

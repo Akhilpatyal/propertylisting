@@ -125,7 +125,7 @@ function CustomNavbar() {
                 </NavDropdown.Item>
               </NavDropdown>
 
-              <Nav.Link as={NavLink} to="/CAREERS">
+              <Nav.Link as={NavLink} to="/career">
                 CAREERS
               </Nav.Link>
               <Nav.Link as={NavLink} to="/contact">
@@ -236,7 +236,7 @@ function CustomNavbar() {
               </NavDropdown.Item>
             </NavDropdown>
 
-            <Nav.Link as={NavLink} to="/CAREERS" onClick={handleClose}>
+            <Nav.Link as={NavLink} to="/career" onClick={handleClose}>
               CAREERS
             </Nav.Link>
             <Nav.Link as={NavLink} to="/contact" onClick={handleClose}>
