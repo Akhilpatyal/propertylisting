@@ -60,7 +60,7 @@ const Career = () => {
       {/* section 2 */}
       <div className=" py-5">
         <div className="Careercontent">
-          <div className="row">
+          <div className="row gy-5 gy-sm-0">
             <div className="col-12 col-sm-6">
               <img src="/campass.png" alt="" className="img-fluid" />
             </div>

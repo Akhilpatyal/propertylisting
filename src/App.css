@@ -1176,8 +1176,22 @@ body {
   .CareerBanner p {
     font-size: 25px;
   }
-.extraCareer a {
-  font-size: 24px;
+
+  .extraCareer a {
+    font-size: 24px;
+  }
+
+  .job-section {
+    padding: 0px 20px!important;
+  }
+  .filter-bar{
+    flex-direction: column!important;
+  }
+  .filter-title {
+    font-size: 32px!important;
+}
+.filter-select select {
+  font-size: 22px!important;
 }
 
 }
@@ -1800,6 +1814,7 @@ svg path {
   width: 100%;
   padding: 40px 0 !important;
 }
+
 .mySwiper-3 .swiper-slide {
   display: flex;
   justify-content: center;
@@ -1807,43 +1822,54 @@ svg path {
   /* allow slide to size itself by its content */
   height: auto !important;
 }
+
 .CareerTestimonial .card-wrapper {
-  width: 100%; /* allow responsive width, or use 400px if you want fixed */
+  width: 100%;
+  /* allow responsive width, or use 400px if you want fixed */
   max-width: 400px;
   margin: 0 auto;
-  position: relative; /* keep wrapper relative if you want inner absolute, but we will avoid absolute */
+  position: relative;
+  /* keep wrapper relative if you want inner absolute, but we will avoid absolute */
   height: auto;
   padding: 0;
   box-sizing: border-box;
 }
 
 .CareerTestimonial .card {
-position: relative; /* changed from absolute */
+  position: relative;
+  /* changed from absolute */
   top: auto;
   left: auto;
   transform: none;
   width: 350px;
-  height: auto;          /* let it adjust with content */
-  min-height: 450px;     /* optional: maintain similar look on large screens */
+  height: auto;
+  /* let it adjust with content */
+  min-height: 450px;
+  /* optional: maintain similar look on large screens */
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 5px 18px rgba(0, 0, 0, 0.6);
   cursor: pointer;
   transition: 0.5s;
-  background: #fff; /* ensure visible background */
+  background: #fff;
+  /* ensure visible background */
   display: flex;
   flex-direction: column;
 }
+
 .CareerTestimonial .card-image::after {
   content: "";
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.4);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
   opacity: 1;
   transition: opacity 0.5s ease;
   z-index: 2;
 }
+
 .CareerTestimonial .card-image {
   position: absolute;
   top: 0px;
@@ -1875,10 +1901,13 @@ position: relative; /* changed from absolute */
 .employeeTestimonial .swiper-controls .custom-pagination {
   display: none;
 }
-.employeeTestimonial .swiper-controls .swiper-button-next, .employeeTestimonial .swiper-controls .swiper-button-prev {
-    background: linear-gradient(108deg, #f5ebac 15.49%, #b49249 100%);
+
+.employeeTestimonial .swiper-controls .swiper-button-next,
+.employeeTestimonial .swiper-controls .swiper-button-prev {
+  background: linear-gradient(108deg, #f5ebac 15.49%, #b49249 100%);
 
 }
+
 /* -------------------------------
    Name (visible by default)
 --------------------------------*/
@@ -1989,19 +2018,25 @@ p {
   overflow: hidden;
   z-index: 1;
 }
+
 .employeeTestimonial::before {
   content: "";
   position: absolute;
-  inset: 0; /* shorthand for top:0; right:0; bottom:0; left:0 */
-  background-image: inherit; /* reuse same background */
+  inset: 0;
+  /* shorthand for top:0; right:0; bottom:0; left:0 */
+  background-image: inherit;
+  /* reuse same background */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  filter: contrast(0.5); /* 👈 only applies to this layer */
-  z-index: -1; /* place it behind the content */
+  filter: contrast(0.5);
+  /* 👈 only applies to this layer */
+  z-index: -1;
+  /* place it behind the content */
 }
-.employeeTestimonial p{
-font-size: 24px;
+
+.employeeTestimonial p {
+  font-size: 24px;
 }
 
 .employeeTestimonial .swiper-controls {
@@ -2030,10 +2065,12 @@ font-size: 24px;
 .jobSection {
   padding: 70px 0px;
 }
-.jobSection h1{
+
+.jobSection h1 {
   font-size: 50px;
 }
-.jobSection p{
+
+.jobSection p {
   font-size: 22px;
 }
 
@@ -2182,8 +2219,9 @@ font-size: 24px;
 
 .apply-btn:hover {
   background: linear-gradient(68deg, #be973e 3.99%, #f5ebac 55.49%, #b49249 100%);
-  
+
 }
-.StorySection .card{
-  background-color: rgba(255, 255, 255, 0)!important;
+
+.StorySection .card {
+  background-color: rgba(255, 255, 255, 0) !important;
 }
