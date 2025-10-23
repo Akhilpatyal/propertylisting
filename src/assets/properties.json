@@ -7,7 +7,7 @@
     "location": "Whitefield",
     "configuration": "2BHK",
     "price": "₹75 Lakhs",
-    "image": "/public/Pune.png"
+    "image": "/Pune.png"
   },
   {
     "id": 2,
@@ -17,7 +17,7 @@
     "location": "Andheri East",
     "configuration": "3BHK",
     "price": "₹1.4 Cr",
-    "image": "/public/hydrabad.png"
+    "image": "/hydrabad.png"
   },
   {
     "id": 3,
@@ -27,7 +27,7 @@
     "location": "Hinjewadi",
     "configuration": "2BHK",
     "price": "₹68 Lakhs",
-    "image": "/public/Chennai.png"
+    "image": "/Chennai.png"
   },
   {
     "id": 4,
@@ -37,7 +37,7 @@
     "location": "Dwarka",
     "configuration": "4BHK",
     "price": "₹2.1 Cr",
-    "image": "/public/Thumbnail.jpeg"
+    "image": "/Thumbnail.jpeg"
   },
   {
     "id": 5,
@@ -47,7 +47,7 @@
     "location": "Shamshabad",
     "configuration": "NA",
     "price": "₹45 Lakhs",
-    "image": "/public/Q2.png"
+    "image": "/Q2.png"
   },
   {
     "id": 6,
@@ -57,7 +57,7 @@
     "location": "Sarjapur",
     "configuration": "NA",
     "price": "₹52 Lakhs",
-    "image": "/public/Pune.png"
+    "image": "/Pune.png"
   },
   {
     "id": 7,
@@ -67,7 +67,7 @@
     "location": "Tambaram",
     "configuration": "NA",
     "price": "₹38 Lakhs",
-    "image": "/public/Delhi.png"
+    "image": "/Delhi.png"
   },
   {
     "id": 8,
@@ -77,7 +77,7 @@
     "location": "Sector 62",
     "configuration": "Office Space",
     "price": "₹3.5 Cr",
-    "image": "/public/Chennai.png"
+    "image": "/Chennai.png"
   },
   {
     "id": 9,
@@ -87,7 +87,7 @@
     "location": "BKC",
     "configuration": "Retail Space",
     "price": "₹5.2 Cr",
-    "image": "/public/Delhi.png"
+    "image": "/Delhi.png"
   },
   {
     "id": 10,
@@ -97,7 +97,7 @@
     "location": "Kalyani Nagar",
     "configuration": "Office Space",
     "price": "₹2.8 Cr",
-    "image": "/public/Q2.png"
+    "image": "/Q2.png"
   },
   {
     "id": 11,
@@ -107,7 +107,7 @@
     "location": "Koramangala",
     "configuration": "1RK",
     "price": "₹42 Lakhs",
-    "image": "/public/new6.png"
+    "image": "/new6.png"
   },
   {
     "id": 12,
@@ -117,7 +117,7 @@
     "location": "Powai",
     "configuration": "1RK",
     "price": "₹58 Lakhs",
-    "image": "/public/building.jpg"
+    "image": "/building.jpg"
   },
   {
     "id": 13,
@@ -127,7 +127,7 @@
     "location": "Baner",
     "configuration": "1BHK",
     "price": "₹49 Lakhs",
-    "image": "/public/Chennai.png"
+    "image": "/Chennai.png"
   },
   {
     "id": 14,
@@ -137,7 +137,7 @@
     "location": "Kondapur",
     "configuration": "3BHK",
     "price": "₹85 Lakhs",
-    "image": "/public/new244.png"
+    "image": "/new244.png"
   },
   {
     "id": 15,
@@ -147,7 +147,7 @@
     "location": "Rohini",
     "configuration": "NA",
     "price": "₹55 Lakhs",
-    "image": "/public/banner-8.png"
+    "image": "/banner-8.png"
   },
   {
     "id": 16,
@@ -167,7 +167,7 @@
     "location": "OMR",
     "configuration": "2BHK",
     "price": "₹67 Lakhs",
-    "image": "/public/Chennai.png"
+    "image": "/Chennai.png"
   },
   {
     "id": 18,
@@ -177,7 +177,7 @@
     "location": "Wagholi",
     "configuration": "NA",
     "price": "₹49 Lakhs",
-    "image": "/public/new244.png"
+    "image": "/new244.png"
   },
   {
     "id": 19,
@@ -187,7 +187,7 @@
     "location": "Madhapur",
     "configuration": "Office Space",
     "price": "₹3.9 Cr",
-    "image": "/public/Q2.png"
+    "image": "/Q2.png"
   },
   {
     "id": 20,
@@ -197,6 +197,6 @@
     "location": "Lajpat Nagar",
     "configuration": "1BHK",
     "price": "₹52 Lakhs",
-    "image": "/public/Chennai.png"
+    "image": "/Chennai.png"
   }
 ]
