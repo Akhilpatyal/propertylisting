@@ -7,7 +7,7 @@ import { BiSolidVideos } from "react-icons/bi";
 import { BsBuildings, BsCalendar2Date } from "react-icons/bs";
 import { CgSmartHomeRefrigerator,CgGym  } from "react-icons/cg";
 import projectsData from "../assets/properties.json";
-import { HiSquare3Stack3D, HiMiniBuildingOffice2 } from "react-icons/hi2";
+import { HiMiniBuildingOffice2 } from "react-icons/hi2";
 import ProjectSlider from "../components/ProjectSlider";
 import FloorPlan from "../components/FloorPlan";
 const ProjectDetailPage = () => {
