@@ -55,7 +55,7 @@ const ProjectDetailPage = () => {
 
             {/* overview */}
             <div className="discibe pb-5">
-              <h2 className="ameneties-title">Description</h2>
+              <h2 className="ameneties-title">Highlights</h2>
               <div className="ul-ameneties">
                 <span className="features d-flex gap-3">
                   <span className="icon">
@@ -125,7 +125,7 @@ const ProjectDetailPage = () => {
 
             {/* ameneties */}
             <div className="ameneties">
-              <h2 className="ameneties-title">Features & Aminities</h2>
+              <h2 className="ameneties-title">Features & Amenities</h2>
               <div className="ul-ameneties">
                 <span className="features">
                   <span className="icon">
