@@ -77,28 +77,28 @@ function CustomNavbar() {
               >
                 <NavDropdown.Item
                   as={NavLink}
-                  to="/Collection/Residential"
+                  to="/projects?propertytype=Residential"
                   onClick={handleClose}
                 >
                   Residential
                 </NavDropdown.Item>
                 <NavDropdown.Item
                   as={NavLink}
-                  to="/Collection/Commercial"
+                  to="/projects?propertytype=Commercial"
                   onClick={handleClose}
                 >
                   Commercial
                 </NavDropdown.Item>
                 <NavDropdown.Item
                   as={NavLink}
-                  to="/Collection/Studio"
+                  to="/projects?propertytype=Studio"
                   onClick={handleClose}
                 >
                   Studio Apartments
                 </NavDropdown.Item>
                 <NavDropdown.Item
                   as={NavLink}
-                  to="/Collection/Plots"
+                  to="/projects?propertytype=Plots"
                   onClick={handleClose}
                 >
                   Plots
@@ -191,28 +191,28 @@ function CustomNavbar() {
             >
               <NavDropdown.Item
                 as={NavLink}
-                to="/Collection/Residential"
+                to="/projects?propertytype=Residential"
                 onClick={handleClose}
               >
                 Residential
               </NavDropdown.Item>
               <NavDropdown.Item
                 as={NavLink}
-                to="/Collection/Commercial"
+                to="/projects?propertytype=Commercial"
                 onClick={handleClose}
               >
                 Commercial
               </NavDropdown.Item>
               <NavDropdown.Item
                 as={NavLink}
-                to="/Collection/Studio"
+                to="/projects?propertytype=Studio"
                 onClick={handleClose}
               >
                 Studio Apartments
               </NavDropdown.Item>
               <NavDropdown.Item
                 as={NavLink}
-                to="/Collection/Plots"
+                to="/projects?propertytype=Plots"
                 onClick={handleClose}
               >
                 Plots
