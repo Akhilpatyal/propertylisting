@@ -59,7 +59,7 @@ const ProjectDetailPage = () => {
               <div className="ul-ameneties">
                 <span className="features d-flex gap-3">
                   <span className="icon">
-                    <img src="/public/property.png" alt=""  width={"34px"} style={{transform: "rotate(0deg)"}}/>
+                    <img src="/property.png" alt=""  width={"34px"} style={{transform: "rotate(0deg)"}}/>
                   </span>
                   <span className="txt">
                     <div className="key">Property Type</div>
@@ -68,7 +68,7 @@ const ProjectDetailPage = () => {
                 </span>
                 <span className="features d-flex gap-3">
                   <span className="icon">
-                    <img src="/public/rupee.png" alt=""  width={"34px"} style={{transform: "rotate(0deg)"}}/>
+                    <img src="/rupee.png" alt=""  width={"34px"} style={{transform: "rotate(0deg)"}}/>
                   </span>
                   <span className="txt">
                     <div className="key">Price</div>
@@ -77,7 +77,7 @@ const ProjectDetailPage = () => {
                 </span>
                 <span className="features d-flex gap-3">
                   <span className="icon">
-                    <img src="/public/scale.png" alt=""  width={"34px"} style={{transform: "rotate(0deg)"}}/>
+                    <img src="/scale.png" alt=""  width={"34px"} style={{transform: "rotate(0deg)"}}/>
                   </span>
                   <span className="txt">
                     <div className="key">Builtup Area</div>
@@ -86,7 +86,7 @@ const ProjectDetailPage = () => {
                 </span>
                 <span className="features d-flex gap-3">
                   <span className="icon">
-                     <img src="/public/stack.png" alt=""  width={"34px"} style={{transform: "rotate(0deg)"}}/>
+                     <img src="/stack.png" alt=""  width={"34px"} style={{transform: "rotate(0deg)"}}/>
                   </span>
                   <span className="txt">
                     <div className="key">Total Land Area</div>
@@ -95,7 +95,7 @@ const ProjectDetailPage = () => {
                 </span>
                 <span className="features d-flex gap-3">
                   <span className="icon">
-                    <img src="/public/location.png" alt=""  width={"34px"} style={{transform: "rotate(0deg)"}}/>
+                    <img src="/location.png" alt=""  width={"34px"} style={{transform: "rotate(0deg)"}}/>
                   </span>
                   <span className="txt">
                     <div className="key">Total Unit</div>
@@ -104,7 +104,7 @@ const ProjectDetailPage = () => {
                 </span>
                 <span className="features d-flex gap-3">
                   <span className="icon">
-                     <img src="/public/residential.png" alt=""  width={"34px"} style={{transform: "rotate(0deg)"}}/>
+                     <img src="/residential.png" alt=""  width={"34px"} style={{transform: "rotate(0deg)"}}/>
                   </span>
                   <span className="txt">
                     <div className="key">Unit Variants</div>
@@ -113,7 +113,7 @@ const ProjectDetailPage = () => {
                 </span>
                 <span className="features d-flex gap-3">
                   <span className="icon">
-                    <img src="/public/confetti.png" alt=""  width={"34px"} style={{transform: "rotate(0deg)"}}/>
+                    <img src="/confetti.png" alt=""  width={"34px"} style={{transform: "rotate(0deg)"}}/>
                   </span>
                   <span className="txt">
                     <div className="key">Possession TIME</div>
