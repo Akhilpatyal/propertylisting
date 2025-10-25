@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { PiClockClockwiseLight } from "react-icons/pi";
 import { SlCalender } from "react-icons/sl";
+import { Link } from "react-router-dom";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -162,10 +163,12 @@ const Blog = () => {
                         <div className="text-uppercase small text-muted fw-semibold mb-2">
                           {blog.category} | Author – {blog.author}
                         </div>
-                        <h5 className="card-title fw-bold">{blog.title}</h5>
+                        <Link to={`/blog/${blog.id}`}><h5 className="card-title fw-bold">{blog.title}</h5></Link>
+                        
                         <p className="card-text text-muted">
                           {blog.description}
                         </p>
+                        
                       </div>
                       <div className="card-footer bg-white border-0 d-flex justify-content-between text-muted small">
                         <span>

@@ -12,6 +12,7 @@ import Contact from "./pages/Contact";
 import Career from "./pages/Career";
 import Projects from "./pages/Projects";
 import ProjectDetailPage from "./pages/ProjectDetailPage";
+import BlogDetailPage from "./pages/BlogDetailPage";
 function App() {
   return (
     <>
@@ -20,15 +21,16 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/whoweare" element={<Whoweare />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:id" element={<BlogDetailPage />} />
         <Route path="/our-team" element={<OurTeam />} />
         <Route path="/client-testimonial" element={<ClientTestimonials />} />
         <Route path="/insight/news&media" element={<NewMedia />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/career" element={<Career/>} />
+        <Route path="/career" element={<Career />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/projects/:id" element={<ProjectDetailPage />} />
       </Routes>
-      <Footer />  
+      <Footer />
     </>
   );
 }
