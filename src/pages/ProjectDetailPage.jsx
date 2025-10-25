@@ -62,7 +62,7 @@ const ProjectDetailPage = () => {
                     <img src="/property.png" alt=""  width={"34px"} style={{transform: "rotate(0deg)"}}/>
                   </span>
                   <span className="txt">
-                    <div className="key">Property Type</div>
+                    <div className="key">Property Type </div>
                     <div className="value">Apartments, Residential</div>
                   </span>
                 </span>
