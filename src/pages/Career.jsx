@@ -1,5 +1,4 @@
 import { React, useEffect } from "react";
-import { FaStar, FaRegStar } from "react-icons/fa";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay, Navigation, EffectFade } from "swiper/modules";
 import "swiper/css/navigation";
@@ -12,14 +11,63 @@ import SplitType from "split-type";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Lenis from "@studio-freight/lenis";
 gsap.registerPlugin(ScrollTrigger);
 const Career = () => {
   useEffect(() => {
+    // --- LENIS SMOOTH SCROLL SETUP ---
+    const lenis = new Lenis({
+      smooth: true,
+      lerp: 0.08,
+      direction: "vertical",
+      smoothTouch: true,
+    });
+
+    // keep Lenis and ScrollTrigger in sync
+    lenis.on("scroll", ScrollTrigger.update);
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // normalize scroll for GSAP
+    ScrollTrigger.normalizeScroll(true);
+    // Reset scroll triggers on resize
+    const handleResize = () => ScrollTrigger.refresh();
+    // --- TEXT ANIMATION ---
+    gsap.utils.toArray(".text-drop__line").forEach((line, i) => {
+      gsap.fromTo(
+        line,
+        { y: 50, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: "power3.out",
+          delay: i * 0.1, // slight stagger
+          scrollTrigger: {
+            trigger: line,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    });
+
     AOS.init({
       duration: 1200, // default duration
       once: true, // whether animation should happen only once
       easing: "ease-in-out",
     });
+
+    // Cleanup
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      ScrollTrigger.getAll().forEach((t) => t.kill());
+      lenis.destroy();
+    };
   }, []);
   useEffect(() => {
     // Wait for fonts to load before animation
@@ -51,7 +99,7 @@ const Career = () => {
   return (
     <div style={{ overflowX: "hidden" }}>
       <div className="CareerBanner">
-        <h1 className="text-drop__line split2">Career</h1>
+        <h1 className=" split2">Career</h1>
         <p className="text-drop__line split2">
           A Culture That Inspires Growth and Belonging
         </p>
@@ -271,7 +319,7 @@ const Career = () => {
 
       {/* extra's */}
       <div className="extraCareer">
-        <h1 data-aos="fade-up" data-aos-duration="4000">
+        <h1 className="text-drop__line">
           Didn’t spot the perfect role yet?
         </h1>
         <h2 data-aos="fade-up" data-aos-duration="6000">

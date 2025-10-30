@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay, EffectFade } from "swiper/modules";
 import { FaSearch, FaMapMarkerAlt } from "react-icons/fa";
@@ -9,9 +9,37 @@ import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 
 import "../index.css"; // your custom styles
-
+import gsap from "gsap";
+import SplitType from "split-type";
 export default function Slider() {
   const [activeTab, setActiveTab] = useState("Residential");
+  useEffect(()=>{
+            document.fonts.ready.then(() => {
+      gsap.set(".split2", { opacity: 1 });
+
+      const elements = document.querySelectorAll(".split2");
+
+      elements.forEach((el, i) => {
+        // Split text into words
+        const split = new SplitType(el, { types: "words", tagName: "span" });
+
+        // Animate words
+        gsap.from(split.words, {
+          opacity: 0,
+          y: 40, // slide up
+          duration: 1,
+          ease: "sine.out",
+          stagger: 0.08,
+          delay: i * 0.3,
+          scrollTrigger: {
+            trigger: el,
+            start: "top 85%",
+          },
+        });
+      });
+    });
+
+  })
   return (
     <>
       <div className="slider-wrapper">
@@ -85,7 +113,7 @@ export default function Slider() {
 
         {/* 🔍 Search Section Overlay (Fixed over all slides) */}
         <div className="search-overlay">
-          <h2>Discover Most Suitable Property</h2>
+          <h2 className="split2">Discover Most Suitable Property</h2>
           <p>
             Building credibility, increasing customer loyalty, and creating
             empowerment.

@@ -7,7 +7,65 @@ import "swiper/css";
 import "swiper/css/pagination";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Lenis from "@studio-freight/lenis";
+
+gsap.registerPlugin(ScrollTrigger);
 const ClientTestimonials = () => {
+
+      useEffect(() => {
+        // --- LENIS SMOOTH SCROLL SETUP ---
+        const lenis = new Lenis({
+          smooth: true,
+          lerp: 0.08,
+          direction: "vertical",
+          smoothTouch: true,
+        });
+    
+        // keep Lenis and ScrollTrigger in sync
+        lenis.on("scroll", ScrollTrigger.update);
+    
+        function raf(time) {
+          lenis.raf(time);
+          requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+    
+        // normalize scroll for GSAP
+        ScrollTrigger.normalizeScroll(true);
+    
+        // Reset scroll triggers on resize
+        const handleResize = () => ScrollTrigger.refresh();
+        window.addEventListener("resize", handleResize);
+    
+        // --- TEXT ANIMATION ---
+        gsap.utils.toArray(".text-drop__line").forEach((line, i) => {
+          gsap.fromTo(
+            line,
+            { y: 50, opacity: 0 },
+            {
+              y: 0,
+              opacity: 1,
+              duration: 0.8,
+              ease: "power3.out",
+              delay: i * 0.1, // slight stagger
+              scrollTrigger: {
+                trigger: line,
+                start: "top 85%",
+                toggleActions: "play none none reverse",
+              },
+            }
+          );
+        });
+    
+        // Cleanup
+        return () => {
+          window.removeEventListener("resize", handleResize);
+          ScrollTrigger.getAll().forEach((t) => t.kill());
+          lenis.destroy();
+        };
+      }, []);
   useEffect(() => {
     AOS.init({
       duration: 1200, // default duration
@@ -32,14 +90,14 @@ const ClientTestimonials = () => {
           <div className="col-12 col-md-6">
             <div className="leftItem p-1 p-sm-3 p-md-5">
               <p
-                className="text-gradient fs-4 fw-medium"
+                className="text-gradient fs-4 fw-medium " 
                 data-aos="fade-up"
                 data-aos-duration="1000"
               >
                 <img src="/icons8-home.gif" alt="" className="gif" />
                 Client Testimonial
               </p>
-              <h2 className="fs-1 fw-bold" data-aos="fade-up"
+              <h2 className="fs-1 fw-bold text-drop__line" data-aos="fade-up"
                 data-aos-duration="1500">Hear From Happy Homeowners</h2>
               <p data-aos="fade-up"
                 data-aos-duration="1800">
@@ -81,7 +139,7 @@ const ClientTestimonials = () => {
               </p>
             </div>
           </div>
-          <div className="col-12 col-md-6 d-flex flex-column align-items-center justify-content-center">
+          <div className="col-12 col-md-6 d-flex flex-column align-items-center justify-content-center testimonial">
             {/*  */}
             <Swiper
               slidesPerView={3}
@@ -250,9 +308,9 @@ const ClientTestimonials = () => {
               </SwiperSlide>
             </Swiper>
             <div className="swiper-controls d-flex justify-content-center align-items-center mt-3">
-              <div className="swiper-button-prev"></div>
+              <div className="swiper-button-prev" ></div>
               <div className="custom-pagination mx-3"></div>
-              <div className="swiper-button-next"></div>
+              <div className="swiper-button-next" ></div>
             </div>
           </div>
         </div>

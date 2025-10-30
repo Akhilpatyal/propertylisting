@@ -2731,3 +2731,10 @@ font-size: 40px;
 
 
 
+.leftItem p{
+  text-align: justify;
+}
+.testimonial .swiper-button-prev,
+.testimonial .swiper-button-next {
+  width: 78px !important;
+}
