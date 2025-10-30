@@ -9,7 +9,7 @@ import ScrollToTop from "./ScrollToTop";
 
 export default function Footer() {
   return (
-    <footer className="mainfooter py-5">
+    <footer className="mainfooter py-5" style={{zIndex:"99!important"}}>
       <div className="container">
         <div className="row ">
           {/* Left Column */}

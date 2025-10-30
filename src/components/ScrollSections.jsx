@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const sections = [
   {
-    id: "20021",
+    id: "2021",
     title: "Technology",
     text: "OVA recognizes the exceptional potential of the technology sector, where each breakthrough opens up promising investment opportunities.",
     image: "/awards/8745tuhgrjrkf.jpg",
@@ -103,17 +103,26 @@ export default function ScrollSections() {
       });
     }, containerRef);
 
-    // Hide navigation initially
-    gsap.set(".section-indicator", { autoAlpha: 0 });
+    // for hide and visible
+gsap.set(".section-indicator", { autoAlpha: 0 });
 
-    // Show navigation only when main section (container) enters
-    ScrollTrigger.create({
-      trigger: ".mainContainer", // replace with your container class
-      start: "top center", // when container reaches center of viewport
-      onEnter: () => gsap.to(".section-indicator", { autoAlpha: 1, duration: 0.5 }),
-      onLeaveBack: () =>
-        gsap.to(".section-indicator", { autoAlpha: 0, duration: 0.5 }),
-    });
+// Show navigation when main container appears
+ScrollTrigger.create({
+  trigger: ".mainContainer",
+  start: "top center",
+  onEnter: () => gsap.to(".section-indicator", { autoAlpha: 1, duration: 0.5 }),
+  onLeaveBack: () => gsap.to(".section-indicator", { autoAlpha: 0, duration: 0.5 }),
+});
+
+// Fade out navigation when `.end` section comes into view
+ScrollTrigger.create({
+  trigger: ".end", // 👈 detect your footer or bottom section
+  start: "top bottom", // when the .end section starts entering viewport
+  onEnter: () => gsap.to(".section-indicator", { autoAlpha: 0, duration: 0.5 }),
+  onLeaveBack: () => gsap.to(".section-indicator", { autoAlpha: 1, duration: 0.5 }), // ✅ correct name
+});
+
+
 
     return () => ctx.revert();
   }, []);
@@ -152,6 +161,8 @@ export default function ScrollSections() {
           </section>
         ))}
       </div>
+
+      <div className="end"></div>
     </div>
   );
 }

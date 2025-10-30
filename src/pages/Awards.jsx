@@ -153,7 +153,16 @@ const Awards = () => {
       <div className="AwardsBanner">
         <h1 className="split2">Awards And Recognition</h1>
       </div>
-      <h1 className="py-5 text-center mb-0" style={{backgroundImage:"url('https://png.pngtree.com/background/20210709/original/pngtree-sketch-drawing-representation-plan-background-picture-image_430821.jpg')"}}>Awards</h1>
+      <div className="awardcontent text-center w-100 py-3 d-flex align-items-center justify-content-center ">
+      <span className="py-5 text-center split2">A</span>
+      <span className="py-5 text-center split2">w</span>
+      <span className="py-5 text-center split2">a</span>
+      <span className="py-5 text-center split2">r</span>
+      <span className="py-5 text-center split2">d</span>
+      <span className="py-5 text-center split2">s</span>
+      <img src="/public/awards/trophy.png" alt="" className="img-fluid" style={{height:"80px"}}/>
+      {/* <img src="/public/awards/bgnon.png" alt="" className="img-fluid" style={{height:"100px"}}/> */}
+      </div>
       <ScrollSections/>
     </div>
   );
