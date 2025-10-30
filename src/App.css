@@ -2651,7 +2651,8 @@ font-size: 40px;
   z-index: 1;
   opacity: 0;
   transition: opacity 0.4s ease;
-  pointer-events: none;
+  /* pointer-events: none; */
+  cursor: pointer;
 }
 
 .indicator-number {
