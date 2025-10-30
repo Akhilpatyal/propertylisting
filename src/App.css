@@ -1109,8 +1109,34 @@ body {
   flex-direction: column;
   color: white;
 }
+.AwardsBanner {
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(65, 56, 56, 0)), url('/award-banner.jpg');
+  width: 100%;
+  height: 70vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  position: relative;
+   overflow: hidden;
+}
+.AwardsBanner::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px; /* adjust as needed */
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.783));
+  pointer-events: none;
+  z-index: 99999;
+}
 
-.CareerBanner p {
+.CareerBanner p,.AwardsBanner p {
   font-size: 40px;
   text-align: center;
 }
@@ -1129,7 +1155,7 @@ body {
 
 .ContactBanner h1,
 .BlogBanner h1,
-.CareerBanner h1 {
+.CareerBanner h1,.AwardsBanner h1 {
   color: rgba(255, 255, 255, 0.9);
   font-size: 60px;
   font-family: "Montserrat", sans-serif;
@@ -1167,7 +1193,7 @@ body {
   }
 
   .whoweare h1,
-  .CareerBanner h1 {
+  .CareerBanner h1,.AwardsBanner h1 {
     color: white;
     font-size: 40px;
     font-family: "Montserrat", sans-serif;
@@ -1209,6 +1235,20 @@ body {
   .employeeTestimonial .swiper-controls {
     display: none !important;
   }
+
+  .AwardsBanner {
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(65, 56, 56, 0)), url('/awardMobileBanner.png');
+  width: 100%;
+  height: 70vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+}
 }
 
 /* animation */
@@ -2591,3 +2631,100 @@ font-size: 40px;
 .reply:hover {
   text-decoration: underline;
 }
+
+
+/* experiment */
+.scroll-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Right-side indicator */
+.section-indicator {
+  position: fixed;
+  right: 3rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 20;
+}
+
+.indicator-number {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.4);
+  transition: all 0.3s ease;
+  font-weight: 500; 
+}
+
+.indicator-number.active {
+  color: #fff;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+}
+
+/* Horizontal scroll container */
+.scroll-sections {
+  display: flex;
+  width: 400vw; /* Adjust based on number of sections */
+  height: 100vh;
+  position: relative;
+}
+
+.panel {
+  flex: 0 0 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 6rem;
+  color: white;
+  box-sizing: border-box;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2));
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+}
+
+.panel-title {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.panel-text {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .panel-title {
+    font-size: 2.5rem;
+  }
+
+  .panel-text {
+    font-size: 1rem;
+  }
+
+  .section-indicator {
+    right: 1rem;
+  }
+}
+
+
+

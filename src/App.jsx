@@ -13,6 +13,7 @@ import Career from "./pages/Career";
 import Projects from "./pages/Projects";
 import ProjectDetailPage from "./pages/ProjectDetailPage";
 import BlogDetailPage from "./pages/BlogDetailPage";
+import Awards from "./pages/Awards";
 function App() {
   return (
     <>
@@ -27,6 +28,7 @@ function App() {
         <Route path="/insight/news&media" element={<NewMedia />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/career" element={<Career />} />
+        <Route path="/aboutus/awards" element={<Awards />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/projects/:id" element={<ProjectDetailPage />} />
       </Routes>
