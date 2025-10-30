@@ -160,7 +160,7 @@ const Awards = () => {
       <span className="py-5 text-center split2">r</span>
       <span className="py-5 text-center split2">d</span>
       <span className="py-5 text-center split2">s</span>
-      <img src="/public/awards/trophy.png" alt="" className="img-fluid" style={{height:"80px"}}/>
+      <img src="/awards/trophy.png" alt="" className="img-fluid" style={{height:"80px"}}/>
       {/* <img src="/public/awards/bgnon.png" alt="" className="img-fluid" style={{height:"100px"}}/> */}
       </div>
       <ScrollSections/>
