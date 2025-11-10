@@ -129,14 +129,33 @@ const ProjectDetailPage = () => {
   if (!project) return <p>Project not found</p>;
   return (
     <>
-      <div className="CareerBanner">
-        <h1 className="split2">{project.name}</h1>
-        <p className="text-drop__line split2">
-          Browse through our diverse portfolio
-        </p>
+      <div
+        className="ProjectBanner position-relative"
+        style={{
+          backgroundImage: `url(${project.image})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          height: "70vh",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexDirection: "column",
+        }}
+      >
+        <div
+          class="banner-content position-absolute top-50 start-50 translate-middle text-center text-white"
+          style={{ zIndex: 2 }}
+        >
+          <h1 className="split2 text-white z-3">{project.name}</h1>
+          <p className="text-drop__line split2">
+            Browse through our diverse portfolio
+          </p>
+        </div>
+        <div className="overlay"></div>
       </div>
       {/*  */}
-      .nav
+      {/* .nav */}
       {/*  */}
       <div className="container py-5 projectDetail">
         <div className="row">
@@ -414,9 +433,7 @@ const ProjectDetailPage = () => {
           </div>
           <div className="col-sm-4 contactform">
             <div className="formcol formRadius">
-              <h1>
-                Send us a <span className="brown">message</span>
-              </h1>
+              <h1>Send us a message</h1>
               <form action="" className="pt-4">
                 <div className="row gy-4">
                   <div className="col-12 ">

@@ -6,22 +6,18 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 import ScrollToTop from "./ScrollToTop";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <footer className="mainfooter py-5" style={{zIndex:"99!important"}}>
+    <footer className="mainfooter py-5" style={{ zIndex: "99!important" }}>
       <div className="container">
         <div className="row ">
           {/* Left Column */}
           <div className="col-lg-4 col-12 mb-4">
             {/* Logo */}
             {/* <h4 className="fw-bold mb-3">ANAROCK</h4> */}
-            <img
-              src="/Group-2.png"
-              alt="Anarock"
-              height="100"
-              className="ms-4"
-            />
+            <img src="/Group-2.png" alt="Anarock" height="100" className="" />
             {/* <p className="mb-0 small fw-bold text-uppercase">Jenika Ventures</p> */}
 
             {/* Social Links */}
@@ -44,7 +40,7 @@ export default function Footer() {
             </div>
 
             {/* Newsletter */}
-            <p className="fw-semibold">
+            {/* <p className="fw-semibold">
               Stay updated with latest trends & reports.
             </p>
             <div className=" form input-group">
@@ -54,170 +50,129 @@ export default function Footer() {
                 placeholder="Email address"
               />
               <button className="btn border-0">Subscribe</button>
-            </div>
+            </div> */}
           </div>
           {/* About Us */}
           <div className="col-lg-2 col-6 col-md-6 mb-4">
             <h6 className="fw-bold">About Us</h6>
             <ul className="list-unstyled ">
               <li>
-                <a href="#" className="link link--metis">
+                <Link to="/whoweare" className="link link--metis">
                   Who we are
-                </a>
+                </Link>
               </li>
+
               <li>
-                <a href="#" className="link link--metis">
-                  Management Team
-                </a>
-              </li>
-              <li>
-                <a href="#" className="link link--metis">
+                <Link to="/client-testimonial" className="link link--metis">
                   Client Testimonials
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="link link--metis">
+                <Link to="/aboutus/awards" className="link link--metis">
                   Awards & Recognition
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="link link--metis">
-                  CSR
-                </a>
-              </li>
-              <li>
-                <a href="#" className="link link--metis">
-                  Contact Us
-                </a>
-              </li>
-              <li>
-                <a href="#" className="link link--metis">
-                  Careers
-                </a>
+                <Link to="/our-team" className="link link--metis">
+                  Our Team
+                </Link>
               </li>
             </ul>
           </div>
           {/* Services */}
           <div className="col-lg-2 col-6 col-md-6 mb-4">
-            <h6 className="fw-bold">Services</h6>
+            <h6 className="fw-bold">Projects</h6>
             <ul className="list-unstyled">
               <li>
-                <a href="#" className="link link--metis">
+                <Link to="/projects?propertytype=Residential" className="link link--metis">
                   Residential
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="link link--metis">
-                  Business Solutions
-                </a>
+                <Link to="/projects?propertytype=CommerciaLink" className="link link--metis">
+                  Commercial
+                </Link>
               </li>
               <li>
-                <a href="#" className="link link--metis">
-                  Land Services
-                </a>
+                <Link to="/projects?propertytype=Studio" className="link link--metis">
+                  Studio Appartments
+                </Link>
               </li>
               <li>
-                <a href="#" className="link link--metis">
-                  Retail
-                </a>
-              </li>
-              <li>
-                <a href="#" className="link link--metis">
-                  Investment Banking
-                </a>
-              </li>
-              <li>
-                <a href="#" className="link link--metis">
-                  Hospitality
-                </a>
-              </li>
-              <li>
-                <a href="#" className="link link--metis">
-                  View All
-                </a>
+                <Link to="/projects?propertytype=Plots" className="link link--metis">
+                  Plots
+                </Link>
               </li>
             </ul>
           </div>
           {/* Technology */}
           <div className="col-lg-2 col-6 col-md-6 mb-4">
-            <h6 className="fw-bold">Technology</h6>
+            <h6 className="fw-bold">Developers</h6>
             <ul className="list-unstyled">
               <li>
                 <a href="#" className="link link--metis">
-                  ACRM
+                  TATA
                 </a>
               </li>
               <li>
                 <a href="#" className="link link--metis">
-                  ASTRA
+                  ATS
                 </a>
               </li>
               <li>
                 <a href="#" className="link link--metis">
-                  ACP
+                  Omaxe
                 </a>
               </li>
               <li>
                 <a href="#" className="link link--metis">
-                  ANACITY
+                  Bhutani
                 </a>
               </li>
               <li>
                 <a href="#" className="link link--metis">
-                  myHQ
+                  M3M
                 </a>
               </li>
               <li>
                 <a href="#" className="link link--metis">
-                  Upflex India
-                </a>
-              </li>
-            </ul>
-            <h6 className="fw-bold mt-3">Media</h6>
-            <ul className="list-unstyled">
-              <li>
-                <a href="#" className="link link--metis">
-                  In the News
+                  Godrej
                 </a>
               </li>
             </ul>
           </div>
           {/* Projects */}
           <div className="col-lg-2 col-6 col-md-6 mb-4">
-            <h6 className="fw-bold">Projects</h6>
+            <h6 className="fw-bold">Others</h6>
             <ul className="list-unstyled">
               <li>
-                <a href="#" className="link link--metis">
-                  Residential
-                </a>
+                <Link to="/career" className="link link--metis">
+                  Careers
+                </Link>
               </li>
               <li>
-                <a href="#" className="link link--metis">
-                  Commercial
-                </a>
+                <Link to="/contact" className="link link--metis">
+                  CONTACT US
+                </Link>
               </li>
               <li>
-                <a href="#" className="link link--metis">
-                  Trespect
-                </a>
+                <Link href="/privacypolicy" className="link link--metis">
+                  Privacy Policy
+                </Link>
               </li>
             </ul>
             <h6 className="fw-bold">Insights</h6>
             <ul className="list-unstyled">
               <li>
-                <a href="#" className="link link--metis">
-                  Research Reports
-                </a>
+                <Link to="/insight/news&media" className="link link--metis">
+                  New & Media
+                </Link>
               </li>
+
               <li>
-                <a href="#" className="link link--metis">
-                  Knowledge Exchange
-                </a>
-              </li>
-              <li>
-                <a href="#" className="link link--metis">
+                <Link to="/blog" className="link link--metis">
                   Blogs
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -229,11 +184,12 @@ export default function Footer() {
           offering equal opportunities in employment...
         </div>
         <div className=" pt-3 text-center small text-light">
-          Developed By <a href="https://aajneeti.social/">Aajneeti Connect Ltd.</a>
+          Developed By{" "}
+          <a href="https://aajneeti.social/">Aajneeti Connect Ltd.</a>
         </div>
       </div>
-      
-      <ScrollToTop/>
+
+      <ScrollToTop />
     </footer>
   );
 }

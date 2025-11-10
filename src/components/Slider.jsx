@@ -135,7 +135,7 @@ export default function Slider() {
             {/* Location + Search */}
             <div className="search-box ">
               <div className="location-input justify-content-center">
-                <FaMapMarkerAlt className="icon" />
+                <FaMapMarkerAlt className="icon" style={{color:"rgb(205 181 112)"}} />
                 <select>
                   <option>Gurugram</option>
                   <option>Delhi</option>

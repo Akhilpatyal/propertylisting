@@ -160,15 +160,15 @@ body {
 /* Base state (hidden) */
 .custom-dropdown .dropdown-menu {
   display: block;
-  /* keep React-Bootstrap control */
-  opacity: 0;
-  transform: translateY(10px);
   visibility: hidden;
-  transition: all 0.3s ease-in-out;
+  /* transition: all 0.3s ease-in-out; */
+  transition: opacity 0.2s ease, transform 0.2s ease;
   margin-top: 0.5rem;
   border-radius: 8px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   border-top: 3px solid #da1e37;
+  opacity: 0;
+  transform: translateY(10px);
 }
 
 /* When dropdown is shown */
@@ -176,6 +176,12 @@ body {
   opacity: 1;
   transform: translateY(0);
   visibility: visible;
+}
+
+.nav-item:hover .dropdown-menu,
+.dropdown-menu.show {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 .MuiButtonBase-root {
@@ -1073,9 +1079,9 @@ body {
 }
 
 .ClientTestimonial {
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url('/ClientTestimonials2.png');
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url('/public/clientBanner.jpg');
   width: 100%;
-  height: 60vh;
+  height: 80vh;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1085,9 +1091,9 @@ body {
 }
 
 .ContactBanner {
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(65, 56, 56, 0)), url('/contactusbanner.jpg');
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(65, 56, 56, 0)), url('/public/contactBanner.jpg');
   width: 100%;
-  height: 60vh;
+  height: 90vh;
   background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1097,10 +1103,10 @@ body {
 }
 
 .CareerBanner {
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(65, 56, 56, 0)), url('/careerBanner2.png');
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(65, 56, 56, 0)), url('/public/careerBanner-2.jpg');
   width: 100%;
-  height: 60vh;
-  background-position: center;
+  height: 80vh;
+  background-position: bottom;
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
@@ -1109,6 +1115,7 @@ body {
   flex-direction: column;
   color: white;
 }
+
 .AwardsBanner {
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(65, 56, 56, 0)), url('/award-banner.jpg');
   width: 100%;
@@ -1122,21 +1129,24 @@ body {
   flex-direction: column;
   color: white;
   position: relative;
-   overflow: hidden;
+  overflow: hidden;
 }
+
 .AwardsBanner::after {
   content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 150px; /* adjust as needed */
+  height: 150px;
+  /* adjust as needed */
   background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.783));
   pointer-events: none;
   z-index: 99999;
 }
 
-.CareerBanner p,.AwardsBanner p {
+.CareerBanner p,
+.AwardsBanner p {
   font-size: 40px;
   text-align: center;
 }
@@ -1155,7 +1165,8 @@ body {
 
 .ContactBanner h1,
 .BlogBanner h1,
-.CareerBanner h1,.AwardsBanner h1 {
+.CareerBanner h1,
+.AwardsBanner h1 {
   color: rgba(255, 255, 255, 0.9);
   font-size: 60px;
   font-family: "Montserrat", sans-serif;
@@ -1193,7 +1204,8 @@ body {
   }
 
   .whoweare h1,
-  .CareerBanner h1,.AwardsBanner h1 {
+  .CareerBanner h1,
+  .AwardsBanner h1 {
     color: white;
     font-size: 40px;
     font-family: "Montserrat", sans-serif;
@@ -1217,11 +1229,11 @@ body {
   }
 
   .filter-title {
-    font-size: 22px !important;
+    font-size: 40px !important;
   }
 
   .filter-select select {
-    font-size: 18px !important;
+    font-size: 25px !important;
   }
 
   .jobSection h1 {
@@ -1237,23 +1249,25 @@ body {
   }
 
   .AwardsBanner {
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(65, 56, 56, 0)), url('/awardMobileBanner.png');
-  width: 100%;
-  height: 70vh;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  color: white;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(65, 56, 56, 0)), url('/awardMobileBanner.png');
+    width: 100%;
+    height: 70vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+  }
 }
-}
-.awardcontent span{
+
+.awardcontent span {
   font-size: 50px;
   font-family: "Montserrat", sans-serif;
 }
+
 /* animation */
 @-webkit-keyframes hoverShine {
   100% {
@@ -1557,7 +1571,7 @@ body {
 } */
 
 .contactform .formcol {
-  background-color: #f0f0f0;
+  background: linear-gradient(327deg, #c80a17 20%, #000000) 45%;
   padding: 30px 18px;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.03) 0px 6px 24px 0px, rgba(0, 0, 0, 0.03) 0px 0px 0px 1px;
@@ -1570,7 +1584,7 @@ body {
   height: 70px;
   border: none;
   outline: none;
-  background: #2f2f2f;
+  background: linear-gradient(90deg, #be973e 3.99%, #f5ebac 55.49%, #b49249 100%);
   color: #fff;
   font-size: 22px;
   border-radius: 14px;
@@ -2140,7 +2154,7 @@ p {
   background-color: #fff;
   border-radius: 12px;
   padding: 25px;
-  margin-top: -50px;
+  margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -2317,12 +2331,12 @@ p {
 }
 
 .formRadius {
-  border-radius: 20px !important;
+  border-radius: 10px !important;
 }
 
 .formRadius input,
 .formRadius textarea {
-  border-radius: 20px !important;
+  border-radius: 10px !important;
 }
 
 /* .overview */
@@ -2335,20 +2349,25 @@ p {
 .projectDetail {
   position: relative;
 }
-.features{
+
+.features {
   padding-bottom: 10px;
   border-bottom: 1px solid #a97300;
 }
-.features .icon{
-font-size: 40px;
+
+.features .icon {
+  font-size: 40px;
 }
+
 .projectDetail .formcol {
   position: sticky;
-  top: 20px;
+  top: 60px;
 }
-.features .txt{
+
+.features .txt {
   font-size: 20px;
 }
+
 .ul-ameneties {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -2367,7 +2386,7 @@ font-size: 40px;
   background: #fff;
   max-width: 1100px;
   margin: auto;
-   
+
 }
 
 .floorplan-title {
@@ -2382,10 +2401,10 @@ font-size: 40px;
   flex-wrap: wrap;
   gap: 30px;
   align-items: flex-start;
-   /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
-   padding: 20px 10px;
-   background-color: #fafafa;
-   border-radius: 10px;
+  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+  padding: 20px 10px;
+  background-color: #fafafa;
+  border-radius: 10px;
 }
 
 .floorplan-image img {
@@ -2411,7 +2430,7 @@ font-size: 40px;
 .tab-btn {
   padding: 10px 18px;
   border: 1px solid #ffffff;
-      background: linear-gradient(327deg, #c80a17 20%, #000000) 45%;
+  background: linear-gradient(327deg, #c80a17 20%, #000000) 45%;
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -2419,13 +2438,13 @@ font-size: 40px;
 }
 
 .tab-btn.active {
-      background: linear-gradient(327deg, #c80a17 20%, #000000) 45%;
+  background: linear-gradient(327deg, #c80a17 20%, #000000) 45%;
   color: #fff;
   border-color: #ffffff;
 }
 
 .tab-btn:hover {
-      background: linear-gradient(327deg, #c80a17 20%, #000000) 45%;
+  background: linear-gradient(327deg, #c80a17 20%, #000000) 45%;
 }
 
 .tab-content p {
@@ -2444,15 +2463,17 @@ font-size: 40px;
   .tab-buttons {
     justify-content: space-around;
   }
+
   .ul-ameneties {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: clamp(12px, 1.05vw, 20px);
-}
-.tab-buttons {
+  }
+
+  .tab-buttons {
     display: flex;
     gap: 0px;
-}
+  }
 }
 
 /* location */
@@ -2479,19 +2500,25 @@ font-size: 40px;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-.cards-3 .ele-1 p{
+
+.cards-3 .ele-1 p {
   text-align: start;
 }
-.cards-3 .ele-1 .fw-bold{
-  font-size: 24px!important;
+
+.cards-3 .ele-1 .fw-bold {
+  font-size: 24px !important;
 }
-.cards-3 .ele-1 a:hover{
- color: #9d0000;
+
+.cards-3 .ele-1 a:hover {
+  color: #9d0000;
 }
-.formcol h1{
+
+.formcol h1 {
   font-size: 35px;
+  color: #fff;
 }
-.card-body a{
+
+.card-body a {
   text-decoration: none;
   color: black;
 }
@@ -2659,7 +2686,7 @@ font-size: 40px;
   font-size: 1.2rem;
   color: rgba(255, 255, 255, 0.4);
   transition: all 0.3s ease;
-  font-weight: 500; 
+  font-weight: 500;
 }
 
 .indicator-number.active {
@@ -2671,7 +2698,8 @@ font-size: 40px;
 /* Horizontal scroll container */
 .scroll-sections {
   display: flex;
-  width: 400vw; /* Adjust based on number of sections */
+  width: 400vw;
+  /* Adjust based on number of sections */
   height: 100vh;
   position: relative;
 }
@@ -2732,10 +2760,47 @@ font-size: 40px;
 
 
 
-.leftItem p{
+.leftItem p {
   text-align: justify;
 }
+
 .testimonial .swiper-button-prev,
 .testimonial .swiper-button-next {
   width: 78px !important;
+}
+
+.card a img {
+  width: 100% !important;
+}
+
+/* drop down */
+.dropdown-item.active,
+.dropdown-item:active {
+  color: black;
+  text-decoration: none;
+  background-color: white;
+}
+
+.projectBanner video {
+  height: 100vh;
+  object-fit: cover;
+}
+
+
+@media (max-width:720px) {
+  .projectBanner video {
+    height: auto;
+    object-fit: cover;
+  }
+
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2); /* adjust opacity as needed */
+  z-index: 1;
 }

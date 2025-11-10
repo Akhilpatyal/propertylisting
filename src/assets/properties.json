@@ -1,5 +1,27 @@
 [
   {
+    "category": "Residential",
+    "bannerImage": "/banner-6.png",
+    "bannerVideo": "/residentialVideo.mp4"
+  },
+  {
+    "category": "Commercial",
+    "bannerImage": "/banner-7.png",
+    "bannerVideo": "/commercialvideo.mp4"
+  },
+  {
+    "category": "Studio",
+    "bannerImage": "/banner-7.png",
+    "content": "Find your dream home with us",
+    "bannerVideo": ""
+  },
+  {
+    "category": "Plots",
+    "bannerImage": "/banner-7.png",
+    "content": "Find your dream home with us",
+    "bannerVideo": ""
+  },
+  {
     "id": 1,
     "name": "Skyline Heights",
     "type": "Residential",

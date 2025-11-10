@@ -8,7 +8,9 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "@studio-freight/lenis";
 import SplitType from "split-type";
+
 gsap.registerPlugin(ScrollTrigger);
+
 const Projects = () => {
   const [searchParams] = useSearchParams();
   const propertyType = searchParams.get("propertytype");
@@ -20,132 +22,139 @@ const Projects = () => {
     location: "",
   });
 
+  // ✅ Safely find banner info for selected property type
+  const bannerData = projectsData.find(
+    (item) => item.category?.toLowerCase() === propertyType?.toLowerCase()
+  );
 
-    useEffect(() => {
-      // --- LENIS SMOOTH SCROLL SETUP ---
-      const lenis = new Lenis({
-        smooth: true,
-        lerp: 0.08,
-        direction: "vertical",
-        smoothTouch: true,
-      });
-  
-      // keep Lenis and ScrollTrigger in sync
-      lenis.on("scroll", ScrollTrigger.update);
-  
-      function raf(time) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-      }
+  // ✅ Default banner (if propertyType missing)
+  const defaultBanner = {
+    bannerImage: "/banner-9.png",
+    bannerVideo: "",
+    category: "Our",
+  };
+
+  useEffect(() => {
+    // --- LENIS SMOOTH SCROLL SETUP ---
+    const lenis = new Lenis({
+      smooth: true,
+      lerp: 0.08,
+      direction: "vertical",
+      smoothTouch: true,
+    });
+
+    lenis.on("scroll", ScrollTrigger.update);
+
+    function raf(time) {
+      lenis.raf(time);
       requestAnimationFrame(raf);
-  
-      // normalize scroll for GSAP
-      ScrollTrigger.normalizeScroll(true);
-  
-      // Reset scroll triggers on resize
-      const handleResize = () => ScrollTrigger.refresh();
-      window.addEventListener("resize", handleResize);
-  
-      // --- TEXT ANIMATION ---
-      gsap.utils.toArray(".text-drop__line").forEach((line, i) => {
-        gsap.fromTo(
-          line,
-          { y: 50, opacity: 0 },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.8,
-            ease: "power3.out",
-            delay: i * 0.1, // slight stagger
-            scrollTrigger: {
-              trigger: line,
-              start: "top 85%",
-              toggleActions: "play none none reverse",
-            },
-          }
-        );
+    }
+    requestAnimationFrame(raf);
+
+    ScrollTrigger.normalizeScroll(true);
+
+    const handleResize = () => ScrollTrigger.refresh();
+    window.addEventListener("resize", handleResize);
+
+    // --- TEXT ANIMATION ---
+    gsap.utils.toArray(".text-drop__line").forEach((line, i) => {
+      gsap.fromTo(
+        line,
+        { y: 50, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: "power3.out",
+          delay: i * 0.1,
+          scrollTrigger: {
+            trigger: line,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    });
+
+    // --- IMAGE REVEAL ---
+    gsap.utils.toArray(".text-drop__img-box").forEach((img) => {
+      gsap.fromTo(
+        img,
+        { scale: 1.2, opacity: 0 },
+        {
+          scale: 1,
+          opacity: 1,
+          duration: 1.2,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: img,
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    });
+
+    // --- PARALLAX EFFECT ---
+    gsap.utils.toArray(".has-prlx").forEach((el) => {
+      gsap.to(el, {
+        yPercent: 0,
+        ease: "none",
+        scrollTrigger: {
+          trigger: el,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1,
+        },
       });
-  
-      // --- IMAGE REVEAL ---
-      gsap.utils.toArray(".text-drop__img-box").forEach((img) => {
-        gsap.fromTo(
-          img,
-          { scale: 1.2, opacity: 0 },
-          {
-            scale: 1,
-            opacity: 1,
-            duration: 1.2,
-            ease: "power2.out",
-            scrollTrigger: {
-              trigger: img,
-              start: "top 80%",
-              toggleActions: "play none none reverse",
-            },
-          }
-        );
-      });
-  
-      // --- PARALLAX EFFECT ---
-      gsap.utils.toArray(".has-prlx").forEach((el) => {
-        gsap.to(el, {
-          yPercent: 0,
-          ease: "none",
+    });
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      ScrollTrigger.getAll().forEach((t) => t.kill());
+      lenis.destroy();
+    };
+  }, []);
+
+  useEffect(() => {
+    // Wait for fonts to load before animation
+    document.fonts.ready.then(() => {
+      gsap.set(".split2", { opacity: 1 });
+
+      const elements = document.querySelectorAll(".split2");
+
+      elements.forEach((el, i) => {
+        const split = new SplitType(el, { types: "words", tagName: "span" });
+
+        gsap.from(split.words, {
+          opacity: 0,
+          y: 50,
+          duration: 1,
+          ease: "sine.out",
+          stagger: 0.2,
+          delay: i * 0.3,
           scrollTrigger: {
             trigger: el,
-            start: "top bottom",
-            end: "bottom top",
-            scrub: 1,
+            start: "top 85%",
           },
         });
       });
-  
-      // Cleanup
-      return () => {
-        window.removeEventListener("resize", handleResize);
-        ScrollTrigger.getAll().forEach((t) => t.kill());
-        lenis.destroy();
-      };
-    }, []);
-    useEffect(() => {
-      // Wait for fonts to load before animation
-      document.fonts.ready.then(() => {
-        gsap.set(".split2", { opacity: 1 });
-  
-        const elements = document.querySelectorAll(".split2");
-  
-        elements.forEach((el, i) => {
-          // Split text into words
-          const split = new SplitType(el, { types: "words", tagName: "span" });
-  
-          // Animate words
-          gsap.from(split.words, {
-            opacity: 0,
-            y: 50, // slide up
-            duration: 1,
-            ease: "sine.out",
-            stagger: 0.2,
-            delay: i * 0.3,
-            scrollTrigger: {
-              trigger: el,
-              start: "top 85%",
-            },
-          });
-        });
-      });
-    }, []);
-  // Filter projects based on URL + selected filters
+    });
+  }, []);
+
+  // ✅ Filter projects based on URL + selected filters
   useEffect(() => {
-    let result = projectsData;
+    let result = projectsData.filter((p) => p.id); // exclude category entries
 
     if (propertyType) {
       result = result.filter(
-        (p) => p.type.toLowerCase() === propertyType.toLowerCase()
+        (p) => p.type?.toLowerCase() === propertyType.toLowerCase()
       );
     }
 
     if (filters.city) {
       result = result.filter(
-        (p) => p.city.toLowerCase() === filters.city.toLowerCase()
+        (p) => p.city?.toLowerCase() === filters.city.toLowerCase()
       );
     }
 
@@ -159,26 +168,53 @@ const Projects = () => {
 
     if (filters.location) {
       result = result.filter(
-        (p) => p.location.toLowerCase() === filters.location.toLowerCase()
+        (p) => p.location?.toLowerCase() === filters.location.toLowerCase()
       );
     }
 
     setFilteredProjects(result);
   }, [propertyType, filters]);
 
-  // Handle dropdown change
   const handleFilterChange = (e) => {
     setFilters({ ...filters, [e.target.name]: e.target.value });
   };
 
+  const activeBanner = bannerData || defaultBanner;
+
   return (
     <div>
       {/* Banner */}
-      <div className="CareerBanner">
-        <h1 className="split2 ">{propertyType} Projects</h1>
-        <p className="text-drop__line split2">
-          Browse through our diverse portfolio
-        </p>
+      {/* ✅ Banner Section */}
+      <div className="projectBanner position-relative">
+        {activeBanner.bannerVideo ? (
+          <video
+            src={activeBanner.bannerVideo}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-100"
+           
+          />
+        ) : (
+          <img
+            src={activeBanner.bannerImage}
+            alt={`${activeBanner.category} Banner`}
+            className="w-100"
+            style={{
+              height: "70vh",
+              objectFit: "cover",
+            }}
+          />
+        )}
+        {activeBanner?.content && (
+          <div className="banner-content position-absolute top-50 start-50 translate-middle text-white text-center">
+            <h1 className="split2">{propertyType || "Our"} Projects</h1>
+            <p className="text-drop__line split2">
+              {activeBanner.content || "Browse through our diverse portfolio"}
+            </p>
+          </div>
+        )}
       </div>
 
       {/* Filter Bar */}
@@ -240,11 +276,15 @@ const Projects = () => {
                 <div className="cards-3 section-gray  text-drop__img-box">
                   <div className="card card-blog">
                     <div className="card-image news-box-items">
-                      <a href="#">
+                      <Link to={`/projects/${project.id}`}>
                         <div className="news-image">
-                          <img src={project.image} alt={project.name} style={{height:"264px"}}/>
+                          <img
+                            src={project.image}
+                            alt={project.name}
+                            style={{ height: "264px" }}
+                          />
                         </div>
-                      </a>
+                      </Link>
                       <div className="ripple-cont"></div>
                     </div>
 
@@ -253,12 +293,16 @@ const Projects = () => {
                         <h6 className="category text-info">
                           {project.city} | {project.location}
                         </h6>
-                        <p className="card-description fs-4">
-                          {project.name}
-                        </p>
+                        <Link to={`/projects/${project.id}`} style={{textDecoration:"none"}}>
+                          <p className="card-description fs-4">
+                            {project.name}
+                          </p>
+                        </Link>
                         <p className="fw-bold">{project.price}</p>
                         <div className="pt-3">
-                        <Link to={`/projects/${project.id}`}>View Details</Link>
+                          <Link to={`/projects/${project.id}`}>
+                            View Details
+                          </Link>
                         </div>
                       </div>
                     </div>

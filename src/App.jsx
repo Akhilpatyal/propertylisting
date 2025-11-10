@@ -14,10 +14,12 @@ import Projects from "./pages/Projects";
 import ProjectDetailPage from "./pages/ProjectDetailPage";
 import BlogDetailPage from "./pages/BlogDetailPage";
 import Awards from "./pages/Awards";
+import RefreshFromTop from "./components/RefreshFromTop";
 function App() {
   return (
     <>
       <Navbar />
+      <RefreshFromTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/whoweare" element={<Whoweare />} />

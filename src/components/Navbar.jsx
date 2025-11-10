@@ -226,7 +226,7 @@ function CustomNavbar() {
             >
               <NavDropdown.Item
                 as={NavLink}
-                to="/Collection/Residential"
+                to="/insight/news&media"
                 onClick={handleClose}
               >
                 NEWS MEDIA

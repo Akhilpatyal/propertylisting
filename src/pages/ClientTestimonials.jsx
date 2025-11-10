@@ -13,59 +13,58 @@ import Lenis from "@studio-freight/lenis";
 
 gsap.registerPlugin(ScrollTrigger);
 const ClientTestimonials = () => {
+  useEffect(() => {
+    // --- LENIS SMOOTH SCROLL SETUP ---
+    const lenis = new Lenis({
+      smooth: true,
+      lerp: 0.08,
+      direction: "vertical",
+      smoothTouch: true,
+    });
 
-      useEffect(() => {
-        // --- LENIS SMOOTH SCROLL SETUP ---
-        const lenis = new Lenis({
-          smooth: true,
-          lerp: 0.08,
-          direction: "vertical",
-          smoothTouch: true,
-        });
-    
-        // keep Lenis and ScrollTrigger in sync
-        lenis.on("scroll", ScrollTrigger.update);
-    
-        function raf(time) {
-          lenis.raf(time);
-          requestAnimationFrame(raf);
+    // keep Lenis and ScrollTrigger in sync
+    lenis.on("scroll", ScrollTrigger.update);
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // normalize scroll for GSAP
+    ScrollTrigger.normalizeScroll(true);
+
+    // Reset scroll triggers on resize
+    const handleResize = () => ScrollTrigger.refresh();
+    window.addEventListener("resize", handleResize);
+
+    // --- TEXT ANIMATION ---
+    gsap.utils.toArray(".text-drop__line").forEach((line, i) => {
+      gsap.fromTo(
+        line,
+        { y: 50, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: "power3.out",
+          delay: i * 0.1, // slight stagger
+          scrollTrigger: {
+            trigger: line,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
         }
-        requestAnimationFrame(raf);
-    
-        // normalize scroll for GSAP
-        ScrollTrigger.normalizeScroll(true);
-    
-        // Reset scroll triggers on resize
-        const handleResize = () => ScrollTrigger.refresh();
-        window.addEventListener("resize", handleResize);
-    
-        // --- TEXT ANIMATION ---
-        gsap.utils.toArray(".text-drop__line").forEach((line, i) => {
-          gsap.fromTo(
-            line,
-            { y: 50, opacity: 0 },
-            {
-              y: 0,
-              opacity: 1,
-              duration: 0.8,
-              ease: "power3.out",
-              delay: i * 0.1, // slight stagger
-              scrollTrigger: {
-                trigger: line,
-                start: "top 85%",
-                toggleActions: "play none none reverse",
-              },
-            }
-          );
-        });
-    
-        // Cleanup
-        return () => {
-          window.removeEventListener("resize", handleResize);
-          ScrollTrigger.getAll().forEach((t) => t.kill());
-          lenis.destroy();
-        };
-      }, []);
+      );
+    });
+
+    // Cleanup
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      ScrollTrigger.getAll().forEach((t) => t.kill());
+      lenis.destroy();
+    };
+  }, []);
   useEffect(() => {
     AOS.init({
       duration: 1200, // default duration
@@ -90,28 +89,35 @@ const ClientTestimonials = () => {
           <div className="col-12 col-md-6">
             <div className="leftItem p-1 p-sm-3 p-md-5">
               <p
-                className="text-gradient fs-4 fw-medium " 
+                className="text-gradient fs-4 fw-medium "
                 data-aos="fade-up"
                 data-aos-duration="1000"
               >
                 <img src="/icons8-home.gif" alt="" className="gif" />
                 Client Testimonial
               </p>
-              <h2 className="fs-1 fw-bold text-drop__line" data-aos="fade-up"
-                data-aos-duration="1500">Hear From Happy Homeowners</h2>
-              <p data-aos="fade-up"
-                data-aos-duration="1800">
+              <h2
+                className="fs-1 fw-bold text-drop__line"
+                data-aos="fade-up"
+                data-aos-duration="1500"
+              >
+                Hear From Happy Homeowners
+              </h2>
+              <p data-aos="fade-up" data-aos-duration="1800">
                 Discover what our satisfied homeowners have to say about their
                 journey . Real stories, real experiences and real trust - built
                 one home at a time.
               </p>
-              <div className="imageContainer d-flex align-items-center pb-3"  data-aos="fade-up"
-                data-aos-duration="2000">
+              <div
+                className="imageContainer d-flex align-items-center pb-3"
+                data-aos="fade-up"
+                data-aos-duration="2000"
+              >
                 <img
                   className="rounded-circle"
                   width="50"
                   height="50"
-                  src="/channelpartner.png"
+                  src="/public/client-1.png"
                   alt=""
                 />
                 <img
@@ -119,7 +125,7 @@ const ClientTestimonials = () => {
                   style={{ border: "2px solid #fff", marginLeft: "-15px" }}
                   width="50"
                   height="50"
-                  src="/start-image.png"
+                  src="/public/client-2.png"
                   alt=""
                 />
                 <img
@@ -127,13 +133,16 @@ const ClientTestimonials = () => {
                   style={{ border: "2px solid #fff", marginLeft: "-15px" }}
                   width="50"
                   height="50"
-                  src="/02.jpg"
+                  src="/public/client-3.png"
                   alt=""
                 />
                 <p className="ciclecards">10K</p>
               </div>
-              <p className="fw-medium"  data-aos="fade-up"
-                data-aos-duration="2000">
+              <p
+                className="fw-medium"
+                data-aos="fade-up"
+                data-aos-duration="2000"
+              >
                 More Than <span className="text-gradient fs-5">25K</span>{" "}
                 Clients Reviews
               </p>
@@ -178,31 +187,33 @@ const ClientTestimonials = () => {
                 >
                   {/* Rating */}
                   <div className="mb-2 text-warning">
-                    <FaStar /> <FaStar /> <FaStar /> <FaStar /> <FaRegStar />
+                    <FaStar /> <FaStar /> <FaStar /> <FaStar /> <FaStar />
                   </div>
 
                   {/* Review */}
                   <p className="fst-italic text-secondary fw-semibold">
-                    “From the moment we arrived, every detail was flawless. The
-                    staff anticipated our every need, and the suite was pure
-                    perfection. We’ll be back soon!”
+                    “Jenika Ventures has given me incredible exposure to the
+                    real estate industry and helped me evolve both personally
+                    and professionally. The collaborative culture and guidance
+                    from senior leaders have shaped my strategic thinking and
+                    client-handling skills”
                   </p>
 
                   {/* Profile Section */}
                   <div className="d-flex justify-content-between align-items-center mt-4">
                     <div className="d-flex align-items-center">
                       <img
-                        src="/start-image.png"
+                        src="/public/client-1.png"
                         alt="Marvin McKinney"
                         className="rounded-circle me-3"
-                        width="50"
-                        height="50"
+                        width="70"
+                        height="70"
                       />
                       <div>
-                        <h6 className="mb-0 fw-bold text-dark">
+                        {/* <h6 className="mb-0 fw-bold text-dark">
                           Marvin McKinney
                         </h6>
-                        <small className="text-muted">Product Manager</small>
+                        <small className="text-muted">Product Manager</small> */}
                       </div>
                     </div>
 
@@ -228,26 +239,28 @@ const ClientTestimonials = () => {
 
                   {/* Review */}
                   <p className="fst-italic text-secondary fw-semibold">
-                    “From the moment we arrived, every detail was flawless. The
-                    staff anticipated our every need, and the suite was pure
-                    perfection. We’ll be back soon!”
+                    “My journey with Jenika Ventures has been truly rewarding.
+                    From building strong client relationships to exploring new
+                    markets, every day brings an opportunity to learn and lead.
+                    The organization’s vision keeps us motivated to go beyond
+                    boundaries. ”
                   </p>
 
                   {/* Profile Section */}
                   <div className="d-flex justify-content-between align-items-center mt-4">
                     <div className="d-flex align-items-center">
                       <img
-                        src="/02.jpg"
+                        src="/public/client-2.png"
                         alt="Marvin McKinney"
                         className="rounded-circle me-3"
-                        width="50"
-                        height="50"
+                        width="70"
+                        height="70"
                       />
                       <div>
-                        <h6 className="mb-0 fw-bold text-dark">
+                        {/* <h6 className="mb-0 fw-bold text-dark">
                           Marvin McKinney
                         </h6>
-                        <small className="text-muted">Product Manager</small>
+                        <small className="text-muted">Product Manager</small> */}
                       </div>
                     </div>
 
@@ -273,26 +286,28 @@ const ClientTestimonials = () => {
 
                   {/* Review */}
                   <p className="fst-italic text-secondary fw-semibold">
-                    “From the moment we arrived, every detail was flawless. The
-                    staff anticipated our every need, and the suite was pure
-                    perfection. We’ll be back soon!”
+                    “My journey at Jenika Ventures has taught me that success
+                    isn’t built overnight — it’s built through people who
+                    believe, collaborate and grow together. Every milestone
+                    we’ve achieved stands as proof that when trust meets
+                    teamwork, excellence follows naturally.”
                   </p>
 
                   {/* Profile Section */}
                   <div className="d-flex justify-content-between align-items-center mt-4">
                     <div className="d-flex align-items-center">
                       <img
-                        src="/channelpartner.png"
+                        src="/public/client-3.png"
                         alt="Marvin McKinney"
                         className="rounded-circle me-3"
-                        width="50"
-                        height="50"
+                        width="70"
+                        height="70"
                       />
                       <div>
-                        <h6 className="mb-0 fw-bold text-dark">
+                        {/* <h6 className="mb-0 fw-bold text-dark">
                           Marvin McKinney
                         </h6>
-                        <small className="text-muted">Product Manager</small>
+                        <small className="text-muted">Product Manager</small> */}
                       </div>
                     </div>
 
@@ -308,9 +323,9 @@ const ClientTestimonials = () => {
               </SwiperSlide>
             </Swiper>
             <div className="swiper-controls d-flex justify-content-center align-items-center mt-3">
-              <div className="swiper-button-prev" ></div>
+              <div className="swiper-button-prev"></div>
               <div className="custom-pagination mx-3"></div>
-              <div className="swiper-button-next" ></div>
+              <div className="swiper-button-next"></div>
             </div>
           </div>
         </div>

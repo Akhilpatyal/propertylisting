@@ -1,6 +1,8 @@
 import { React, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay, Navigation, EffectFade } from "swiper/modules";
+import "@fancyapps/ui/dist/fancybox/fancybox.css";
+import { Fancybox } from "@fancyapps/ui";
 import "swiper/css/navigation";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -11,6 +13,7 @@ import SplitType from "split-type";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 import Lenis from "@studio-freight/lenis";
 gsap.registerPlugin(ScrollTrigger);
 const Career = () => {
@@ -96,13 +99,19 @@ const Career = () => {
       });
     });
   }, []);
+
+  useEffect(() => {
+    Fancybox.bind("[data-fancybox='gallery']", {});
+    return () => Fancybox.destroy();
+  }, []);
+
   return (
     <div style={{ overflowX: "hidden" }}>
       <div className="CareerBanner">
-        <h1 className=" split2">Career</h1>
+        {/* <h1 className=" split2">Career</h1>
         <p className="text-drop__line split2">
           A Culture That Inspires Growth and Belonging
-        </p>
+        </p> */}
       </div>
 
       {/* section 2 */}
@@ -262,54 +271,108 @@ const Career = () => {
             >
               <SwiperSlide>
                 <div className="card shadow-sm rounded-5">
-                  <img
-                    style={{
-                      borderRadius: "10px",
-                      height: "400px",
-                      objectFit: "cover",
-                    }}
-                    src="https://jenikaventures.com/wp-content/uploads/2024/07/1-1.png"
-                    alt=""
-                  />
+                  <a data-fancybox="gallery" href="/JENIKA/story-1.jpg">
+                    <img
+                      style={{
+                        borderRadius: "10px",
+                        height: "400px",
+                        objectFit: "cover",
+                      }}
+                      src="/JENIKA/story-1.jpg"
+                      alt="Story 1"
+                    />
+                  </a>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
                 <div className="card shadow-sm rounded-5">
-                  <img
-                    style={{
-                      borderRadius: "10px",
-                      height: "400px",
-                      objectFit: "cover",
-                    }}
-                    src="https://jenikaventures.com/wp-content/uploads/2024/03/1-2-1.png"
-                    alt=""
-                  />
+                  <a data-fancybox="gallery" href="/JENIKA/story-2.jpg">
+                    <img
+                      style={{
+                        borderRadius: "10px",
+                        height: "400px",
+                        objectFit: "cover",
+                      }}
+                      src="/JENIKA/story-2.jpg"
+                      alt="Story 2"
+                    />
+                  </a>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
                 <div className="card shadow-sm rounded-5">
-                  <img
-                    style={{
-                      borderRadius: "10px",
-                      height: "400px",
-                      objectFit: "cover",
-                    }}
-                    src="https://jenikaventures.com/wp-content/uploads/2024/07/IMG_4715-1024x683.jpg"
-                    alt=""
-                  />
+                  <a data-fancybox="gallery" href="/JENIKA/story-3.jpg">
+                    <img
+                      style={{
+                        borderRadius: "10px",
+                        height: "400px",
+                        objectFit: "cover",
+                      }}
+                      src="/JENIKA/story-3.jpg"
+                      alt="Story 2"
+                    />
+                  </a>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
                 <div className="card shadow-sm rounded-5">
-                  <img
-                    style={{
-                      borderRadius: "10px",
-                      height: "400px",
-                      objectFit: "cover",
-                    }}
-                    src="https://jenikaventures.com/wp-content/uploads/2024/07/awards-2022-new-1024x1024.jpg"
-                    alt=""
-                  />
+                  <a data-fancybox="gallery" href="/JENIKA/story-4.jpeg">
+                    <img
+                      style={{
+                        borderRadius: "10px",
+                        height: "400px",
+                        objectFit: "cover",
+                      }}
+                      src="/JENIKA/story-4.jpeg"
+                      alt="Story 2"
+                    />
+                  </a>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="card shadow-sm rounded-5">
+                  <a data-fancybox="gallery" href="/JENIKA/story-5.jpeg">
+                    <img
+                      style={{
+                        borderRadius: "10px",
+                        height: "400px",
+                        objectFit: "cover",
+                      }}
+                      src="/JENIKA/story-5.jpeg"
+                      alt="Story 2"
+                    />
+                  </a>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="card shadow-sm rounded-5">
+                  <a data-fancybox="gallery" href="/JENIKA/story-6.jpeg">
+                    <img
+                      style={{
+                        borderRadius: "10px",
+                        height: "400px",
+                        objectFit: "cover",
+                      }}
+                      src="/JENIKA/story-6.jpeg"
+                      alt="Story 2"
+                    />
+                  </a>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="card shadow-sm rounded-5">
+                  <a data-fancybox="gallery" href="/JENIKA/story-7.jpeg">
+                    <img
+                      style={{
+                        borderRadius: "10px",
+                        height: "400px",
+                        objectFit: "cover",
+                      }}
+                      src="/JENIKA/story-7.jpeg"
+                      alt="Story 2"
+                    />
+                  </a>
+                 
                 </div>
               </SwiperSlide>
             </Swiper>
@@ -319,9 +382,7 @@ const Career = () => {
 
       {/* extra's */}
       <div className="extraCareer">
-        <h1 className="text-drop__line">
-          Didn’t spot the perfect role yet?
-        </h1>
+        <h1 className="text-drop__line">Didn’t spot the perfect role yet?</h1>
         <h2 data-aos="fade-up" data-aos-duration="6000">
           Reach out to us at
         </h2>
