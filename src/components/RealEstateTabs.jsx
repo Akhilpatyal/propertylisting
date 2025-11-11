@@ -1,10 +1,12 @@
-import * as React from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay, EffectFade, Navigation } from "swiper/modules";
+import { Link } from "react-router-dom";
+import projectsData from "../assets/properties.json"; // import mock data
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -37,6 +39,11 @@ function a11yProps(index) {
 
 export default function RealEstateTabs() {
   const [value, setValue] = React.useState(0);
+  const [projects, setProjects] = useState([]);
+  useEffect(() => {
+    // Example: set all projects initially (or filter based on some condition)
+    setProjects(projectsData);
+  }, []);
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -45,7 +52,9 @@ export default function RealEstateTabs() {
     <>
       <div className="container pt-5">
         <Box sx={{ width: "100%" }}>
-          <h2 className="pt-5 mainFont text-center text-md-start">Latest in Real Estate</h2>
+          <h2 className="pt-5 mainFont text-center text-md-start">
+            Latest in Real Estate
+          </h2>
           {/* Tab Header */}
           <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
             <Tabs
@@ -65,156 +74,62 @@ export default function RealEstateTabs() {
               slidesPerView={3}
               spaceBetween={30}
               autoplay={{ delay: 0, disableOnInteraction: true }}
-      
-              pagination={{
-                clickable: true,
-              }}
+              pagination={{ clickable: true }}
               navigation={false}
-                loop={true}
-               speed={4000}
-               freeMode={true}
+              loop={true}
+              speed={4000}
+              freeMode={true}
               breakpoints={{
-                0: {
-                  slidesPerView: 1, // 👈 mobile (default)
-                },
-                768: {
-                  slidesPerView: 2, // 👈 tablets
-                },
-                1024: {
-                  slidesPerView: 3, // 👈 desktop
-                },
+                0: { slidesPerView: 1 },
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
               }}
-              modules={[Pagination,Autoplay, EffectFade]}
+              modules={[Pagination, Autoplay, EffectFade]}
               className="mySwiper-2"
             >
-              <SwiperSlide>
-                <div class="cards-3 section-gray">
-                  <div class="card card-blog">
-                    <div class="card-image news-box-items">
-                      <a href="#">
-                        <div className="news-image ">
-                          <img src="/Pune.png" alt="img" />
-                          <img src="/Pune.png" alt="img" />
-                        </div>
-                        {/* <div class="card-caption">
-                    
-                          Quisque a bibendum magna
-                        </div> */}
-                      </a>
-                      <div className="ripple-cont"></div>
-                    </div>
-                    <div className="table p-3">
-                      <div className="ele-1">
-                        <h6 class="category text-info">
-                          September 2025 | Capital Market
-                        </h6>
-                        <p className="card-description fs-4">
-                          Indian REITs A Gateway to Pune Real Estate{" "}
-                        </p>
-                        <div className="pt-5">
-                          <a href="">Read more</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div class="cards-3 section-gray">
-                  <div class="card card-blog">
-                    <div class="card-image news-box-items">
-                      <a href="#">
-                        <div className="news-image ">
-                          <img src="/Chennai.png" alt="img" />
-                          <img src="/Chennai.png" alt="img" />
-                        </div>
-                        {/* <div class="card-caption">
-                    
-                          Quisque a bibendum magna
-                        </div> */}
-                      </a>
-                      <div class="ripple-cont"></div>
-                    </div>
-                    <div class="table p-3">
-                      <div className="ele-1">
-                        <h6 class="category text-info">
-                          September 2025 | Capital Market
-                        </h6>
-                        <p class="card-description fs-4">
-                          Indian REITs A Gateway to Chennai Real Estate{" "}
-                        </p>
-                        <div className="pt-5">
-                          <a href="">Read more</a>
+              {projects.length > 0 ? (
+                projects.slice(4,10).map(
+                  (
+                    project // 👈 Only top 5 projects
+                  ) => (
+                    <SwiperSlide key={project.id}>
+                      <div className="cards-3 section-gray">
+                        <div className="card card-blog">
+                          <div className="card-image news-box-items">
+                            <Link to={`/projects/${project.id}`}>
+                              <div className="news-image">
+                                <img src={project.image} alt={project.name} style={{ height: "264px" }}/>
+                              </div>
+                            </Link>
+                          </div>
+                          <div className="table p-3">
+                            <div className="ele-1">
+                              <h6 className="category text-info">
+                                {project.city} | {project.location}
+                              </h6>
+                              <Link
+                                to={`/projects/${project.id}`}
+                                style={{ textDecoration: "none" }}
+                              >
+                                <p className="card-description fs-4">
+                                  {project.name}
+                                </p>
+                              </Link>
+                              <div className="pt-5">
+                                <Link to={`/projects/${project.id}`}>
+                                  View Details
+                                </Link>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div class="cards-3 section-gray">
-                  <div class="card card-blog">
-                    <div class="card-image news-box-items">
-                      <a href="#">
-                        <div className="news-image ">
-                          <img src="/Q2.png" alt="img" />
-                          <img src="/Q2.png" alt="img" />
-                        </div>
-                        {/* <div class="card-caption">
-                    
-                          Quisque a bibendum magna
-                        </div> */}
-                      </a>
-                      <div class="ripple-cont"></div>
-                    </div>
-                    <div class="table p-3">
-                      <div className="ele-1">
-                        <h6 class="category text-info">
-                          September 2025 | Capital Market
-                        </h6>
-                        <p class="card-description fs-4">
-                          Indian REITs A Gateway to Residential Real Estate{" "}
-                        </p>
-                        <div className="pt-5">
-                          <a href="">Read more</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div class="cards-3 section-gray">
-                  <div class="card card-blog">
-                    <div class="card-image news-box-items">
-                      <a href="#">
-                        <div className="news-image ">
-                          <img src="/Thumbnail.jpeg" alt="img" />
-                          <img src="/Thumbnail.jpeg" alt="img" />
-                        </div>
-                        {/* <div class="card-caption">
-                    
-                          Quisque a bibendum magna
-                        </div> */}
-                      </a>
-                      <div class="ripple-cont"></div>
-                    </div>
-                    <div class="table p-3">
-                      <div className="ele-1">
-                        <h6 class="category text-info">
-                          September 2025 | Capital Market
-                        </h6>
-                        <p class="card-description fs-4">
-                          Indian REITs A Gateway to Institutional Real Estate{" "}
-                        </p>
-                        <div className="pt-5">
-                          <a href="">Read more</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </SwiperSlide>
+                    </SwiperSlide>
+                  )
+                )
+              ) : (
+                <p className="text-center">No projects found</p>
+              )}
             </Swiper>
           </CustomTabPanel>
           <CustomTabPanel value={value} index={1}>
@@ -225,9 +140,9 @@ export default function RealEstateTabs() {
               pagination={{
                 clickable: true,
               }}
-               loop={true}
-               speed={4000}
-               freeMode={true}
+              loop={true}
+              speed={4000}
+              freeMode={true}
               breakpoints={{
                 0: {
                   slidesPerView: 1, // 👈 mobile (default)
@@ -239,7 +154,7 @@ export default function RealEstateTabs() {
                   slidesPerView: 3, // 👈 desktop
                 },
               }}
-              modules={[Pagination,Autoplay, EffectFade]}
+              modules={[Pagination, Autoplay, EffectFade]}
               className="mySwiper-2"
             >
               <SwiperSlide>
@@ -268,7 +183,7 @@ export default function RealEstateTabs() {
                           elit!{" "}
                         </p>
                         <div className="pt-5">
-                          <a href="">Read</a>
+                          <Link to="/Blog">Read</Link>
                         </div>
                       </div>
                     </div>
@@ -300,7 +215,7 @@ export default function RealEstateTabs() {
                           Lorem ipsum dolor sit amet consectetur.{" "}
                         </p>
                         <div className="pt-5">
-                          <a href="">Read</a>
+                          <Link to="/Blog">Read</Link>
                         </div>
                       </div>
                     </div>
@@ -332,7 +247,7 @@ export default function RealEstateTabs() {
                           Lorem ipsum dolor sit, amet consectetur adipisicing.{" "}
                         </p>
                         <div className="pt-5">
-                          <a href="">Read</a>
+                          <Link to="/Blog">Read</Link>
                         </div>
                       </div>
                     </div>
@@ -365,7 +280,7 @@ export default function RealEstateTabs() {
                           elit{" "}
                         </p>
                         <div className="pt-5">
-                          <a href="">Read</a>
+                          <Link to="/Blog">Read</Link>
                         </div>
                       </div>
                     </div>
@@ -382,9 +297,9 @@ export default function RealEstateTabs() {
               pagination={{
                 clickable: true,
               }}
-                loop={true}
-               speed={4000}
-               freeMode={true}
+              loop={true}
+              speed={4000}
+              freeMode={true}
               breakpoints={{
                 0: {
                   slidesPerView: 1, // 👈 mobile (default)
@@ -396,7 +311,7 @@ export default function RealEstateTabs() {
                   slidesPerView: 3, // 👈 desktop
                 },
               }}
-              modules={[Pagination,Autoplay, EffectFade]}
+              modules={[Pagination, Autoplay, EffectFade]}
               className="mySwiper-2"
             >
               <SwiperSlide>

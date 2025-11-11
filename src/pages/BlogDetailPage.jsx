@@ -5,11 +5,14 @@ import { FaRegNewspaper } from "react-icons/fa6";
 const BlogDetailPage = () => {
   return (
     <div>
-      <div className="CareerBanner">
+      <div className="blog-detailBanner position-relative">
+        <div class="banner-content">
         <h1>Commercial Leasing & Advisory</h1>
-        <p className="text-drop__line split2">
+        <p className=" split2">
           Browse through our diverse portfolio
         </p>
+        </div>
+        <div className="overlay"></div>
       </div>
 
       {/*  */}

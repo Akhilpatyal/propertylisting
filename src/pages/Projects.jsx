@@ -220,7 +220,7 @@ const Projects = () => {
       {/* Filter Bar */}
       <div className="container">
         <div className="filter-bar">
-          <h2 className="filter-title">Filter By</h2>
+          <h2 className="filter-title text-gradient2">Filter By</h2>
 
           <div className="filter-controls">
             {/* City */}

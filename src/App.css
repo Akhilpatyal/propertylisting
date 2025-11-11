@@ -1046,6 +1046,11 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.text-gradient2 {
+  background:linear-gradient(to top, #be973e 3.99%, #cec484 55.49%, #b49249 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 .ourStorySection {
   padding-top: 10px;
@@ -1066,6 +1071,17 @@ body {
   background: rgb(190 151 62) !important;
 }
 
+.OurTeambanner {
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url('/ourTeam/Team-2.jpg');
+  width: 100%;
+  height: 90vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
 .OurTeambanner {
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url('/ourTeam/Team-2.jpg');
   width: 100%;
@@ -1102,6 +1118,19 @@ body {
   justify-content: center;
 }
 
+.blog-detailBanner {
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(65, 56, 56, 0)), url('https://images.pexels.com/photos/4157731/pexels-photo-4157731.jpeg');
+  width: 100%;
+  height: 80vh;
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+}
 .CareerBanner {
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(65, 56, 56, 0)), url('/public/careerBanner-2.jpg');
   width: 100%;
@@ -2061,7 +2090,7 @@ svg path {
 
 .StorySection h1,
 p {
-  text-align: center;
+  text-align: start;
 }
 
 .StorySection {
@@ -2503,6 +2532,7 @@ p {
 
 .cards-3 .ele-1 p {
   text-align: start;
+  padding: 0px;
 }
 
 .cards-3 .ele-1 .fw-bold {
@@ -2525,7 +2555,7 @@ p {
 
 /* blog */
 .blog-post-details {
-  max-width: 900px;
+  /* max-width: 900px; */
   margin: 50px auto;
   padding: 0 20px;
   font-family: "Poppins", sans-serif;
@@ -2803,4 +2833,7 @@ p {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2); /* adjust opacity as needed */
   z-index: 1;
+}
+.banner-content{
+  z-index: 99;
 }

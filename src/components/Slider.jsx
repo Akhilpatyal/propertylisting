@@ -11,10 +11,13 @@ import "swiper/css/effect-fade";
 import "../index.css"; // your custom styles
 import gsap from "gsap";
 import SplitType from "split-type";
+import { useNavigate } from "react-router-dom";
+
 export default function Slider() {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("Residential");
-  useEffect(()=>{
-            document.fonts.ready.then(() => {
+  useEffect(() => {
+    document.fonts.ready.then(() => {
       gsap.set(".split2", { opacity: 1 });
 
       const elements = document.querySelectorAll(".split2");
@@ -38,8 +41,16 @@ export default function Slider() {
         });
       });
     });
+  });
 
-  })
+  const handleTabClick = (tab) => {
+    setActiveTab(tab);
+
+    // 👇 Navigate to a page based on tab
+    if (tab === "Residential") navigate("/projects?propertytype=Residential");
+    else if (tab === "Commercial") navigate("/projects?propertytype=Commercial");
+    else if (tab === "Plots") navigate("/projects?propertytype=Plots");
+  };
   return (
     <>
       <div className="slider-wrapper">
@@ -48,7 +59,7 @@ export default function Slider() {
           effect="fade"
           pagination={{ clickable: true }}
           autoplay={{ delay: 4000, disableOnInteraction: false }}
-          modules={[ Autoplay, EffectFade]}
+          modules={[Autoplay, EffectFade]}
           className="mySwiper"
           loop={true}
           speed={1200}
@@ -109,7 +120,6 @@ export default function Slider() {
             />
           </SwiperSlide>
         </Swiper>
-       
 
         {/* 🔍 Search Section Overlay (Fixed over all slides) */}
         <div className="search-overlay">
@@ -125,7 +135,7 @@ export default function Slider() {
                 <button
                   key={tab}
                   className={`tab-btn ${activeTab === tab ? "active" : ""}`}
-                  onClick={() => setActiveTab(tab)}
+                  onClick={() => handleTabClick(tab)}
                 >
                   {tab}
                 </button>
@@ -135,7 +145,10 @@ export default function Slider() {
             {/* Location + Search */}
             <div className="search-box ">
               <div className="location-input justify-content-center">
-                <FaMapMarkerAlt className="icon" style={{color:"rgb(205 181 112)"}} />
+                <FaMapMarkerAlt
+                  className="icon"
+                  style={{ color: "rgb(205 181 112)" }}
+                />
                 <select>
                   <option>Gurugram</option>
                   <option>Delhi</option>
